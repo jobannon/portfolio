@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.outer {
+  background-color: lightslategrey;
+}
+
+.inner {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+
+}
+.title{
+  word-wrap: normal;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
