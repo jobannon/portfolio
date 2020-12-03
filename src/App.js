@@ -23,12 +23,13 @@ class App extends Component {
 
     executeSearch(term){
         this.setState({loading: true})
-        fetch(`https://movie-superstar.herokuapp.com/api/v1/movies?s=${term}`)
+        // fetch(`https://movie-superstar.herokuapp.com/api/v1/movies?s=${term}`)
+        fetch(`http://localhost:4000/api/v1/movies?s=${term}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
                     loading: false,
-                    searchedMovies: data['Search']
+                    searchedMovies: data
                 })
             })
     }
@@ -42,7 +43,8 @@ class App extends Component {
             posterUrl={movie.Poster} 
             year={movie.Year} 
             type={movie.Type} 
-            imdbid={movie.imdbID} 
+            imdbId={movie.imdbID} 
+            count={movie.count}
             />
         );
 
