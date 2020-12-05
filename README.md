@@ -3,8 +3,8 @@
 [Heroku FrontEnd](https://moviesuperstar.herokuapp.com/#/)
 
 ## Disclaimer...
-- Self disparagement can border on pity.  Having said that, this is my second time using React and my first time using MaterialUI components. 
-- While I had a lot of fun, I expect that my code quality suffered as a result.  I desire to be in a working community which suppports innovation and code review.
+- I loved every moment of building this. Having said that, this is my second time using React and my first time using MaterialUI components. There is still large collections of non-optmizied code, and technical debt.  Some unneeded imports are reported by the React Linter as well as suboptimal display configurations on components. 
+- My central concern was to have fun.  And secondly, just build an MVP.  The second iteration of this will require a day (or two) of code clean up, refactoring, and optimizations.  Before spending this time, I would like to further review `useState`, async promise resolution, and good component architecting.  Pluralsight and Scrimba have a few courses that I intend to check out. 
 
 ## Please see [wiki](https://github.com/jobannon/superstar-api/wiki) for notes about this project.
 
