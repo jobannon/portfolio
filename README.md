@@ -3,8 +3,8 @@
 [Heroku FrontEnd](https://moviesuperstar.herokuapp.com/#/)
 
 ## Disclaimer...
-- Self disparagement can border on pity.  Having said that - this is my second time utializing React and my first time using MaterialUI components. 
-- While I had a lot of fun, I expect that my code quality suffered as a result.  I desire to be in a working community which suppports innovation and will allow me to growth along side other developers.
+- Self disparagement can border on pity.  Having said that, this is my second time using React and my first time using MaterialUI components. 
+- While I had a lot of fun, I expect that my code quality suffered as a result.  I desire to be in a working community which suppports innovation and code review.
 
 ## Please see [wiki](https://github.com/jobannon/superstar-api/wiki) for notes about this project.
 
