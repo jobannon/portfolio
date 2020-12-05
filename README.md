@@ -2,11 +2,12 @@
 # View Here
 [Heroku FrontEnd](https://moviesuperstar.herokuapp.com/#/)
 
+![giphy](https://media.giphy.com/media/sz5deIKVOg2YUeAKPh/giphy.gif)
 ## Disclaimer...
-- I loved every moment of building this. Having said that, this is my second time using React and my first time using MaterialUI Components. There are still large collections of non-optimized code, and technical debt.  Some unnecessary imports are reported by the React Linter as well as suboptimal display configurations on components. 
-- My central concern was to have fun.  And secondly, build an MVP.  The second iteration of this will require a day (or two) of code clean up, refactoring, and optimizations.  Before spending this time, I would like to further review `useState`, async promise resolution, and good component architecting.  Pluralsight and Scrimba have a few courses that I intend to check out. 
+- I loved every moment of building this. Having said that, this is my second time using React and my first time using MaterialUI Components. There are still collections of non-optimized code, and technical debt.  Some unnecessary imports are reported by the React Linter as well as suboptimal display configurations on components. 
+- My central concern was to have fun.  And secondly, build an MVP.  The second iteration of this will require a day (or two) of code clean up, refactoring, and optimizations.  Before spending this time, I would like to further review `useState`, async promise resolution, and good component architecting.  Pluralsight and Scrimba have a few courses I intend to check out. 
 
-## Please see [wiki](https://github.com/jobannon/superstar-api/wiki) for notes about this project.
+## Please see [wiki](https://github.com/jobannon/superstar-api/wiki) for backend notes about this project.
 
 <details>
 <summary>Click to View Historical Readme</summary>
@@ -33,7 +34,7 @@ Ability to thumbs up or thumbs down the movie (see below)
 Implement some type of storage or database to persist movie titles and how many thumbs up or thumbs down they’ve received. No need to add movies that have not received any votes. A sample table is below.
 Movie Title
 Thumbs Up
-Thumbs Down
+Thumbs Downu
 Ray
 48
 3
