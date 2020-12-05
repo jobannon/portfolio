@@ -62,6 +62,7 @@ class Search extends Component {
     render() {
         const { classes } = this.props;
         var movie_array = this.state.searchedMovies
+debugger        
 
         if(movie_array.length > 0){
           var cleanedMovies = movie_array.map((movie, i) =>
