@@ -42,13 +42,13 @@ class Search extends Component {
     }
 
     executeSearch(){
-        var baseUrl = ""
-        if(process.env.NODE_ENV === "production"){
-          baseUrl = "https://movie-superstar.herokuapp.com"  
-        } else {
-          baseUrl = "http://localhost:4000"  
-        }
-        fetch(`${baseUrl}/api/v1/movies?s=${this.state.value}&page=${this.state.activePage}`)
+        // var baseUrl = ""
+        // if(process.env.NODE_ENV === "production"){
+        //   baseUrl = "https://movie-superstar.herokuapp.com"  
+        // } else {
+        //   baseUrl = "http://localhost:4000"  
+        // }
+        fetch(`https://movie-superstar.herokuapp.com/api/v1/movies?s=${this.state.value}&page=${this.state.activePage}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
