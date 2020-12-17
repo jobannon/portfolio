@@ -23,12 +23,6 @@ class MovieDetails extends Component {
   }
 
   render(){
-    var movie_array = this.state.details
-    var cleanedDetails = movie_array.map((movie, i) =>{
-    }
-    )
-    
-    const movie_thing = this.state.details
     return (
       <Container>
         {this.state.details}

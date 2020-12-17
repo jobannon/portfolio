@@ -7,6 +7,12 @@
 - I loved every moment of building this. Having said that, this is my second time using React and my first time using MaterialUI Components. There are still collections of non-optimized code, and technical debt.  Some unnecessary imports are reported by the React Linter as well as suboptimal display configurations on components. 
 - My central concern was to have fun.  And secondly, build an MVP.  The second iteration of this will require a day (or two) of code clean up, refactoring, and optimizations.  Before spending this time, I would like to further review `useState`, async promise resolution, and good component architecting.  Pluralsight and Scrimba have a few courses I intend to check out. 
 
+## Local Installation Instructions
+- Two commands
+  - `git clone [...repo]`
+  - `npm install`
+- Then...
+  - `npm start`
 ## Please see [wiki](https://github.com/jobannon/superstar-api/wiki) for backend notes about this project.
 
 <details>

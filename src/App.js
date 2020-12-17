@@ -1,11 +1,8 @@
 import React, {Component} from "react"
 import './App.scss';
-import Movie from './Movie' 
 import About from './About' 
 import Search from './Search' 
 import Home from './Home' 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
 import { withStyles } from "@material-ui/core/styles";
 
 import {
