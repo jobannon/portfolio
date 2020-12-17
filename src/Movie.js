@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react"
-import MovieDetails from './MovieDetails' 
 import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -9,36 +8,18 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { useParams } from "react-router-dom";
 import smallstars from './smallstars.png'
 
 import clsx from 'clsx';
-import CardHeader from '@material-ui/core/CardHeader';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
 
 function Movie(props){
 
-  const [hasImdb, setImdb] = useState(0);
-  const [hasError, setErrors] = useState(false);
   const [expanded, setExpanded] = React.useState(false);
-  const [moreDetails, setMoreDetails] = React.useState({moreDetails: []});
 
   const vote = (direction, imdbId) => {
     setCount(count + direction)
