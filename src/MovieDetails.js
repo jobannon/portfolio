@@ -10,12 +10,15 @@ class MovieDetails extends Component {
     fetch(`http://localhost:4000/api/v1/movies?i=${props.imdbId}`)
       .then(response => response.json())
       .then(data => {
-            this.setState({
-                loading: false,
-                searchedMovies: data,
-                hasSearched: true
-            })
+        this.setState({
+          loading: false,
+          searchedMovies: data,
+          hasSearched: true
         })
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
 }
   
   componentDidMount(props){

@@ -32,7 +32,6 @@ class App extends Component {
             loading: false,
             activePage: 1,
             searchedMovies: [],
-            term: "",
             value: "",
             hasSearched: false
         }
