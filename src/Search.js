@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Pagination from "react-js-pagination";
+import LoadingAnimation from './LoadingAnimation'
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
@@ -101,24 +102,29 @@ class Search extends Component {
             <SearchBar
               value={this.state.value}
               onChange={(newTerm) => this.setState({ value: newTerm })}
-              onRequestSearch={() => this.executeSearch(this.state.value)}
+              onRequestSearch={() => {this.executeSearch(this.state.value); this.setState({loading: true})}}
             />
           </Container>
           <Container>
-          {this.state.hasSearched && 
-              <Pagination 
-                firstPageText='first'
-                lastPageText='last'
-                activePage={(this.state.activePage)}
-                itemsCountPerPage={10}
-                totalItemsCount={100}
-                pageRangeDisplayed={10}
-                onChange={this.handlePageChange.bind(this)}
-              />
-          }
+            {this.state.hasSearched && 
+                <Pagination 
+                  firstPageText='first'
+                  lastPageText='last'
+                  activePage={(this.state.activePage)}
+                  itemsCountPerPage={10}
+                  totalItemsCount={100}
+                  pageRangeDisplayed={10}
+                  onChange={this.handlePageChange.bind(this)}
+                />
+            }
           </Container>
           <Grid container direction="column" justify="center" spacing={3} alignItems="center">
-            {cleanedMovies}
+            {
+              ((this.state.loading) && (this.state.value.length > 0)) ? 
+                <LoadingAnimation />
+                :
+                cleanedMovies
+            }
           </Grid>
           <Container>
           {this.state.hasSearched && 

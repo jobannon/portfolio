@@ -3,13 +3,13 @@ import './App.scss';
 import About from './About' 
 import Search from './Search' 
 import Home from './Home' 
+import LoadingAnimation from './LoadingAnimation'
 import { withStyles } from "@material-ui/core/styles";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -29,7 +29,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loading: false,
+            loading: true,
             activePage: 1,
             searchedMovies: [],
             value: "",
