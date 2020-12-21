@@ -20,11 +20,6 @@ class MovieDetails extends Component {
         console.error('Error:', error);
       })
 }
-  
-  componentDidMount(props){
-    const movie_thing = this.state.details
-  }
-
   render(){
     return (
       <Container>
