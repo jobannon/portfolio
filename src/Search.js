@@ -57,14 +57,21 @@ class Search extends Component {
                     hasSearched: true
                 })
             })
+            .catch(error => {
+                console.error('Error:', error);
+            })
     }
 
     render() {
-        const { classes } = this.props;
-        var movie_array = this.state.searchedMovies
+        var movieArray = this.state.searchedMovies
+        // var errorFromMovie = this.state.searchedMovies
+        // debugger 
 
-        if(movie_array.length > 0){
-          var cleanedMovies = movie_array.map((movie, i) =>
+        // if(errorFromMovie.length > 0){
+        //   showErrorImage = true
+        // }
+        if(movieArray.length > 0){
+          var cleanedMovies = movieArray.map((movie, i) =>
             <Movie 
               key={i}
               title={movie.Title} 
