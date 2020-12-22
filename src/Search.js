@@ -5,12 +5,13 @@ import SearchBar from "material-ui-search-bar";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import { withStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import Pagination from "react-js-pagination";
 import LoadingAnimation from './LoadingAnimation'
+import Pagination from '@material-ui/lab/Pagination';
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
@@ -30,16 +31,16 @@ class Search extends Component {
         super(props)
         this.state = {
             loading: false,
-            activePage: 1,
             searchedMovies: [],
             term: "",
             value: "",
-            hasSearched: false
+            hasSearched: false,
+            page: 1
         }
     }
     
-    handlePageChange(pageNumber) {
-      this.setState({activePage: pageNumber}, function() {this.executeSearch()});
+    handlePageChange(event, value) {
+      this.setState({page: value}, function() {this.executeSearch()});
     }
 
     executeSearch(){
@@ -49,13 +50,13 @@ class Search extends Component {
         // } else {
         //   baseUrl = "http://localhost:4000"  
         // }
-        fetch(`https://movie-superstar.herokuapp.com/api/v1/movies?s=${this.state.value}&page=${this.state.activePage}`)
+        fetch(`https://movie-superstar.herokuapp.com/api/v1/movies?s=${this.state.value}&page=${this.state.page}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    loading: false,
-                    searchedMovies: data,
-                    hasSearched: true
+                  loading: false,
+                  searchedMovies: data,
+                  hasSearched: true
                 })
             })
             .catch(error => {
@@ -106,17 +107,20 @@ class Search extends Component {
             />
           </Container>
           <Container>
-            {this.state.hasSearched && 
-                <Pagination 
-                  firstPageText='first'
-                  lastPageText='last'
-                  activePage={(this.state.activePage)}
-                  itemsCountPerPage={10}
-                  totalItemsCount={100}
-                  pageRangeDisplayed={10}
-                  onChange={this.handlePageChange.bind(this)}
-                />
-            }
+            <Grid container direction="column" justify="center" spacing={-1} flexGrow={2} alignItems="center" m={5}>
+              <Box m={'20px'}>
+                {this.state.hasSearched && 
+                    <Pagination 
+                      count={10}
+                      color='primary'
+                      size='large'
+                      shape='rounded'
+                      onChange={this.handlePageChange.bind(this)}
+                      page={(this.state.page)}
+                    />
+                }
+                </Box>
+              </Grid>
           </Container>
           <Grid container direction="column" justify="center" spacing={3} alignItems="center">
             {
@@ -126,21 +130,20 @@ class Search extends Component {
                 cleanedMovies
             }
           </Grid>
-          <Container>
-          {this.state.hasSearched && 
-              <Pagination 
-                prevPageText='prev'
-                nextPageText='next'
-                firstPageText='first'
-                lastPageText='last'
-                activePage={(this.state.activePage)}
-                itemsCountPerPage={10}
-                totalItemsCount={100}
-                pageRangeDisplayed={10}
-                onChange={this.handlePageChange.bind(this)}
-              />
-          }
-          </Container>
+          <Grid container direction="column" justify="center" spacing={-1} flexGrow={2} alignItems="center" m={5}>
+            <Box m={'20px'}>
+              {this.state.hasSearched && 
+                  <Pagination 
+                    count={10}
+                    color='primary'
+                    size='large'
+                    shape='rounded'
+                    onChange={this.handlePageChange.bind(this)}
+                    page={(this.state.page)}
+                  />
+              }
+              </Box>
+          </Grid>
         </React.Fragment>
       );
     }
