@@ -3,7 +3,6 @@ import './App.scss';
 import About from './About' 
 import Search from './Search' 
 import Home from './Home' 
-import LoadingAnimation from './LoadingAnimation'
 import { withStyles } from "@material-ui/core/styles";
 
 import {
