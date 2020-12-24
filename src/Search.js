@@ -10,8 +10,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import LoadingAnimation from './LoadingAnimation'
 import Pagination from '@material-ui/lab/Pagination';
+import { CircularProgress } from "@material-ui/core";
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
@@ -125,7 +125,7 @@ class Search extends Component {
           <Grid container direction="column" justify="center" spacing={3} alignItems="center">
             {
               ((this.state.loading) && (this.state.value.length > 0)) ? 
-                <LoadingAnimation />
+                <CircularProgress />
                 :
                 cleanedMovies
             }
