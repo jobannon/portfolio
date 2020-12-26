@@ -24,15 +24,16 @@ function Movie(props){
   const vote = (direction, imdbId) => {
     setCount(count + direction)
 
-    // var baseUrl = ""
-    // if(process.env.NODE_ENV === "production"){
-    //   baseUrl = "https://movie-superstar.herokuapp.com"  
-    // } else {
+    // change if backend / frontend testing needed.
+    let baseUrl = ""
+    if(process.env.NODE_ENV === "production" || process.env.NODE_ENV === "development"){
+      baseUrl = "movie-superstar.herokuapp.com"  
+    }
+    //  else {
     //   baseUrl = "http://localhost:4000"  
     // }
 
-    fetch(`https://movie-superstar.herokuapp.com/api/v1/votes?vote=${direction}&imdbid=${imdbId}`, {
-    // fetch(`https://movie-superstar.herokuapp.com/api/v1/vote?v=${direction}`, {
+    fetch(`https://${baseUrl}/api/v1/votes?vote=${direction}&imdbid=${imdbId}`, {
       method: 'POST', 
       headers: {
         'Accept': 'application/json, text/plain, */*',

@@ -44,34 +44,32 @@ class Search extends Component {
     }
 
     executeSearch(){
-        // var baseUrl = ""
-        // if(process.env.NODE_ENV === "production"){
-        //   baseUrl = "https://movie-superstar.herokuapp.com"  
-        // } else {
-        //   baseUrl = "http://localhost:4000"  
-        // }
-        fetch(`https://movie-superstar.herokuapp.com/api/v1/movies?s=${this.state.value}&page=${this.state.page}`)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                  loading: false,
-                  searchedMovies: data,
-                  hasSearched: true
-                })
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            })
+      let baseUrl = ""
+
+      // change if backend / frontend testing needed.
+      if(process.env.NODE_ENV === "production" || process.env.NODE_ENV === "development"){
+        baseUrl = "movie-superstar.herokuapp.com"  
+      }
+      //  else {
+      //   baseUrl = "http://localhost:4000"  
+      // }
+
+      fetch(`https://${baseUrl}/api/v1/movies?s=${this.state.value}&page=${this.state.page}`)
+          .then(response => response.json())
+          .then(data => {
+              this.setState({
+                loading: false,
+                searchedMovies: data,
+                hasSearched: true
+              })
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          })
     }
 
     render() {
         var movieArray = this.state.searchedMovies
-        // var errorFromMovie = this.state.searchedMovies
-        // debugger 
-
-        // if(errorFromMovie.length > 0){
-        //   showErrorImage = true
-        // }
         if(movieArray.length > 0){
           var cleanedMovies = movieArray.map((movie, i) =>
             <Movie 
