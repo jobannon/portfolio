@@ -77,7 +77,7 @@ function Search() {
           year={movie.Year}
           type={movie.Type}
           imdbId={movie.imdbID}
-          count={movie.count}
+          voteCount={movie.count}
           details={movie.details}
         />
       )));
@@ -122,10 +122,8 @@ function Search() {
       </Container>
       <Grid container direction="column" justify="center" spacing={3} alignItems="center">
         {
-              ((loading) && (value.length > 0))
-                ? <CircularProgress />
-                : getCleanedMovies()
-            }
+          ((loading) && (value.length > 0)) ? <CircularProgress /> : getCleanedMovies()
+        }
       </Grid>
       <Grid container direction="column" justify="center" spacing={-1} flexGrow={2} alignItems="center" m={5}>
         <Box m="20px">
