@@ -259,7 +259,7 @@ const Movie = (props) => {
       </Grid>
     </>
   );
-}
+};
 
 export default Movie;
 
