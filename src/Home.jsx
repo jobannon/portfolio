@@ -122,11 +122,13 @@ function Home() {
           }}
         >
           <Grid item style={{ position: 'absolute', top: '0' }}>
-            <Lottie
-              options={defaultOptions}
-              height={800}
-              width={800}
-            />
+            <div style={{opacity: '.2'}}>
+              <Lottie
+                options={defaultOptions}
+                height={800}
+                width={800}
+              />
+            </div>
           </Grid>
           <Grid item style={{ position: 'absolute', transform: 'rotate(1deg)', top: '0px' }}>
             <img src={circleMovieSuperstar} alt="app" height="400px" />
