@@ -122,7 +122,7 @@ function Home() {
           }}
         >
           <Grid item style={{ position: 'absolute', top: '0' }}>
-            <div style={{opacity: '.2'}}>
+            <div style={{ opacity: '.2' }}>
               <Lottie
                 options={defaultOptions}
                 height={800}
