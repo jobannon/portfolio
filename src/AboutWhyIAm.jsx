@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     opacity: '.85',
   },
   why: {
-    height: '100vh',
+    // height: '100vh',
   },
   headerText: {
     marginBottom: '100px',

@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     alignText: 'center',
   },
   who: {
-    height: '100vh',
+    // height: '100vh',
   },
   headerText: {
     marginBottom: '100px',

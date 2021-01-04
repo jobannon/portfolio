@@ -49,9 +49,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.light,
   },
   how: {
-    height: '100vh',
+    // height: '100vh',
   },
   headerText: {
+    marginTop: '100px',
     marginBottom: '100px',
   },
   greenBackground: {
@@ -75,9 +76,6 @@ const useStyles = makeStyles((theme) => ({
   },
   innerText: {
     paddingRight: '250px',
-  },
-  headerText: {
-    marginBottom: '100px',
   },
 }));
 
