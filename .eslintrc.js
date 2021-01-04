@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react/recommended',
+    // 'plugin:react/recommended',
     // 'airbnb',
   ],
   parserOptions: {
@@ -15,8 +15,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'only-warn',
-    'react',
+    // 'only-warn',
+    // 'react',
   ],
   rules: {
   },
