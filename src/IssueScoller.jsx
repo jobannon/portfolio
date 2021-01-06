@@ -15,7 +15,7 @@ function IssueScroller(props) {
         setGithubIssues(data);
       })
       .catch((error) => {
-        console.error('Error:', error);
+        // console.error('Error:', error);
       });
   }
   useEffect(() => {
