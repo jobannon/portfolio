@@ -48,7 +48,6 @@ function Search() {
         setSearchedMovies(data);
       })
       .catch((error) => {
-        console.error('Error:', error);
       });
   }
 
