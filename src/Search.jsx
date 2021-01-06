@@ -36,7 +36,7 @@ function Search() {
     let baseUrl = '';
 
     if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
-      baseUrl = 'movie-superstar.herokuapp.com';
+      baseUrl = 'be-movie-superstar-redux.herokuapp.com';
     }
     // change if backend / frontend testing needed.
     //  else { baseUrl = "http://localhost:4000"}
