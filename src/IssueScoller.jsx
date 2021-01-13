@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from 'react';
+
 import TextLoop from 'react-text-loop';
+import Chip from '@material-ui/core/Chip';
+import Box from '@material-ui/core/Box';
+import { makeStyles } from '@material-ui/core/styles';
 
 function IssueScroller(props) {
+  const useStyles = makeStyles(theme => ({
+    left: {
+      textAlign: 'left'
+    }
+  }))
+  const classes = useStyles();
   const [githubIssues, setGithubIssues] = useState([]);
   const [cleanTitles, setCleanTitles] = useState([]);
   const [status, setStatus] = useState([]);
@@ -29,9 +39,12 @@ function IssueScroller(props) {
 
   return (
     <>
-      {(cleanTitles.length > 0) ? <h1><TextLoop children={status} /></h1> : ' ' }
-      {(cleanTitles.length > 0) ? <h1><TextLoop children={cleanTitles} /></h1> : ' ' }
-
+      <Box>
+        {(cleanTitles.length > 0) ? <h1><TextLoop children={cleanTitles} /></h1> : ' ' }
+      </Box>
+      <Box>
+        {(cleanTitles.length > 0) ? <Chip label={<TextLoop children={status} />}  color="secondary" /> : ' ' }
+      </Box>
     </>
   );
 }

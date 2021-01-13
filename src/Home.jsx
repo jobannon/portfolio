@@ -75,10 +75,10 @@ function Home() {
           >
             <MenuItem
               component={Link}
-              to="/search"
+              to="/project"
               onClick={handleClose}
             >
-              Search
+              Project
             </MenuItem>
             <MenuItem
               onClick={handleClose}

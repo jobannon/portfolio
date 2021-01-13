@@ -4,12 +4,15 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { lighten, makeStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
 import outdoorJosh from './outdoorJosh.jpg';
 import thinkingDeveloperDataLight from './assets/thinkingDeveloperDataLight.json';
 import turingFull from './assets/turingFull.png';
 import turingFullAlt from './assets/turingFullAlt.png';
+import codeForDenver from './assets/codeForDenver2.png'
+import Button from '@material-ui/core/Button';
+import { Brightness1 } from '@material-ui/icons';
 
 const defaultOptions = {
   loop: true,
@@ -66,14 +69,20 @@ const useStyles = makeStyles((theme) => ({
     alignText: 'center',
   },
   who: {
+    // background: '#c7c3da'
     // height: '100vh',
+  },
+  buttonStyle: {
+    fontSize: 15,
+    borderRadius: 15,
+    color: theme.palette.primary.light,
   },
   headerText: {
     marginBottom: '100px',
   },
   greenBackground: {
     background: '#CEEDDB',
-    borderRadius: '25px',
+    // borderRadius: '25px',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '55px',
@@ -126,6 +135,8 @@ function AboutWhoIAm() {
                   strings: ['I am a fullstack developer'],
                   autoStart: true,
                   loop: true,
+                  cursor: " ",
+                  pauseFor: 10000000000,
                 }}
               />
             </Typography>
@@ -152,6 +163,8 @@ function AboutWhoIAm() {
                   strings: ['I am a thoughtful developer'],
                   autoStart: true,
                   loop: true,
+                  cursor: " ",
+                  pauseFor: 10000000000,
                 }}
               />
             </Typography>
@@ -196,6 +209,8 @@ function AboutWhoIAm() {
                   strings: ['I am pay-it-forward developer'],
                   autoStart: true,
                   loop: true,
+                  cursor: " ",
+                  pauseFor: 100000000,
                 }}
               />
             </Typography>
@@ -207,6 +222,31 @@ function AboutWhoIAm() {
                 The greatest obstacle to change is support to make that change.  When I decided to pursue coding as a full-time career having a mentor in my corner to explain the finer points of OOP was invaluable.
                 <p>I have recently signed up to offer the same 6 week mentoring to incoming Turing Students.</p>
                 <p>I would like to offer the same service back to others.</p>
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid container direction="row" className={classes.greenBackground} spacing={3}>
+          <Grid item xs={4} className={classes.paperRight}>
+            <img src={codeForDenver} alt="Code for Denver Logo" height='120px' />
+          </Grid>
+          <Grid item xs={6} className={classes.paperRight}>
+            <Box>
+              <Typography
+                className={classes.paperLeft}
+                variant="h6"
+              >
+                Open Source Software is the platform from which I built my career - I am giving back
+                <p>I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects</p>
+                <Button 
+                  variant='outlined'
+                  href='https://codefordenver.org/#/#featured'
+                  target="#"
+                  className={classes.buttonStyle}
+                >
+                  site
+                </Button>
+
               </Typography>
             </Box>
           </Grid>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.scss';
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -7,8 +7,11 @@ import {
   Route,
 } from 'react-router-dom';
 import About from './About';
+import Project from './Project';
 import Search from './Search';
 import Home from './Home';
+import Site from './Site';
+import PanelSnap from 'panelsnap'
 
 const styles = (theme) => ({
   root: {
@@ -22,18 +25,27 @@ const styles = (theme) => ({
   },
 });
 function App() {
+
+  // const [activePanelName, setActivePanelName] = userState(undefined)
+
+  // useEffect(() => {
+  //   const panelSpanInstance = new PanelSnap({
+  //     panelSelector: '> #root > #app > section'
+  //   })
+  // }, []);
+  
   return (
     <>
       <Router>
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/project">
+            <Project />
           </Route>
-          <Route path="/search">
-            <Search />
+          <Route path="/site">
+            <Site />
           </Route>
           <Route path="/">
-            <Home />
+            <About />
           </Route>
         </Switch>
       </Router>

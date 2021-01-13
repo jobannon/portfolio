@@ -8,11 +8,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextLoop from 'react-text-loop';
 import Lottie from 'react-lottie';
 import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
 import codeSignalContribution from './assets/codeSignalContribution.png';
 import codeSignalLogo from './assets/codeSignalLogo.png';
 import githubLogo from './assets/GitHub-Mark-120px-plus.png';
 import githubContribution from './assets/githubContribution.png';
 import IssueScroller from './IssueScoller';
+import GitHubCalendar from 'react-github-calendar';
 
 const defaultOptions = {
   loop: true,
@@ -57,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   greenBackground: {
     background: '#CEEDDB',
-    borderRadius: '25px',
+    // borderRadius: '25px',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '55px',
@@ -77,6 +79,8 @@ const useStyles = makeStyles((theme) => ({
   innerText: {
     paddingRight: '250px',
   },
+  bordered: {
+  }
 }));
 
 const preventDefault = (event) => event.preventDefault();
@@ -114,6 +118,8 @@ function AboutHowIAm() {
                   strings: ['I am iterative'],
                   autoStart: true,
                   loop: true,
+                  cursor: " ",
+                  pauseFor: 10000000000,
                 }}
               />
             </Typography>
@@ -121,7 +127,7 @@ function AboutHowIAm() {
               className={classes.paper}
               variant="h5"
             >
-              For example, I have continusouly worked on this SuperStar app
+              For example, I am continuously refactoring past projects and implementing new features 
               <Grid container direction="column">
                 <Grid item>
                   <Button
@@ -164,11 +170,36 @@ function AboutHowIAm() {
                   strings: ['I am fully engaged in Growth Mindset'],
                   autoStart: true,
                   loop: true,
+                  cursor: " ",
+                  pauseFor: 10000000000,
                 }}
               />
             </Typography>
           </Grid>
           <Grid item xs={12}>
+            <Box style={{ marginTop: '50px' }}>
+              <img src={githubLogo} alt="Github Logo" />
+              <Typography
+                className={classes.paper}
+                variant="h6"
+              >
+                By Working on Code Weekly And Improving Daily
+                <Button
+                  href="https://github.com/jobannon"
+                  variant="outlined"
+                  className={classes.buttonStyle}
+                >
+                  Github Profile 
+                </Button>
+              </Typography>
+            </Box>
+            <Box className={classes.bordered} >
+              <Chip label="Live" color="secondary"></Chip>
+              <GitHubCalendar 
+                username="jobannon"
+                blockSize={15}
+              />
+            </Box>
             <Box
               style={{ marginTop: '50px' }}
             >
@@ -190,47 +221,8 @@ function AboutHowIAm() {
             <Box>
               <img src={codeSignalContribution} alt="Code Signal Contrbution" />
             </Box>
-            <Box style={{ marginTop: '50px' }}>
-              <img src={githubLogo} alt="Github Logo" />
-              <Typography
-                className={classes.paper}
-                variant="h6"
-              >
-                By Working on Code Weekly And Improving Daily
-                <Button
-                  href="https://github.com/jobannon"
-                  variant="outlined"
-                  className={classes.buttonStyle}
-                >
-                  Github Profile 
-                </Button>
-              </Typography>
-            </Box>
-            <Box>
-              <img src={githubContribution} alt="Github Contrbution" width="890px" />
-            </Box>
           </Grid>
         </Grid>
-        {/* <Grid
-          container
-          className={classes.greenBackground}
-          direction="row"
-        >
-          <Grid item xs={6}>
-            <Typography
-              className={classes.paper}
-              variant="h3"
-            >
-              <Typewriter
-                options={{
-                  strings: ['I am commited to growing'],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </Typography>
-          </Grid>
-        </Grid> */}
       </Grid>
     </>
   );

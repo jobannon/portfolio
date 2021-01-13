@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   greenBackground: {
     background: '#CEEDDB',
-    borderRadius: '25px',
+    // borderRadius: '25px',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '55px',
@@ -143,6 +143,8 @@ function AboutWhyIAm() {
                   strings: ['I fell in love with programming from "go"'],
                   autoStart: true,
                   loop: true,
+                  cursor: " ",
+                  pauseFor: 100000000,
                 }}
               />
             </Typography>

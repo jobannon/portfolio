@@ -11,6 +11,7 @@ import hiJoshData from './assets/hiJosh.json';
 import downCaret from './assets/downCaret.json';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import TopBar from './TopBar';
+import AboutHello from './AboutHello'
 import AboutWhoIAm from './AboutWhoIAm';
 import AboutWhyIAm from './AboutWhyIAm';
 import AboutHowIAm from './AboutHowIAm';
@@ -40,6 +41,15 @@ const useStyles = makeStyles((theme) => ({
   hi: {
     zIndex: -1,
   },
+  scroller: {
+    height: '300px',
+    overflowY: 'scroll',
+    scrollSnapType: 'y mandatory',
+    section: {
+      scrollSnapAlign: 'start',
+    },
+  },
+  
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
@@ -75,80 +85,11 @@ function About() {
     <>
       <CssBaseline />
       <TopBar whereAt="About" />
-
-      <Grid
-        container
-        xs={12}
-        direction="column"
-        alignItems="center"
-      >
-        <Grid
-          container
-          maxWidth="1600px"
-          xs={7}
-          alignItems="center"
-          justify="center"
-          variant="h1"
-          spacing={1}
-        >
-          <Grid
-            container
-            style={{ height: '100vh' }}
-            xs={9}
-            alignItems="center"
-            justify="center"
-            variant="h1"
-            spacing={1}
-          >
-            <Grid item xs={6}>
-              <Box>
-                <Lottie
-                  animationData={hiJoshData}
-                  options={defaultOptions}
-                  height={800}
-                  width={800}
-                  className={classes.hi}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography
-                className={classes.paper}
-                variant="h1"
-              >
-                I am
-                <Typography
-                  className={classes.paper}
-                  variant="h1"
-                >
-                  <Box component="span" className={classes.fName}>
-                    <TextLoop>
-                      <Box component="span">Josh</Box>
-                      <Box component="span">a Developer</Box>
-                      <Box component="span">a Life-long Learner</Box>
-                      <Box component="span">a Turing Alumni</Box>
-                      <Box component="span">Growth Oriented</Box>
-                      <Box component="span">Team Oriented</Box>
-                      <Box component="span">Open...</Box>
-                    </TextLoop>
-                  </Box>
-                </Typography>
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Lottie
-                animationData={downCaret}
-                options={defaultOptions2}
-                height={400}
-                width={400}
-              />
-            </Grid>
-          </Grid>
-          <AboutWhoIAm />
-          <AboutHowIAm />
-          <AboutWhyIAm />
-        </Grid>
-      </Grid>
+      <AboutHello/>
+      <AboutWhoIAm />
+      <AboutHowIAm />
+      <AboutWhyIAm />
+      <h1>GET IN TOUCh</h1>
     </>
   );
 }

@@ -50,28 +50,28 @@ function TopBar(props) {
           >
             <MenuItem
               component={Link}
-              to="/search"
+              to="/Project"
               onClick={handleClose}
             >
-              Search
+              Project
             </MenuItem>
             <MenuItem
               onClick={handleClose}
               component={Link}
-              to="about"
+              to="/About"
             >
-              About
+              About This Dev
             </MenuItem>
             <MenuItem
               onClick={handleClose}
               component={Link}
-              to="home"
+              to="/Site"
             >
-              Home
+              About Site
             </MenuItem>
           </Menu>
           <Typography variant="h6" color="inherit">
-            Movie Superstar - {props.whereAt}
+            {props.whereAt}
           </Typography>
         </Toolbar>
       </AppBar>
