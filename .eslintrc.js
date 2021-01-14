@@ -4,8 +4,8 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
+    // 'plugin:react/recommended',
+    // 'airbnb',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -15,8 +15,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'only-warn',
-    'react',
+    // 'only-warn',
+    // 'react',
   ],
   rules: {
   },
