@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { CssBaseline } from '@material-ui/core';
-import Footer from '../components/Footer';
+import Footer from './Footer';
 import movieReelData from '../lotties/movieReel.json';
 import codeGearsData from '../lotties/codeGrearsData.json';
 import weatherData from '../lotties/weatherData.json';
@@ -44,15 +44,6 @@ function Project() {
       backgroundColor: theme.palette.primary.light,
     },
   }));
-
-  const defaultOptionsReturn = (nameOf) => ({
-    loop: true,
-    autoplay: true,
-    animationData: nameOf,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  });
 
   const classes = useStyles();
 

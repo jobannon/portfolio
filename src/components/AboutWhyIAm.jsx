@@ -4,7 +4,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Carousel } from 'react-responsive-carousel';
-import earlyAgeBabyAnimData from '../assets/earlyAge/earlyAgeAnimationLottie.json';
 import earlyAgeAppleBasic from '../assets/earlyAge/earlyAgeAppleBasic.png';
 import earlyAgeTic from '../assets/earlyAge/earlyAgeTic.png';
 import earlyAgeTic2 from '../assets/earlyAge/earlyAgeTic2.png';
@@ -12,15 +11,6 @@ import earlyAgeTic3 from '../assets/earlyAge/earlyAgeTic3.png';
 import earlyAgeTic4 from '../assets/earlyAge/earlyAgeTic4.png';
 import earlyAgeTic5 from '../assets/earlyAge/earlyAgeTic5.png';
 import '../overrides.css';
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: earlyAgeBabyAnimData,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {

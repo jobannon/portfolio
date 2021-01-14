@@ -111,8 +111,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const preventDefault = (event) => event.preventDefault();
-
 function AboutWhoIAm() {
   const classes = useStyles();
   return (
