@@ -6,12 +6,23 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import PanelSnap from 'panelsnap';
+
+import {
+  createMuiTheme,
+  responsiveFontSizes,
+  MuiThemeProvider,
+} from '@material-ui/core';
+
 import About from './About';
 import Project from './Project';
 import Search from './Search';
 import Home from './Home';
 import Site from './Site';
-import PanelSnap from 'panelsnap'
+import Resume from './Resume';
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const styles = (theme) => ({
   root: {
@@ -25,7 +36,6 @@ const styles = (theme) => ({
   },
 });
 function App() {
-
   // const [activePanelName, setActivePanelName] = userState(undefined)
 
   // useEffect(() => {
@@ -33,22 +43,27 @@ function App() {
   //     panelSelector: '> #root > #app > section'
   //   })
   // }, []);
-  
+
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path="/project">
-            <Project />
-          </Route>
-          <Route path="/site">
-            <Site />
-          </Route>
-          <Route path="/">
-            <About />
-          </Route>
-        </Switch>
-      </Router>
+      <MuiThemeProvider theme={theme}>
+        <Router>
+          <Switch>
+            <Route path="/project">
+              <Project />
+            </Route>
+            <Route path="/site">
+              <Site />
+            </Route>
+            <Route path="/resume">
+              <Resume />
+            </Route>
+            <Route path="/">
+              <About />
+            </Route>
+          </Switch>
+        </Router>
+      </MuiThemeProvider>
     </>
   );
 }

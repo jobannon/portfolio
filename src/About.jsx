@@ -11,10 +11,11 @@ import hiJoshData from './assets/hiJosh.json';
 import downCaret from './assets/downCaret.json';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import TopBar from './TopBar';
-import AboutHello from './AboutHello'
+import AboutHello from './AboutHello';
 import AboutWhoIAm from './AboutWhoIAm';
 import AboutWhyIAm from './AboutWhyIAm';
 import AboutHowIAm from './AboutHowIAm';
+import Footer from './Footer';
 
 const defaultOptions = {
   loop: true,
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       scrollSnapAlign: 'start',
     },
   },
-  
+
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
@@ -64,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15px',
     borderRadius: '50px',
     color: 'white',
-    opacity: '.85',
   },
   musings: {
     marginLeft: '10px',
@@ -75,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15px',
     borderRadius: '50px',
     color: 'white',
-    opacity: '.85',
   },
 }));
 
@@ -85,11 +84,11 @@ function About() {
     <>
       <CssBaseline />
       <TopBar whereAt="About" />
-      <AboutHello/>
+      <AboutHello />
       <AboutWhoIAm />
       <AboutHowIAm />
       <AboutWhyIAm />
-      <h1>GET IN TOUCh</h1>
+      <Footer />
     </>
   );
 }

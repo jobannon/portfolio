@@ -9,12 +9,12 @@ import TextLoop from 'react-text-loop';
 import Lottie from 'react-lottie';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
+import GitHubCalendar from 'react-github-calendar';
 import codeSignalContribution from './assets/codeSignalContribution.png';
 import codeSignalLogo from './assets/codeSignalLogo.png';
 import githubLogo from './assets/GitHub-Mark-120px-plus.png';
 import githubContribution from './assets/githubContribution.png';
 import IssueScroller from './IssueScoller';
-import GitHubCalendar from 'react-github-calendar';
 
 const defaultOptions = {
   loop: true,
@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15px',
     borderRadius: '50px',
     color: 'white',
-    opacity: '.85',
   },
   buttonStyle: {
     fontSize: 15,
@@ -80,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '250px',
   },
   bordered: {
-  }
+  },
 }));
 
 const preventDefault = (event) => event.preventDefault();
@@ -94,9 +93,8 @@ function AboutHowIAm() {
           <Grid item xs={12} className={classes.headerText}>
             <Typography className={classes.paper} variant="h1">
               <Box component="span" className={classes.colorBox}>
-                How
+                How I am
               </Box>
-              I am
             </Typography>
           </Grid>
         </Grid>
@@ -113,21 +111,13 @@ function AboutHowIAm() {
               className={classes.paper}
               variant="h3"
             >
-              <Typewriter
-                options={{
-                  strings: ['I am iterative'],
-                  autoStart: true,
-                  loop: true,
-                  cursor: " ",
-                  pauseFor: 10000000000,
-                }}
-              />
+              I am iterative
             </Typography>
             <Typography
               className={classes.paper}
               variant="h5"
             >
-              For example, I am continuously refactoring past projects and implementing new features 
+              For example, I am continuously refactoring past projects and implementing new features
               <Grid container direction="column">
                 <Grid item>
                   <Button
@@ -164,63 +154,63 @@ function AboutHowIAm() {
             <Typography
               className={classes.paper}
               variant="h3"
+              style={{marginBottom:"30px"}}
             >
-              <Typewriter
-                options={{
-                  strings: ['I am fully engaged in Growth Mindset'],
-                  autoStart: true,
-                  loop: true,
-                  cursor: " ",
-                  pauseFor: 10000000000,
-                }}
-              />
+              I am fully engaged in Growth Mindset
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Box style={{ marginTop: '50px' }}>
-              <img src={githubLogo} alt="Github Logo" />
-              <Typography
-                className={classes.paper}
-                variant="h6"
-              >
-                By Working on Code Weekly And Improving Daily
-                <Button
-                  href="https://github.com/jobannon"
-                  variant="outlined"
-                  className={classes.buttonStyle}
-                >
-                  Github Profile 
-                </Button>
-              </Typography>
-            </Box>
-            <Box className={classes.bordered} >
-              <Chip label="Live" color="secondary"></Chip>
-              <GitHubCalendar 
+            <img src={githubLogo} alt="Github Logo" />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography
+              className={classes.paper}
+              variant="h6"
+            >
+              By Commiting Code Daily to Hone My Craft
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              href="https://github.com/jobannon"
+              variant="outlined"
+              className={classes.buttonStyle}
+            >
+              Github Profile
+            </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Box className={classes.bordered}>
+              <Chip label="Live" color="secondary" />
+              <GitHubCalendar
                 username="jobannon"
                 blockSize={15}
               />
             </Box>
+          </Grid>
+          <Grid item xs={12}>
             <Box
               style={{ marginTop: '50px' }}
             >
               <img src={codeSignalLogo} alt="Code Signal Logo" height="100px" />
-              <Typography
-                className={classes.paper}
-                variant="h6"
-              >
-                By Working Code Challenges
-                <Button
-                  href="https://app.codesignal.com/coding-report/hXCXzwomgS5TABwR7-NECN2JFQz9t3JHWX6DhoERXT"
-                  variant="outlined"
-                  className={classes.buttonStyle}
-                >
-                  Latest Report
-                </Button>
-              </Typography>
             </Box>
-            <Box>
-              <img src={codeSignalContribution} alt="Code Signal Contrbution" />
-            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography
+              className={classes.paper}
+              variant="h6"
+            >
+              By Working Code Challenges
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              href="https://app.codesignal.com/coding-report/hXCXzwomgS5TABwR7-NECN2JFQz9t3JHWX6DhoERXT"
+              variant="outlined"
+              className={classes.buttonStyle}
+            >
+              Latest Report
+            </Button>
           </Grid>
         </Grid>
       </Grid>
