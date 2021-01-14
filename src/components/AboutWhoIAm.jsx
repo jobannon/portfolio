@@ -4,16 +4,13 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { lighten, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
-import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import { Brightness1 } from '@material-ui/icons';
-import outdoorJosh from './outdoorJosh.jpg';
-import thinkingDeveloperDataLight from './assets/thinkingDeveloperDataLight.json';
-import turingFull from './assets/turingFull.png';
-import turingFullAlt from './assets/turingFullAlt.png';
-import codeForDenver from './assets/codeForDenver2.png';
+import outdoorJosh from '../assets/outdoorJosh.jpg';
+import thinkingDeveloperDataLight from '../assets/thinkingDeveloperDataLight.json';
+import turingFull from '../assets/turingFull.png';
+import codeForDenver from '../assets/codeForDenver2.png';
 
 const defaultOptions = {
   loop: true,

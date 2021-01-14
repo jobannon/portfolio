@@ -1,31 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import Footer from './Footer'
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
-import Lottie from 'react-lottie';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { CssBaseline } from '@material-ui/core';
-import movieReelData from './lotties/movieReel.json';
-import codePromptData from './lotties/codePromptData.json';
-import codeGearsData from './lotties/codeGrearsData.json';
-import weatherData from './lotties/weatherData.json';
-import coffeeData from './lotties/coffeeData.json';
-import mapData from './lotties/mapData.json';
+import Footer from '../components/Footer';
+import movieReelData from '../lotties/movieReel.json';
+import codeGearsData from '../lotties/codeGrearsData.json';
+import weatherData from '../lotties/weatherData.json';
+import coffeeData from '../lotties/coffeeData.json';
+import mapData from '../lotties/mapData.json';
 import TopBar from './TopBar';
 import ProjectCard from './ProjectCard';
 

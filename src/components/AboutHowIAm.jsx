@@ -1,19 +1,13 @@
-import Typewriter from 'typewriter-effect';
 import React, { useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import TextLoop from 'react-text-loop';
-import Lottie from 'react-lottie';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import GitHubCalendar from 'react-github-calendar';
-import codeSignalContribution from './assets/codeSignalContribution.png';
-import codeSignalLogo from './assets/codeSignalLogo.png';
-import githubLogo from './assets/GitHub-Mark-120px-plus.png';
-import githubContribution from './assets/githubContribution.png';
+import codeSignalLogo from '../assets/codeSignalLogo.png';
+import githubLogo from '../assets/GitHub-Mark-120px-plus.png';
 import IssueScroller from './IssueScoller';
 
 const defaultOptions = {
@@ -154,7 +148,7 @@ function AboutHowIAm() {
             <Typography
               className={classes.paper}
               variant="h3"
-              style={{marginBottom:"30px"}}
+              style={{ marginBottom: '30px' }}
             >
               I am fully engaged in Growth Mindset
             </Typography>

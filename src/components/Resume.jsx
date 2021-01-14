@@ -5,10 +5,10 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import TopBar from './TopBar';
-import turingFull from './assets/turingFull.png';
-import awsCloudBadge from './assets/awsCloudBadge.png';
-import hastingsCollegeLogo from './assets/hastingsCollegeLogo.png';
-import currentResume from './assets/currentResume.pdf';
+import turingFull from '../assets/turingFull.png';
+import awsCloudBadge from '../assets/awsCloudBadge.png';
+import hastingsCollegeLogo from '../assets/hastingsCollegeLogo.png';
+import currentResume from '../assets/currentResume.pdf';
 
 // credentials
 function Resume() {
@@ -47,9 +47,9 @@ function Resume() {
           </Box>
         </Grid>
       </Grid>
-        <Box style={{ marginLeft: '45px', marginTop: '20px' }}>
-          <embed src={currentResume} alt="AWS Cloud Certified" style={{ height: '70vh', width: '40vw' }} />
-        </Box>
+      <Box style={{ marginLeft: '45px', marginTop: '20px' }}>
+        <embed src={currentResume} alt="AWS Cloud Certified" style={{ height: '70vh', width: '40vw' }} />
+      </Box>
     </>
 
   );
