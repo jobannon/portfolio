@@ -1,4 +1,3 @@
-import Typewriter from 'typewriter-effect';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
@@ -136,15 +135,7 @@ function AboutWhoIAm() {
               className={classes.paperLeft}
               variant="h3"
             >
-              <Typewriter
-                options={{
-                  strings: ['I am a fullstack developer'],
-                  autoStart: true,
-                  loop: true,
-                  cursor: ' ',
-                  pauseFor: 10000000000,
-                }}
-              />
+              I am a fullstack developer
             </Typography>
             <Typography
               className={classes.paperLeft}
@@ -162,15 +153,7 @@ function AboutWhoIAm() {
               className={classes.paper}
               variant="h3"
             >
-              <Typewriter
-                options={{
-                  strings: ['I am a thoughtful developer'],
-                  autoStart: true,
-                  loop: true,
-                  cursor: ' ',
-                  pauseFor: 10000000000,
-                }}
-              />
+              I am a thoughtful developer
             </Typography>
             <Box>
               <Typography
