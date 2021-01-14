@@ -63,6 +63,13 @@ function TopBar(props) {
               About This Dev
             </MenuItem>
             <MenuItem
+              component={Link}
+              to="/Resume"
+              onClick={handleClose}
+            >
+              Resume
+            </MenuItem>
+            <MenuItem
               onClick={handleClose}
               component={Link}
               to="/Site"

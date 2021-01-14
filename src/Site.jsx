@@ -48,11 +48,12 @@ const useStyles = makeStyles((theme) => ({
     padding: '6px 16px',
     maxWidth: '400px',
     maxHeight: '600px',
-    minWidth: '400px',
+    minWidth: '350px',
     minHeight: '600px',
   },
   paperTimelineCard: {
     padding: '56px 16px',
+    maxWidth: '375px',
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
@@ -77,8 +78,8 @@ export default function CustomizedTimeline() {
       >
         <Grid item>
           <Paper elevation={3} className={classes.paperCard}>
-            <Box style={{ width: '400px', height: '400px' }}>
-              <img src={nodeJs} width="300" height="300" zIndex="-1" alt="NodeJS" />
+            <Box style={{ width: '350px', height: '350px' }}>
+              <img src={nodeJs} zIndex="-1" alt="NodeJS" />
             </Box>
             <Typography variant="h6" component="h1">
               NodeJS
@@ -90,8 +91,8 @@ export default function CustomizedTimeline() {
           <Paper elevation={3} className={classes.paperCard}>
             <Lottie
               options={defaultOptionsReturn(reactLogoData)}
-              height={400}
-              width={400}
+              height={350}
+              width={350}
             />
             <Typography variant="h6" component="h1">
               React
@@ -101,7 +102,7 @@ export default function CustomizedTimeline() {
         </Grid>
         <Grid item>
           <Paper elevation={3} className={classes.paperCard}>
-            <img src={materialUI} width="400" height="400" zIndex="-1" alt="materialUI" />
+            <img src={materialUI} width="350" height="350" zIndex="-1" alt="materialUI" />
             <Typography variant="h6" component="h1">
               Material UI
             </Typography>

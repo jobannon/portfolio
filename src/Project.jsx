@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Footer from './Footer'
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -76,7 +77,7 @@ function Project() {
     <>
       <CssBaseline />
       <TopBar />
-      <Typography className={classes.paper} variant="h1" styles={{marginTop: '30px'}}>
+      <Typography className={classes.paper} variant="h1" styles={{ marginTop: '30px' }}>
         My Work
 
       </Typography>
@@ -84,7 +85,7 @@ function Project() {
         <Grid item>
           <ProjectCard
             avatarLabelAria="Denver Poverty Map"
-            avatarLabel="CT"
+            avatarLabel="DPM"
             title="Denver Poverty Map"
             subheader="Working"
             animationData={mapData}
@@ -142,13 +143,14 @@ function Project() {
             title="Coffee Town"
             subheader="Recent"
             animationData={coffeeData}
-            description="Coffee Town is a e-commerce platform sell everyone's favorite - coffee"
+            description="Coffee Town is a e-commerce platform selling everyone's favorite - coffee"
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
             liveLink=""
             chipList=" "
           />
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 }

@@ -6,13 +6,14 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { lighten, makeStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import { Brightness1 } from '@material-ui/icons';
 import outdoorJosh from './outdoorJosh.jpg';
 import thinkingDeveloperDataLight from './assets/thinkingDeveloperDataLight.json';
 import turingFull from './assets/turingFull.png';
 import turingFullAlt from './assets/turingFullAlt.png';
-import codeForDenver from './assets/codeForDenver2.png'
-import Button from '@material-ui/core/Button';
-import { Brightness1 } from '@material-ui/icons';
+import codeForDenver from './assets/codeForDenver2.png';
 
 const defaultOptions = {
   loop: true,
@@ -41,9 +42,21 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'Right',
     color: theme.palette.text.secondary,
+    [theme.breakpoints.up('xs')]: {
+    },
+  },
+  codeForDenverImg: {
+    height: '120px',
+    [theme.breakpoints.down('xs')]: {
+      height: '80px',
+    },
+
   },
   outdoorJosh: {
     textAlign: 'right',
+    [theme.breakpoints.up('xs')]: {
+      float: 'center',
+    },
   },
   colorBox: {
     marginLeft: '10px',
@@ -54,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15px',
     borderRadius: '50px',
     color: 'white',
-    opacity: '.85',
   },
   greenColorBox: {
     marginLeft: '10px',
@@ -65,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15px',
     borderRadius: '50px',
     color: 'white',
-    opacity: '.85',
     alignText: 'center',
   },
   who: {
@@ -111,21 +122,19 @@ function AboutWhoIAm() {
   return (
     <>
       <Grid container direction="column" className={classes.who}>
-        <Grid container direction="row">
-          <Grid item xs={12} className={classes.headerText}>
-            <Typography className={classes.paper} variant="h1">
-              <Box component="span" className={classes.colorBox}>
-                Who
-              </Box>
-              I am
-            </Typography>
-          </Grid>
+        <Grid item xs={12} className={classes.headerText}>
+          <Typography className={classes.paper} variant="h1">
+            <Box component="span" className={classes.colorBox}>
+              Who I am
+            </Box>
+          </Typography>
         </Grid>
         <Grid container direction="row" className={classes.greenBackground} spacing={5}>
-          <Grid item xs={4} className={classes.outdoorJosh}>
-            <img src={outdoorJosh} height="400px" alt="Outdoor Josh" style={{ borderRadius: '25px' }} />
+          <Grid item xs={12} lg={4}>
+            {/* <Grid item xs={12} lg={4} className={classes.outdoorJosh}> */}
+            <img src={outdoorJosh} height="300px" alt="Outdoor Josh" style={{ borderRadius: '25px' }} />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={12} lg={8} className={classes.greenBackground}>
             <Typography
               className={classes.paperLeft}
               variant="h3"
@@ -135,25 +144,23 @@ function AboutWhoIAm() {
                   strings: ['I am a fullstack developer'],
                   autoStart: true,
                   loop: true,
-                  cursor: " ",
+                  cursor: ' ',
                   pauseFor: 10000000000,
                 }}
               />
             </Typography>
-            <Box className={classes.innerText}>
-              <Typography
-                className={classes.paperLeft}
-                variant="h6"
-              >
-                I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in Applesoft BASIC.
-                <p>I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.</p>
-                <p>I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.</p>
-              </Typography>
-            </Box>
+            <Typography
+              className={classes.paperLeft}
+              variant="h6"
+            >
+              I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in Applesoft BASIC.
+              <p>I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.</p>
+              <p>I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.</p>
+            </Typography>
           </Grid>
         </Grid>
-        <Grid container direction="row" className={classes.whiteBackground}>
-          <Grid item xs={6}>
+        <Grid container justify="center">
+          <Grid item xs={12} lg={6} style={{ marginTop: '20px' }}>
             <Typography
               className={classes.paper}
               variant="h3"
@@ -163,7 +170,7 @@ function AboutWhoIAm() {
                   strings: ['I am a thoughtful developer'],
                   autoStart: true,
                   loop: true,
-                  cursor: " ",
+                  cursor: ' ',
                   pauseFor: 10000000000,
                 }}
               />
@@ -174,6 +181,11 @@ function AboutWhoIAm() {
                 variant="h4"
               >
                 You can see my musings
+              </Typography>
+              <Typography
+                className={classes.paper}
+                variant="h4"
+              >
                 <Link
                   href="https://joshcodes.dev/posts"
                   className={classes.greenColorBox}
@@ -181,78 +193,65 @@ function AboutWhoIAm() {
                   Here
                 </Link>
               </Typography>
-
-            </Box>
-          </Grid>
-          <Grid item xs={3}>
-            <Box>
-              <Lottie
-                animationData={thinkingDeveloperDataLight}
-                options={defaultOptions}
-                height={400}
-                width={400}
-              />
             </Box>
           </Grid>
         </Grid>
-        <Grid container direction="row" className={classes.greenBackground} spacing={3}>
-          <Grid item xs={4} className={classes.paperRight}>
-            <img src={turingFull} alt="Turing Logo" />
-          </Grid>
-          <Grid item xs={6}>
+        <Grid item xs={12}>
+          <Box style={{ marginTop: '40px', marginBottom: '40px' }}>
+            <Lottie
+              animationData={thinkingDeveloperDataLight}
+              options={defaultOptions}
+              height={400}
+              width={400}
+            />
+          </Box>
+        </Grid>
+      </Grid>
+      <Grid container direction="column" justify="center" className={classes.greenBackground} spacing={3}>
+        <Typography
+          className={classes.paper}
+          variant="h3"
+        >
+          I am pay-it-forward developer
+        </Typography>
+        <Grid item xs={12} className={classes.paper}>
+          <img src={turingFull} alt="Turing Logo" height="220px" />
+        </Grid>
+        <Grid item xs={12}>
+          <Box component="p" style={{ maxWidth: '70vw', margin: 'auto' }}>
             <Typography
               className={classes.paperLeft}
-              variant="h3"
             >
-              <Typewriter
-                options={{
-                  strings: ['I am pay-it-forward developer'],
-                  autoStart: true,
-                  loop: true,
-                  cursor: " ",
-                  pauseFor: 100000000,
-                }}
-              />
+              The greatest obstacle to change is support to make that change.  When I decided to pursue coding as a full-time career having a mentor in my corner to explain the finer points of OOP was invaluable.
+              <p>I have recently signed up to offer the same 6 week mentoring to incoming Turing Students.</p>
+              <p>I would like to offer the same service back to others.</p>
             </Typography>
-            <Box>
-              <Typography
-                className={classes.paperLeft}
-                variant="h6"
-              >
-                The greatest obstacle to change is support to make that change.  When I decided to pursue coding as a full-time career having a mentor in my corner to explain the finer points of OOP was invaluable.
-                <p>I have recently signed up to offer the same 6 week mentoring to incoming Turing Students.</p>
-                <p>I would like to offer the same service back to others.</p>
-              </Typography>
-            </Box>
-          </Grid>
+          </Box>
         </Grid>
-        <Grid container direction="row" className={classes.greenBackground} spacing={3}>
-          <Grid item xs={4} className={classes.paperRight}>
-            <img src={codeForDenver} alt="Code for Denver Logo" height='120px' />
-          </Grid>
-          <Grid item xs={6} className={classes.paperRight}>
-            <Box>
-              <Typography
-                className={classes.paperLeft}
-                variant="h6"
+        <Grid item xs={12} lg={12} className={classes.paper}>
+          <img src={codeForDenver} alt="Code for Denver Logo" className={classes.codeForDenverImg} />
+        </Grid>
+        <Grid item xs={12} lg={12} className={classes.paper}>
+          <Box component="p" style={{ maxWidth: '70vw', margin: 'auto' }}>
+            <Typography
+              className={classes.paperLeft}
+            >
+              Open Source Software is the platform from which I built my career - I am giving back
+              <p>I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects</p>
+              <Button
+                variant="outlined"
+                href="https://codefordenver.org/#/#featured"
+                target="#"
+                className={classes.buttonStyle}
               >
-                Open Source Software is the platform from which I built my career - I am giving back
-                <p>I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects</p>
-                <Button 
-                  variant='outlined'
-                  href='https://codefordenver.org/#/#featured'
-                  target="#"
-                  className={classes.buttonStyle}
-                >
-                  site
-                </Button>
-
-              </Typography>
-            </Box>
-          </Grid>
+                site
+              </Button>
+            </Typography>
+          </Box>
         </Grid>
 
       </Grid>
+
     </>
   );
 }
