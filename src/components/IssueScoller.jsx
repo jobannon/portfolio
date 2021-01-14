@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
-function IssueScroller(props) {
+function IssueScroller() {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -27,17 +27,12 @@ function IssueScroller(props) {
   const [githubIssues, setGithubIssues] = useState([]);
   const [cleanTitles, setCleanTitles] = useState([]);
   const [status, setStatus] = useState([]);
-  const [githubIssuesClean, setGithubIssuesClean] = useState({});
 
   function getGithubIssues() {
     fetch('https://api.github.com/repos/jobannon/fe-movie-superstar-redux/issues')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setGithubIssues(data);
-      })
-      .catch((error) => {
-        // console.error('Error:', error);
       });
   }
   useEffect(() => {
@@ -64,7 +59,7 @@ function IssueScroller(props) {
         {(cleanTitles.length > 0)
           ? (
             <Box>
-              <Chip label={<TextLoop children={status} />} color="secondary" />
+              <Chip label={<TextLoop>{status}</TextLoop>} color="secondary" />
             </Box>
           )
           : ' ' }

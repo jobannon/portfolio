@@ -3,10 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import Lottie from 'react-lottie';
 import TextLoop from 'react-text-loop';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import hiJoshData from '../assets/hiJosh.json';
 import downCaret from '../assets/downCaret.json';
 

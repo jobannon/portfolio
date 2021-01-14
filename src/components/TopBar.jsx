@@ -9,8 +9,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {
   BrowserRouter as
-  Switch,
-  Route,
   Link,
 } from 'react-router-dom';
 // import Search from './Search';

@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-import { Palette, PlaylistAdd } from '@material-ui/icons';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';

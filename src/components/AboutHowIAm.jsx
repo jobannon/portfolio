@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -9,15 +9,6 @@ import GitHubCalendar from 'react-github-calendar';
 import codeSignalLogo from '../assets/codeSignalLogo.png';
 import githubLogo from '../assets/GitHub-Mark-120px-plus.png';
 import IssueScroller from './IssueScoller';
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  // animationData: earlyAgeBabyAnimData,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,8 +66,6 @@ const useStyles = makeStyles((theme) => ({
   bordered: {
   },
 }));
-
-const preventDefault = (event) => event.preventDefault();
 
 function AboutHowIAm() {
   const classes = useStyles();
