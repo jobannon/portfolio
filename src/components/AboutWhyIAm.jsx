@@ -1,21 +1,17 @@
-import Typewriter from 'typewriter-effect';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Lottie from 'react-lottie';
 import { Carousel } from 'react-responsive-carousel';
-import earlyAgeBabyAnimData from './assets/earlyAge/earlyAgeAnimationLottie.json';
-import earlyAgeAppleBasic from './assets/earlyAge/earlyAgeAppleBasic.png';
-import earlyAgeBattleCry from './assets/earlyAge/earlyAgeBattleCry.png';
-import earlyAgeTic from './assets/earlyAge/earlyAgeTic.png';
-import earlyAgeTic2 from './assets/earlyAge/earlyAgeTic2.png';
-import earlyAgeTic3 from './assets/earlyAge/earlyAgeTic3.png';
-import earlyAgeTic4 from './assets/earlyAge/earlyAgeTic4.png';
-import earlyAgeTic5 from './assets/earlyAge/earlyAgeTic5.png';
-import './overrides.css';
+import earlyAgeBabyAnimData from '../assets/earlyAge/earlyAgeAnimationLottie.json';
+import earlyAgeAppleBasic from '../assets/earlyAge/earlyAgeAppleBasic.png';
+import earlyAgeTic from '../assets/earlyAge/earlyAgeTic.png';
+import earlyAgeTic2 from '../assets/earlyAge/earlyAgeTic2.png';
+import earlyAgeTic3 from '../assets/earlyAge/earlyAgeTic3.png';
+import earlyAgeTic4 from '../assets/earlyAge/earlyAgeTic4.png';
+import earlyAgeTic5 from '../assets/earlyAge/earlyAgeTic5.png';
+import '../overrides.css';
 
 const defaultOptions = {
   loop: true,

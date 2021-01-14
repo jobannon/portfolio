@@ -5,10 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Lottie from 'react-lottie';
 import Link from '@material-ui/core/Link';
-import linkedInLogo from './lotties/linkedInLogo.json';
-import emailData from './lotties/emailData.json';
-import githubCatColorLogoData from './lotties/githubCatLogoColored.json';
-import calendarData from './lotties/calendarData.json';
+import linkedInLogo from '../lotties/linkedInLogo.json';
+import emailData from '../lotties/emailData.json';
+import githubCatColorLogoData from '../lotties/githubCatLogoColored.json';
+import calendarData from '../lotties/calendarData.json';
 
 function Footer() {
   const useStyles = makeStyles((theme) => ({

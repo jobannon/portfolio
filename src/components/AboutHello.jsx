@@ -7,8 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import Lottie from 'react-lottie';
 import TextLoop from 'react-text-loop';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import hiJoshData from './assets/hiJosh.json';
-import downCaret from './assets/downCaret.json';
+import hiJoshData from '../assets/hiJosh.json';
+import downCaret from '../assets/downCaret.json';
 
 const defaultOptionsReturn = (nameOf) => ({
   loop: true,

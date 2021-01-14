@@ -1,14 +1,8 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Lottie from 'react-lottie';
-import TextLoop from 'react-text-loop';
-import hiJoshData from './assets/hiJosh.json';
-import downCaret from './assets/downCaret.json';
+import hiJoshData from '../assets/hiJosh.json';
+import downCaret from '../assets/downCaret.json';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import TopBar from './TopBar';
 import AboutHello from './AboutHello';
@@ -16,24 +10,6 @@ import AboutWhoIAm from './AboutWhoIAm';
 import AboutWhyIAm from './AboutWhyIAm';
 import AboutHowIAm from './AboutHowIAm';
 import Footer from './Footer';
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: hiJoshData,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
-
-const defaultOptions2 = {
-  loop: true,
-  autoplay: true,
-  animationData: downCaret,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {

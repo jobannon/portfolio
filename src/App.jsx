@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -6,7 +6,6 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import PanelSnap from 'panelsnap';
 
 import {
   createMuiTheme,
@@ -14,12 +13,10 @@ import {
   MuiThemeProvider,
 } from '@material-ui/core';
 
-import About from './About';
-import Project from './Project';
-import Search from './Search';
-import Home from './Home';
-import Site from './Site';
-import Resume from './Resume';
+import About from './components/About';
+import Project from './components/Project';
+import Site from './components/Site';
+import Resume from './components/Resume';
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
