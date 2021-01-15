@@ -1,86 +1,204 @@
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import { makeStyles } from '@material-ui/core/styles';
+// import AppBar from '@material-ui/core/AppBar';
+// import Tabs from '@material-ui/core/Tabs';
+// import Tab from '@material-ui/core/Tab';
+// import Link from '@material-ui/core/Link'
+// import Typography from '@material-ui/core/Typography';
+// import Box from '@material-ui/core/Box';
+
+// // function TabPanel(props) {
+// //   const { children, value, index, ...other } = props;
+
+// //   return (
+// //     <div
+// //       role="tabpanel"
+// //       hidden={value !== index}
+// //       id={`scrollable-auto-tabpanel-${index}`}
+// //       aria-labelledby={`scrollable-auto-tab-${index}`}
+// //       {...other}
+// //     >
+// //       {value === index && (
+// //         <Box p={3}>
+// //           <Typography>{children}</Typography>
+// //         </Box>
+// //       )}
+// //     </div>
+// //   );
+// // }
+
+// // TabPanel.propTypes = {
+// //   children: PropTypes.node,
+// //   index: PropTypes.any.isRequired,
+// //   value: PropTypes.any.isRequired,
+// // };
+
+// // function a11yProps(index) {
+// //   return {
+// //     id: `scrollable-auto-tab-${index}`,
+// //     'aria-controls': `scrollable-auto-tabpanel-${index}`,
+// //   };
+// // }
+
+// // const useStyles = makeStyles((theme) => ({
+// //   root: {
+// //     flexGrow: 1,
+// //     width: '100%',
+// //     backgroundColor: theme.palette.background.paper,
+// //   },
+// // }));
+
+// // export default function ScrollableTabsButtonAuto() {
+// //   const classes = useStyles();
+// //   const [value, setValue] = React.useState(0);
+
+// //   const handleChange = (event, newValue) => {
+// //     setValue(newValue);
+// //   };
+
+// //   return (
+// //     <div className={classes.root}>
+// //       <AppBar position="static">
+// //         <Tabs
+// //           value={value}
+// //           onChange={handleChange}
+// //           indicatorColor="secondary"
+// //           variant="scrollable"
+// //           scrollButtons="auto"
+// //           style={{alignSelf: 'center'}}
+// //           aria-label="scrollable auto tabs example"
+// //         >
+// //           <Tab component={Link} label="Home" to="/" href="/" {...a11yProps(0)} />
+// //           <Tab component={Link} label="About This Site" to="/Site" href="/Site" {...a11yProps(1)} />
+// //           <Tab component={Link} label="My Work" to="/Project" href="/Project" {...a11yProps(2)} />
+// //           <Tab component={Link} label="Professional Experience" to="/Resume" href="/Resume" {...a11yProps(3)} />
+// //         </Tabs>
+// //       </AppBar>
+// //     </div>
+// //   );
+// // }
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import AppBar from '@material-ui/core/AppBar';
-import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import {
-  BrowserRouter as
-  Link,
-} from 'react-router-dom';
-// import Search from './Search';
-// import About from './About';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { useLocation } from 'react-router-dom';
+import Link from '@material-ui/core/Link'
 
-function TopBar(props) {
-  const useStyles = makeStyles(() => ({
-    buttonStyle: {
-      fontSize: 30,
-      borderRadius: 15,
-    },
-  }));
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
   return (
-    <>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem
-              component={Link}
-              to="/Project"
-              onClick={handleClose}
-            >
-              Project
-            </MenuItem>
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to="/About"
-            >
-              About This Dev
-            </MenuItem>
-            <MenuItem
-              component={Link}
-              to="/Resume"
-              onClick={handleClose}
-            >
-              Resume
-            </MenuItem>
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to="/Site"
-            >
-              About Site
-            </MenuItem>
-          </Menu>
-          <Typography variant="h6" color="inherit">
-            {props.whereAt}
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </>
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-auto-tabpanel-${index}`}
+      aria-labelledby={`scrollable-auto-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
   );
 }
-export default TopBar;
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `scrollable-auto-tab-${index}`,
+    'aria-controls': `scrollable-auto-tabpanel-${index}`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    width: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+export default function ScrollableTabsButtonAuto() {
+  const classes = useStyles();
+
+  // const figureOutSelectedIndex = (location)=>{
+  //   case location == '/Project' 
+  //   case location == '/Project' 
+
+  // }
+  // const location = useLocation()
+  // const selectedIndex = figureOutSelectedIndex(location)
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    debugger
+    setValue(newValue);
+  };
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" >
+        <Tabs
+          // value={value}
+          onChange={handleChange}
+          indicatorColor="secondary"
+          style={{alignSelf: 'center'}}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
+        >
+          <Tab component={Link} label="Home" to="/#" href="/#" {...a11yProps(0)} value={value} index={0}/>
+          <Tab component={Link} label="About This Site" to="/Site#" href="/Site#" {...a11yProps(1)} value={value} index={1} />
+          <Tab component={Link} label="My Work" to="/Project" href="/Project#" {...a11yProps(2)} value={value} index={2}/>
+          <Tab component={Link} label="Professional Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} value={value} index={3}/>
+        </Tabs>
+      </AppBar>
+      {/* <TabPanel value={value} index={0}>
+        Item One
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Item Two
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Item Three
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        Item Four
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        Item Five
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+        Item Six
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        Item Seven
+      </TabPanel> */}
+    </div>
+  );
+}

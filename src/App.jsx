@@ -33,13 +33,6 @@ const styles = (theme) => ({
   },
 });
 function App() {
-  // const [activePanelName, setActivePanelName] = userState(undefined)
-
-  // useEffect(() => {
-  //   const panelSpanInstance = new PanelSnap({
-  //     panelSelector: '> #root > #app > section'
-  //   })
-  // }, []);
 
   return (
     <>
