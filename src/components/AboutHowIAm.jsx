@@ -109,6 +109,7 @@ function AboutHowIAm() {
                     className={classes.buttonStyle}
                   >
                     here
+                  for example...
                   </Button>
                 </Grid>
               </Grid>
