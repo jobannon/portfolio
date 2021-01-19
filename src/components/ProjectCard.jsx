@@ -14,7 +14,7 @@ import Lottie from 'react-lottie';
 import Typography from '@material-ui/core/Typography';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-function ProjectCard(props) {
+export default function ProjectCard(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
       position: 'relative',
@@ -126,5 +126,6 @@ function ProjectCard(props) {
 
 ProjectCard.defaultProps = {
   links: true,
+  height: 300,
+  width: 300,
 };
-export default ProjectCard;

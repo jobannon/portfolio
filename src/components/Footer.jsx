@@ -15,6 +15,10 @@ function Footer() {
       backgroundColor: theme.palette.primary.main,
       minHeight: '15vh',
       marginTop: '5vh',
+      // position: 'absolute',
+      // bottom: 0,
+      // left: 0,
+      // right: 0,
     },
   }));
 
@@ -34,9 +38,10 @@ function Footer() {
         direction="row"
         justify="center"
         alignItems="center"
+        spacing={5}
         className={classes.boxBackground}
       >
-        <Grid item xs={2} lg={1}>
+        <Grid item>
           <Link
             href="https://www.linkedin.com/in/jtobannon/"
             target="#"
@@ -48,42 +53,42 @@ function Footer() {
             />
           </Link>
         </Grid>
-        <Grid item xs={2} lg={1}>
+        <Grid item>
           <Link
             href="mailto:jtobannon@gmail.com"
             target="#"
           >
             <Lottie
               options={defaultOptionsReturn(emailData)}
-              height={60}
-              width={60}
+              height={70}
+              width={70}
             />
           </Link>
         </Grid>
-        <Grid item xs={2} lg={1}>
-          <Box component="p" style={{ marginTop: '12px' }}>
+        <Grid item>
+          <Box component="p" style={{ marginTop: '14px', marginRight: '15px', marginLeft: '5px' }}>
             <Link
               href="https://github.com/jobannon"
               target="#"
             >
               <Lottie
                 options={defaultOptionsReturn(githubCatColorLogoData)}
-                height={28}
-                width={28}
+                height={24}
+                width={24}
               />
             </Link>
           </Box>
         </Grid>
-        <Grid item xs={2} lg={1}>
-          <Box component="p" style={{ marginTop: '7px' }}>
+        <Grid item>
+          <Box component="p" style={{ marginTop: '14px' }}>
             <Link
               href="https://calendly.com/joshcodes/"
               target="#"
             >
               <Lottie
                 options={defaultOptionsReturn(calendarData)}
-                height={35}
-                width={35}
+                height={40}
+                width={40}
               />
             </Link>
           </Box>

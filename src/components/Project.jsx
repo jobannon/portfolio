@@ -3,19 +3,21 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { CssBaseline } from '@material-ui/core';
-import Footer from './Footer';
 import movieReelData from '../lotties/movieReel.json';
 import codeGearsData from '../lotties/codeGrearsData.json';
 import weatherData from '../lotties/weatherData.json';
 import coffeeData from '../lotties/coffeeData.json';
 import mapData from '../lotties/mapData.json';
-import TopBar from './TopBar';
+import upvoteAltAltData from '../lotties/upvoteAltAltData.json';
+import upvoteHeartData from '../lotties/upVoteHeartData.json';
+import upvoteThumbData from '../lotties/upvoteThumbData.json';
+import upvoteAwardData from '../lotties/upvoteAwardData.json';
+import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
 import ProjectCard from './ProjectCard';
 
 function Project() {
   const useStyles = makeStyles((theme) => ({
     root: {
-      maxWidth: 345,
     },
     paper: {
       padding: theme.spacing(2),
@@ -49,13 +51,10 @@ function Project() {
 
   return (
     <>
-      <CssBaseline />
-      <TopBar />
       <Typography className={classes.paper} variant="h1" styles={{ marginTop: '30px' }}>
         My Work
-
       </Typography>
-      <Grid container className={classes.cardGroup} direction="row" justify="center" alignItems="center" spacing={3} xs={12}>
+      <Grid container className={classes.cardGroup} direction="row" justify="center" alignItems="center" style={{backgroundColor: 'red'}} spacing={8} xs={12} lg={6}>
         <Grid item>
           <ProjectCard
             avatarLabelAria="Denver Poverty Map"
@@ -99,6 +98,21 @@ function Project() {
         </Grid>
         <Grid item>
           <ProjectCard
+            avatarLabelAria="Upvote"
+            avatarLabel="UV"
+            title="Upvote"
+            subheader="Recent"
+            animationData={upvoteRocketAltData}
+            height="50"
+            width="50"
+            description="Upvote is a interative voting platform using microservices"
+            gitHubLink="https://github.com/jobannon/upvote_api"
+            liveLink=""
+            chipList=" "
+          />
+        </Grid>
+        <Grid item>
+          <ProjectCard
             avatarLabelAria="Sweater Weather"
             avatarLabel="SW"
             title="Sweater Weather"
@@ -124,7 +138,6 @@ function Project() {
           />
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

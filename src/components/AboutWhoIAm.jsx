@@ -115,7 +115,7 @@ function AboutWhoIAm() {
   const classes = useStyles();
   return (
     <>
-      <Grid container direction="column" className={classes.who}>
+      <Grid container direction="row" className={classes.who}>
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
             <Box component="span" className={classes.colorBox}>
@@ -123,12 +123,11 @@ function AboutWhoIAm() {
             </Box>
           </Typography>
         </Grid>
-        <Grid container direction="row" className={classes.greenBackground} spacing={5}>
-          <Grid item xs={12} lg={4}>
-            {/* <Grid item xs={12} lg={4} className={classes.outdoorJosh}> */}
+        <Grid container direction="row" justify="center" className={classes.greenBackground} >
+          <Grid item xs={12} style={{textAlign: 'center'}}>
             <img src={outdoorJosh} height="300px" alt="Outdoor Josh" style={{ borderRadius: '25px' }} />
           </Grid>
-          <Grid item xs={12} lg={8} className={classes.greenBackground}>
+          <Grid item xs={12} style={{maxWidth: '1000px'}} className={classes.greenBackground}>
             <Typography
               className={classes.paperLeft}
               variant="h3"
@@ -142,6 +141,7 @@ function AboutWhoIAm() {
               I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in Applesoft BASIC.
               <p>I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.</p>
               <p>I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.</p>
+              
             </Typography>
           </Grid>
         </Grid>
@@ -196,7 +196,7 @@ function AboutWhoIAm() {
           <img src={turingFull} alt="Turing Logo" height="220px" />
         </Grid>
         <Grid item xs={12}>
-          <Box component="p" style={{ maxWidth: '70vw', margin: 'auto' }}>
+          <Box component="p" style={{ maxWidth: '1000px', margin: 'auto' }}>
             <Typography
               className={classes.paperLeft}
             >
@@ -210,7 +210,7 @@ function AboutWhoIAm() {
           <img src={codeForDenver} alt="Code for Denver Logo" className={classes.codeForDenverImg} />
         </Grid>
         <Grid item xs={12} lg={12} className={classes.paper}>
-          <Box component="p" style={{ maxWidth: '70vw', margin: 'auto' }}>
+          <Box component="p" style={{ maxWidth: '1000px', margin: 'auto' }}>
             <Typography
               className={classes.paperLeft}
             >

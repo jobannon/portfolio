@@ -57,7 +57,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AboutHello() {
-  const classes = useStyles();
+  const classes = useStyles(); 
+  const getVariant = () => {
+    if (window.screen.availWidth < 500) {
+      return 'h2';
+    }
+    return 'h1';
+  };
   return (
     <>
       <div className={classes.root}>
@@ -78,8 +84,8 @@ function AboutHello() {
               <Lottie
                 animationData={hiJoshData}
                 options={defaultOptionsReturn(hiJoshData)}
-                height={'30vh'}
-                width={'40vh'}
+                height="30vh"
+                width="40vh"
                 className={classes.hi}
               />
             </Box>
@@ -96,7 +102,7 @@ function AboutHello() {
                 I am
                 <Typography
                   className={classes.paper}
-                  variant="h2"
+                  variant={getVariant()}
                 >
                   <Box component="span" className={classes.fName}>
                     <TextLoop>
@@ -117,8 +123,8 @@ function AboutHello() {
             <Lottie
               animationData={downCaret}
               options={defaultOptionsReturn(downCaret)}
-              height={'25vh'}
-              width={'25vh'}
+              height="25vh"
+              width="25vh"
             />
           </Grid>
         </Grid>
