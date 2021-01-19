@@ -129,7 +129,7 @@ function AboutWhoIAm() {
           </Grid>
           <Grid item xs={12} style={{maxWidth: '1000px'}} className={classes.greenBackground}>
             <Typography
-              className={classes.paperLeft}
+              className={classes.paper}
               variant="h3"
             >
               I am a fullstack developer
@@ -146,7 +146,7 @@ function AboutWhoIAm() {
           </Grid>
         </Grid>
         <Grid container justify="center">
-          <Grid item xs={12} lg={6} style={{ marginTop: '20px' }}>
+          <Grid item xs={12} lg={6} style={{ marginTop: '60px' }}>
             <Typography
               className={classes.paper}
               variant="h3"
@@ -175,7 +175,7 @@ function AboutWhoIAm() {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Box style={{ marginTop: '40px', marginBottom: '40px' }}>
+          <Box style={{ marginTop: '40px', marginBottom: '80px' }}>
             <Lottie
               animationData={thinkingDeveloperDataLight}
               options={defaultOptions}
@@ -214,7 +214,7 @@ function AboutWhoIAm() {
             <Typography
               className={classes.paperLeft}
             >
-              Open Source Software is the platform from which I built my career - I am giving back
+              Open Source Software is the platform from which I built my career. 
               <p>I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects</p>
               <Button
                 variant="outlined"

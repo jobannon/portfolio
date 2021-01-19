@@ -67,6 +67,11 @@ export default function CustomizedTimeline() {
         alignItems="center"
         style={{ marginTop: '30px' }}
       >
+        <Grid item xs={12} >
+          <Typography variant="h1" color="textSecondary" style={{textAlign: 'center', marginBotton: '20px', marginTop: '20px'}}>
+            Built with...
+          </Typography>
+        </Grid>
         <Grid item>
           <Paper elevation={3} className={classes.paperCard}>
             <Box style={{ width: '350px', height: '350px' }}>

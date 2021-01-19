@@ -9,6 +9,7 @@ import GitHubCalendar from 'react-github-calendar';
 import codeSignalLogo from '../assets/codeSignalLogo.png';
 import githubLogo from '../assets/GitHub-Mark-120px-plus.png';
 import IssueScroller from './IssueScoller';
+import Paper from '@material-ui/core/Paper'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
   },
   buttonStyle: {
+    marginTop: '10px',
     fontSize: 15,
     borderRadius: 15,
     color: theme.palette.primary.light,
@@ -108,8 +110,7 @@ function AboutHowIAm() {
                     variant="outlined"
                     className={classes.buttonStyle}
                   >
-                    here
-                  for example...
+                    For Example...
                   </Button>
                 </Grid>
               </Grid>
@@ -140,19 +141,19 @@ function AboutHowIAm() {
               variant="h3"
               style={{ marginBottom: '30px' }}
             >
-              I am fully engaged in Growth Mindset
+              I believe in a Growth Mindset
             </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <img src={githubLogo} alt="Github Logo" />
           </Grid>
           <Grid item xs={12}>
             <Typography
               className={classes.paper}
               variant="h6"
             >
-              By Commiting Code Daily to Hone My Craft
+              BY COMMITTING CODE DAILY 
             </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <img src={githubLogo} alt="Github Logo" />
           </Grid>
           <Grid item xs={12}>
             <Button
@@ -172,22 +173,22 @@ function AboutHowIAm() {
               />
             </Box>
           </Grid>
-          <Grid item xs={12}>
-            <Box
-              style={{ marginTop: '50px' }}
-            >
-              <img src={codeSignalLogo} alt="Code Signal Logo" height="100px" />
-            </Box>
-          </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{marginTop: '30px'}}>
             <Typography
               className={classes.paper}
               variant="h6"
             >
-              By Working Code Challenges
+              BY WORKING CODE CHALLENGES 
             </Typography>
           </Grid>
           <Grid item xs={12}>
+            <Box
+              style={{ marginTop: '20px' }}
+            >
+              <img src={codeSignalLogo} alt="Code Signal Logo" height="100px" />
+            </Box>
+          </Grid>
+          <Grid item xs={12} style={{marginTop: '20px'}}>
             <Button
               href="https://app.codesignal.com/coding-report/hXCXzwomgS5TABwR7-NECN2JFQz9t3JHWX6DhoERXT"
               variant="outlined"
