@@ -8,6 +8,7 @@ import movieReelData from '../lotties/movieReel.json';
 import codeGearsData from '../lotties/codeGrearsData.json';
 import weatherData from '../lotties/weatherData.json';
 import coffeeData from '../lotties/coffeeData.json';
+import dripCoffeeData from '../lotties/dripCoffeeData.json'
 import mapData from '../lotties/mapData.json';
 import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
 import ProjectCard from './ProjectCard';
@@ -77,7 +78,7 @@ function Project() {
             description="Movie SuperStar is an exercise in API design and testing"
             gitHubLink="https://github.com/MovieSuperStar"
             liveLink=""
-            chipHightlightList=" "
+            chipHighlightList=" "
             chipTechList=" "
           />
         </Grid>
@@ -88,7 +89,7 @@ function Project() {
             title="Rosetta"
             subheader="Recent"
             animationData={codeGearsData}
-            description="Rosetta is a language translation service using webscraping and machine learning"
+            description="Rosetta is a language translation service using web scraping and machine learning"
             gitHubLink="https://github.com/rosetta-team"
             liveLink=""
             chipList=" "
@@ -103,7 +104,7 @@ function Project() {
             animationData={upvoteRocketAltData}
             height="50"
             width="50"
-            description="Upvote is a interative voting platform using microservices"
+            description="Upvote is a interactive voting platform using micro-services"
             gitHubLink="https://github.com/jobannon/upvote_api"
             liveLink=""
             chipList=" "
@@ -128,7 +129,7 @@ function Project() {
             avatarLabel="CT"
             title="Coffee Town"
             subheader="Recent"
-            animationData={coffeeData}
+            animationData={dripCoffeeData}
             description="Coffee Town is a e-commerce platform selling everyone's favorite - coffee"
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
             liveLink=""
