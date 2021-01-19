@@ -75,7 +75,12 @@ function AboutWhyIAm() {
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
             <Box component="span" className={classes.colorBox}>
-              Why I am
+              Why I am 
+            </Box>
+          </Typography>
+          <Typography className={classes.paper} variant="h3">
+            <Box component="span" >
+              [a programmer]
             </Box>
           </Typography>
         </Grid>
@@ -86,12 +91,6 @@ function AboutWhyIAm() {
           >
             I fell in love with programming
           </Typography>
-          <Typography
-            className={classes.paper}
-          >
-            <Box component="p">My First Game was Tic-Tac-Toe</Box>
-            <Box component="p">My Second Game was Space Invaders</Box>
-          </Typography>
           <Box className={classes.carBox}>
             <Carousel
               showThumbs={false}
@@ -99,31 +98,36 @@ function AboutWhyIAm() {
               autoPlay
             >
               <div>
-                <img src={earlyAgeAppleBasic} alt="applesoft basic" style={{ borderRadius: '25px' }} />
+                <img src={earlyAgeAppleBasic} alt="AppleSoft Basic" style={{ borderRadius: '25px' }} />
                 <p className="legend">My First Programming Language</p>
               </div>
               <div>
                 <img src={earlyAgeTic} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Gensis of my Journey</p>
+                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
               </div>
               <div>
                 <img src={earlyAgeTic2} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Gensis of my Journey</p>
+                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
               </div>
               <div>
                 <img src={earlyAgeTic3} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Gensis of my Journey</p>
+                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
               </div>
               <div>
                 <img src={earlyAgeTic4} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Gensis of my Journey</p>
+                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
               </div>
               <div>
                 <img src={earlyAgeTic5} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Gensis of my Journey</p>
+                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
               </div>
             </Carousel>
           </Box>
+          <Typography
+            className={classes.paper}
+          >
+            <Box className={classes.paper}>My First Game was Tic-Tac-Toe. My second, Space Invaders.</Box>
+          </Typography>
         </Grid>
       </Grid>
     </>

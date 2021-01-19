@@ -172,9 +172,9 @@ export default function ScrollableTabsButtonAuto() {
           aria-label="scrollable auto tabs example"
         >
           <Tab component={Link} label="Home" to="/#" href="/#" {...a11yProps(0)} value={value} index={0}/>
-          <Tab component={Link} label="About This Site" to="/Site#" href="/Site#" {...a11yProps(1)} value={value} index={1} />
           <Tab component={Link} label="My Work" to="/Project" href="/Project#" {...a11yProps(2)} value={value} index={2}/>
           <Tab component={Link} label="Professional Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} value={value} index={3}/>
+          <Tab component={Link} label="About This Site" to="/Site#" href="/Site#" {...a11yProps(1)} value={value} index={1} />
         </Tabs>
       </AppBar>
       {/* <TabPanel value={value} index={0}>

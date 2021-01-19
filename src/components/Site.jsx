@@ -102,7 +102,7 @@ export default function CustomizedTimeline() {
             <Typography variant="h6" component="h1">
               Material UI
             </Typography>
-            <Typography color="textSecondary">Standarized Components from Google!</Typography>
+            <Typography color="textSecondary">Components from Google!</Typography>
           </Paper>
         </Grid>
       </Grid>
@@ -182,7 +182,7 @@ export default function CustomizedTimeline() {
                       GitHub Actions
                     </Typography>
                     <Typography>Work in Progress</Typography>
-                    <Typography color="textSecondary">Allowing a auto-deploy from the Git repository to elastic beanstalk</Typography>
+                    <Typography color="textSecondary">Allowing a auto-deploy from the Git repository to Elastic Beanstalk</Typography>
                   </Paper>
                 </TimelineContent>
               </TimelineItem>
