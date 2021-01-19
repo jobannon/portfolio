@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { CssBaseline } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
 import movieReelData from '../lotties/movieReel.json';
 import codeGearsData from '../lotties/codeGrearsData.json';
 import weatherData from '../lotties/weatherData.json';
@@ -51,10 +52,11 @@ function Project() {
 
   return (
     <>
+      <CssBaseline />
       <Typography className={classes.paper} variant="h1" styles={{ marginTop: '30px' }}>
         My Work
       </Typography>
-      <Grid container className={classes.cardGroup} direction="row" justify="center" alignItems="center" style={{backgroundColor: 'red'}} spacing={8} xs={12} lg={6}>
+      <Grid container className={classes.cardGroup} direction="row" justify="center" alignItems="center" spacing={8} xs={12}>
         <Grid item>
           <ProjectCard
             avatarLabelAria="Denver Poverty Map"
