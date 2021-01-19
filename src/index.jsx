@@ -5,10 +5,13 @@ import './index.css';
 import { HashRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter><App /></HashRouter>
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -15,8 +15,6 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Lottie from 'react-lottie';
 import nodeJs from '../assets/nodeJs.png';
-import Footer from './Footer';
-import TopBar from './TopBar';
 import reactLogoData from '../lotties/reactLogoData.json';
 import materialUI from '../assets/materialUI.png';
 import codePromptFull from '../lotties/codePromptFull.json';
@@ -60,7 +58,6 @@ export default function CustomizedTimeline() {
   return (
     <>
       <CssBaseline />
-      <TopBar whereAt="About This Site" />
       <Grid
         container
         xs={12}
@@ -207,7 +204,6 @@ export default function CustomizedTimeline() {
           </Paper>
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

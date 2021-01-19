@@ -12,15 +12,11 @@ function IssueScroller() {
     root: {
       flexGrow: 1,
     },
-    left: {
-      textAlign: 'left',
-    },
     paper: {
       padding: theme.spacing(2),
-      textAlign: 'center',
+      maxWidth: '800px',
       backgroundColor: '#F0F9F4',
       borderRadius: '15px',
-      // maxWidth: '30vw',
     },
   }));
   const classes = useStyles();

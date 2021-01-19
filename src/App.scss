@@ -1,60 +1,9 @@
-ul {
+#container {
   display: flex;
-  list-style: none;
-  padding: 0;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-ul.pagination { 
-  justify-content: center;
-  margin: 30px
-}
-
-ul.pagination li {
-  display: inline-block;
-  width: 30px;
-  border: 1px solid #e2e2e2;
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-  margin: 5px;
-  padding: 15px 20px;
-  
-}
-
-ul.pagination li a {
-  text-decoration: none;
-  color: #3f51b5;
-  font-size: 20px;
-}
-
-ul.pagination li.active a {
-  color: white;
-}
-ul.pagination li.active {
-  background-color: #3f51b5;
-}
-
-ul.pagination li a:hover,
-.page-selection {
-  width: 48px;
-  height: 30px;
-}
-
-.pagination-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.rotate {
-  animation: rotation 2s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+#main-content {
+  flex: 1;
 }
