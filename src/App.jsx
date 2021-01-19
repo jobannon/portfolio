@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  BrowserRouter,
 } from 'react-router-dom';
 
 import {
@@ -67,6 +68,7 @@ function App() {
       <Box id="container">
         <MuiThemeProvider theme={theme}>
 
+        <BrowserRouter >
           <Router>
             <Box id="main-content">
               <TopBar />
@@ -91,7 +93,7 @@ function App() {
           </Router>
 
           <Footer />
-
+        </BrowserRouter>
         </MuiThemeProvider>
 
       </Box>
