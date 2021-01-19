@@ -9,10 +9,6 @@ import codeGearsData from '../lotties/codeGrearsData.json';
 import weatherData from '../lotties/weatherData.json';
 import coffeeData from '../lotties/coffeeData.json';
 import mapData from '../lotties/mapData.json';
-import upvoteAltAltData from '../lotties/upvoteAltAltData.json';
-import upvoteHeartData from '../lotties/upVoteHeartData.json';
-import upvoteThumbData from '../lotties/upvoteThumbData.json';
-import upvoteAwardData from '../lotties/upvoteAwardData.json';
 import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
 import ProjectCard from './ProjectCard';
 
