@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
 import Typography from '@material-ui/core/Typography';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Paper from '@material-ui/core/Paper';
 
 export default function ProjectCard(props) {
   const useStyles = makeStyles((theme) => ({
@@ -64,62 +65,64 @@ export default function ProjectCard(props) {
 
   return (
     <>
-      <Card className={classes.root} variant="outlined">
-        <CardHeader
-          avatar={(
-            <Avatar aria-label={props.avatarLabelAria} className={classes.avatar}>
-              {props.avatarLabel}
-            </Avatar>
+      <Paper elevation={3}>
+        <Card className={classes.root} variant="outlined">
+          <CardHeader
+            avatar={(
+              <Avatar aria-label={props.avatarLabelAria} className={classes.avatar}>
+                {props.avatarLabel}
+              </Avatar>
               )}
-          action={(
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
+            action={(
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
               )}
-          title={props.title}
-          subheader={props.subheader}
-        />
-        <CardMedia
-          title={props.title}
-        >
-          <Lottie
-            options={defaultOptionsReturn(animationData)}
-            height={300}
-            width={300}
+            title={props.title}
+            subheader={props.subheader}
           />
-        </CardMedia>
-        <CardContent>
-          <Typography>
-            {props.title}
-          </Typography>
-          <Typography component="p" variant="body2" color="textSecondary">
-            {props.description}
-          </Typography>
-          {props.links && (
-          <Box style={{
-            position: 'absolute', left: '0', right: '0', marginLeft: 'auto', marginRight: 'auto', bottom: '30px', textAlign: 'center', paddingTop: '20px',
-          }}
+          <CardMedia
+            title={props.title}
           >
-            <Button
-              variant="outlined"
-              href={props.gitHubLink}
-              target="#"
-              disabled={props.disableButton}
+            <Lottie
+              options={defaultOptionsReturn(animationData)}
+              height={300}
+              width={300}
+            />
+          </CardMedia>
+          <CardContent>
+            <Typography>
+              {props.title}
+            </Typography>
+            <Typography component="p" variant="body2" color="textSecondary">
+              {props.description}
+            </Typography>
+            {props.links && (
+            <Box style={{
+              position: 'absolute', left: '0', right: '0', marginLeft: 'auto', marginRight: 'auto', bottom: '30px', textAlign: 'center', paddingTop: '20px',
+            }}
             >
-              View Github
-            </Button>
-            <Button
-              variant="outlined"
-              href={props.liveLink}
-              target="#"
-              disabled={props.disableButton}
-            >
-              View Live
-            </Button>
-          </Box>
-          )}
-        </CardContent>
-      </Card>
+              <Button
+                variant="outlined"
+                href={props.gitHubLink}
+                target="#"
+                disabled={props.disableButton}
+              >
+                View Github
+              </Button>
+              <Button
+                variant="outlined"
+                href={props.liveLink}
+                target="#"
+                disabled={props.disableButton}
+              >
+                View Live
+              </Button>
+            </Box>
+            )}
+          </CardContent>
+        </Card>
+      </Paper>
     </>
   );
 }
