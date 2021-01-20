@@ -10,6 +10,7 @@ import codeSignalLogo from '../assets/codeSignalLogo.png';
 import githubLogo from '../assets/GitHub-Mark-120px-plus.png';
 import IssueScroller from './IssueScoller';
 import Paper from '@material-ui/core/Paper'
+import issuesScreenAlt from '../assets/issuesScreenAlt.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,6 +68,16 @@ const useStyles = makeStyles((theme) => ({
   },
   bordered: {
   },
+  issuesScreenshot:{
+    [theme.breakpoints.up('xs', 'sm', 'md')]: {
+      height: '200px',
+      marginTop: '10px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '400px',
+      marginTop: '20px',
+    },
+  }
 }));
 
 function AboutHowIAm() {
@@ -105,13 +116,7 @@ function AboutHowIAm() {
               For example, I am continuously refactoring past projects and implementing new features
               <Grid container direction="column">
                 <Grid item>
-                  <Button
-                    href="https://github.com/jobannon/fe-movie-superstar-redux/issues"
-                    variant="outlined"
-                    className={classes.buttonStyle}
-                  >
-                    For Example...
-                  </Button>
+                  <img src={issuesScreenAlt} alt="Issues Screenshoot" className={classes.issuesScreenshot} />
                 </Grid>
               </Grid>
             </Typography>
@@ -159,6 +164,7 @@ function AboutHowIAm() {
             <Button
               href="https://github.com/jobannon"
               variant="outlined"
+              target="#"
               className={classes.buttonStyle}
             >
               Github Profile
@@ -192,6 +198,7 @@ function AboutHowIAm() {
             <Button
               href="https://app.codesignal.com/coding-report/hXCXzwomgS5TABwR7-NECN2JFQz9t3JHWX6DhoERXT"
               variant="outlined"
+              target="#"
               className={classes.buttonStyle}
             >
               Latest Report

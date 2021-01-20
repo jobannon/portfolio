@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 import turingFull from '../assets/turingFull.png';
 import awsCloudBadge from '../assets/awsCloudBadge.png';
 import hastingsCollegeLogo from '../assets/hastingsCollegeLogo.png';
@@ -22,12 +23,26 @@ function Resume() {
     root: {
       flexGrow: 1,
     },
+    colorBox: {
+      marginLeft: '10px',
+      background: '#3f51b5',
+      paddingLeft: '17px',
+      paddingRight: '17px',
+      paddingTop: '15px',
+      paddingBottom: '15px',
+      borderRadius: '50px',
+      color: 'white',
+    },
     badge: {
       marginLeft: '10px',
       marginRight: '10px',
       padding: theme.spacing(2),
       maxWidth: '220px',
       minWidth: '220px',
+      textAlign: 'center',
+    },
+    headerText: {
+      marginBottom: '100px',
       textAlign: 'center',
     },
     credFormat: {
@@ -79,7 +94,13 @@ function Resume() {
         style={{ marginTop: '15px' }}
         spacing={3}
       >
-        {/* <Grid item xs={12} className={classes.credFormat}> */}
+        <Grid item xs={12} className={classes.headerText}>
+          <Typography className={classes.paper} variant="h1">
+            <Box component="span" className={classes.colorBox}>
+              Experience
+            </Box>
+          </Typography>
+        </Grid>
         <Grid item>
           {/* <Box style={{ display: 'flex', marginTop: '20px' }}> */}
           <Paper className={classes.badge}>

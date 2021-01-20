@@ -50,6 +50,20 @@ const useStyles = makeStyles((theme) => ({
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
   },
+  colorBox: {
+    marginLeft: '10px',
+    background: '#3f51b5',
+    paddingLeft: '17px',
+    paddingRight: '17px',
+    paddingTop: '15px',
+    paddingBottom: '15px',
+    borderRadius: '50px',
+    color: 'white',
+  },
+  headerText: {
+    marginBottom: '100px',
+    textAlign: 'center',
+  },
 }));
 
 export default function CustomizedTimeline() {
@@ -67,11 +81,21 @@ export default function CustomizedTimeline() {
         alignItems="center"
         style={{ marginTop: '30px' }}
       >
-        <Grid item xs={12} >
-          <Typography variant="h1" color="textSecondary" style={{textAlign: 'center', marginBotton: '20px', marginTop: '20px'}}>
-            Built with...
+        <Grid item xs={12} className={classes.headerText}>
+          <Typography variant="h1">
+            <Box component="span" className={classes.colorBox}>
+              Built With...
+            </Box>
           </Typography>
         </Grid>
+      </Grid>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
         <Grid item>
           <Paper elevation={3} className={classes.paperCard}>
             <Box style={{ width: '350px', height: '350px' }}>
@@ -160,7 +184,7 @@ export default function CustomizedTimeline() {
                     <Typography variant="h6" component="h1">
                       Elastic Beanstalk
                     </Typography>
-                    <Typography>Handles the deployment of both the FrontEnd and BackEnd</Typography>
+                    <Typography>Handles the deployment pipeline</Typography>
                     <Typography color="textSecondary">Autoscaling of capacity is built in using ...</Typography>
                   </Paper>
                 </TimelineContent>
