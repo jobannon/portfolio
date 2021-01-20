@@ -30,12 +30,9 @@ const useStyles = makeStyles((theme) => ({
       float: 'right',
     },
   },
-  animatingTextBox: {
-    [theme.breakpoints.up('xs', 'sm', 'md')]: {
-      justifyContent: 'center',
-    },
-    [theme.breakpoints.up('lg')]: {
-      justifyContent: 'left',
+  positionTextBox: {
+    [theme.breakpoints.down('xs', 'sm')]: {
+      textAlignLast: 'center',
     },
   },
   paper: {
@@ -57,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AboutHello() {
-  const classes = useStyles(); 
+  const classes = useStyles();
   const getVariant = () => {
     if (window.screen.availWidth < 500) {
       return 'h2';
@@ -75,11 +72,7 @@ function AboutHello() {
           variant="h1"
           spacing={1}
         >
-          <Grid
-            item
-            xs={12}
-            lg={6}
-          >
+          <Grid item xs={12} lg={6}>
             <Box className={classes.animatingHi}>
               <Lottie
                 animationData={hiJoshData}
@@ -91,15 +84,16 @@ function AboutHello() {
             </Box>
           </Grid>
           <Grid item lg={6} xs={12}>
-            <Box
-              display="flex"
-              className={classes.animatingTextBox}
-            >
-              <Typography
-                className={classes.paper}
-                variant="h2"
-              >
-                I am
+            <Grid container direction="row" className={classes.positionTextBox}>
+              <Grid item xs={12}>
+                <Typography
+                  className={classes.paper}
+                  variant="h2"
+                >
+                  I am
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Typography
                   className={classes.paper}
                   variant={getVariant()}
@@ -115,8 +109,8 @@ function AboutHello() {
                     </TextLoop>
                   </Box>
                 </Typography>
-              </Typography>
-            </Box>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item xs={12}>
             <Lottie
