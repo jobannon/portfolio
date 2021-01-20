@@ -87,7 +87,7 @@ export default function ScrollableTabsButtonAuto() {
           </Box>
         </Box>
         <Tabs
-          value={value}
+          // value={value}
           onChange={handleChange}
           indicatorColor="secondary"
           style={{ alignSelf: 'center' }}
