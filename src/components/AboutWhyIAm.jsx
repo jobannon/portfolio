@@ -3,14 +3,19 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Carousel } from 'react-responsive-carousel';
-import earlyAgeAppleBasic from '../assets/earlyAge/earlyAgeAppleBasic.png';
-import earlyAgeTic from '../assets/earlyAge/earlyAgeTic.png';
-import earlyAgeTic2 from '../assets/earlyAge/earlyAgeTic2.png';
-import earlyAgeTic3 from '../assets/earlyAge/earlyAgeTic3.png';
-import earlyAgeTic4 from '../assets/earlyAge/earlyAgeTic4.png';
-import earlyAgeTic5 from '../assets/earlyAge/earlyAgeTic5.png';
-import '../overrides.css';
+import Button from '@material-ui/core/Button';
+import Lottie from 'react-lottie';
+import AboutWhyIAmCarousel from './AboutWhyIAmCarousel';
+import heartData from '../lotties/heartData.json';
+
+const defaultOptionsReturn = (nameOf) => ({
+  loop: true,
+  autoplay: true,
+  animationData: nameOf,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,64 +75,36 @@ function AboutWhyIAm() {
       <Grid
         container
         direction="column"
-        className={classes.why}
       >
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
             <Box component="span" className={classes.colorBox}>
-              Why I am 
+              Why I am
             </Box>
           </Typography>
-          <Typography className={classes.paper} variant="h3">
-            <Box component="span" >
+          <Typography className={classes.paper} variant="h6">
+            <Box component="span">
               [a programmer]
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs={12} className={classes.greenBackground}>
+        <Grid item xs={12} className={classes.greenBackground} >
           <Typography
             className={classes.paper}
+            style={{marginBottom: '20px'}}
             variant="h3"
           >
             I fell in love with programming
           </Typography>
-          <Box className={classes.carBox}>
-            <Carousel
-              showThumbs={false}
-              renderItem={(item) => <div className={classes.carImage}>{item}</div>}
-              autoPlay
-            >
-              <div>
-                <img src={earlyAgeAppleBasic} alt="AppleSoft Basic" style={{ borderRadius: '25px' }} />
-                <p className="legend">My First Programming Language</p>
-              </div>
-              <div>
-                <img src={earlyAgeTic} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
-              </div>
-              <div>
-                <img src={earlyAgeTic2} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
-              </div>
-              <div>
-                <img src={earlyAgeTic3} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
-              </div>
-              <div>
-                <img src={earlyAgeTic4} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
-              </div>
-              <div>
-                <img src={earlyAgeTic5} alt="Tic Tac Toe" style={{ borderRadius: '25px' }} />
-                <p className="legend">Tic Tac Toe was the Genesis of my Journey</p>
-              </div>
-            </Carousel>
-          </Box>
-          <Typography
-            className={classes.paper}
+          <AboutWhyIAmCarousel />
+          <Button
+            href="http://www.jobannon.com"
+            variant="contained"
+            color="primary"
+            style={{marginTop: '30px'}}
           >
-            <Box className={classes.paper}>My First Game was Tic-Tac-Toe. My second, Space Invaders.</Box>
-          </Typography>
+            See My Work...
+          </Button>
         </Grid>
       </Grid>
     </>

@@ -190,7 +190,7 @@ function AboutWhoIAm() {
           className={classes.paper}
           variant="h3"
         >
-          I am pay-it-forward developer
+          I am a pay-it-forward developer
         </Typography>
         <Grid item xs={12} className={classes.paper}>
           <img src={turingFull} alt="Turing Logo" height="220px" />
@@ -201,7 +201,7 @@ function AboutWhoIAm() {
               className={classes.paperLeft}
             >
               The greatest obstacle to change is support to make that change.  When I decided to pursue coding as a full-time career having a mentor in my corner to explain the finer points of OOP was invaluable.
-              <p>I have recently signed up to offer the same 6 week mentoring to incoming Turing Students.</p>
+              <p>I am giving back by offering a 6-week mentorship to incoming Turing Students</p>
             </Typography>
           </Box>
         </Grid>

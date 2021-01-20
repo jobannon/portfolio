@@ -32,34 +32,12 @@ const styles = (theme) => ({
   root: {
     // flexGrow: 1,
   },
-  // site: {
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   minHeight: '100vh',
-  // },
-  // content: {
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   flex: '1 0 auto',
-  //   '&::after': {
-  //     content: '\0',
-  //     display: 'block',
-  //     marginTop: '10px',
-  //     height: 0,
-  //     visibility: 'hidden',
-  //   },
-  // },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
   },
-  content: {
-  },
-  footer: {
-  },
-
 });
 
 function App() {
@@ -67,33 +45,33 @@ function App() {
     <>
       <Box id="container">
         <MuiThemeProvider theme={theme}>
-
-        <BrowserRouter >
-          <Router>
-            <Box id="main-content">
-              <TopBar />
-              <Switch>
-                <Route path="/project">
-                  <Project />
-                </Route>
-                <Route path="/site">
-                  <Site />
-                </Route>
-                <Route path="/resume">
-                  <Resume />
-                </Route>
-                <Route path="/test">
-                  <Test />
-                </Route>
-                <Route path="/">
-                  <About />
-                </Route>
-              </Switch>
-            </Box>
-          </Router>
-
-          <Footer />
-        </BrowserRouter>
+          <BrowserRouter>
+            <Router>
+              <Box id="main-content">
+                <TopBar />
+                <Box style={{ marginTop: '100px' }}>
+                  <Switch>
+                    <Route path="/project">
+                      <Project />
+                    </Route>
+                    <Route path="/site">
+                      <Site />
+                    </Route>
+                    <Route path="/resume">
+                      <Resume />
+                    </Route>
+                    <Route path="/test">
+                      <Test />
+                    </Route>
+                    <Route path="/">
+                      <About />
+                    </Route>
+                  </Switch>
+                </Box>
+              </Box>
+            </Router>
+            <Footer />
+          </BrowserRouter>
         </MuiThemeProvider>
 
       </Box>

@@ -109,10 +109,9 @@ function AboutHello() {
                       <Box component="span">Josh</Box>
                       <Box component="span">a Developer</Box>
                       <Box component="span">a Life-long Learner</Box>
-                      <Box component="span">a Turing Alumni</Box>
+                      <Box component="span">Goal Oriented</Box>
                       <Box component="span">Growth Oriented</Box>
                       <Box component="span">Team Oriented</Box>
-                      <Box component="span">Open...</Box>
                     </TextLoop>
                   </Box>
                 </Typography>
