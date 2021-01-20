@@ -25,6 +25,7 @@ function Project() {
     },
     cardGroup: {
       marginTop: '5vh',
+      margin: 'auto',
     },
     media: {
       height: 0,

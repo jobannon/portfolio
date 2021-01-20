@@ -38,14 +38,14 @@ const useStyles = makeStyles((theme) => ({
   },
   paperCard: {
     padding: '6px 16px',
-    maxWidth: '400px',
+    maxWidth: '350px',
     maxHeight: '600px',
     minWidth: '350px',
     minHeight: '600px',
   },
   paperTimelineCard: {
     padding: '56px 16px',
-    maxWidth: '375px',
+    maxWidth: '350px',
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,

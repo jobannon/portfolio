@@ -78,8 +78,6 @@ function Resume() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  function downloadResume() {
-  }
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
