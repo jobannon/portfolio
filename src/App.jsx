@@ -18,6 +18,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import { ViewColumnTwoTone } from '@material-ui/icons';
 import TopBar from './components/TopBar';
+import TopBarAlt from './components/TopBarAlt';
 import About from './components/About';
 import Project from './components/Project';
 import Site from './components/Site';
@@ -48,7 +49,7 @@ function App() {
           <BrowserRouter>
             <Router>
               <Box id="main-content">
-                <TopBar />
+                <TopBar/>
                 <Box style={{ marginTop: '100px' }}>
                   <Switch>
                     <Route path="/project">
