@@ -12,6 +12,7 @@ import websiteData from '../lotties/websiteData.json';
 import dripCoffeeData from '../lotties/dripCoffeeData.json';
 import mapData from '../lotties/mapData.json';
 import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
+import findSweepData from '../lotties/findSweepData.json';
 import ProjectCard from './ProjectCard';
 
 function Project() {
@@ -81,10 +82,10 @@ function Project() {
             stacksUsed={['vueJS', 'JS']}
             animationData={mapData}
             description="I am working with Code For Denver on geo-visualization of Poverty Rates"
-            disableButton
-            gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
-            liveLink=""
-            chipList=" "
+            disableButtonGithub
+            gitHubLink=""
+            liveLink="https://codefordenver.org"
+            chipList=""
           />
         </Grid>
         <Grid item>
@@ -93,13 +94,13 @@ function Project() {
             avatarLabel="MSS"
             title="Movie SuperStar"
             subheader="Latest"
-            stacksUsed={['React', 'Rails', 'Ruby', 'AWS']}
+            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'AWS', 'memcachier']}
             animationData={movieReelData}
             description="Movie SuperStar is an exercise in API design and testing"
             gitHubLink="https://github.com/MovieSuperStar"
-            liveLink=""
+            liveLink="https://fe-movie-superstar-redux.herokuapp.com"
             chipHighlightList=" "
-            chipTechList=" "
+            chipTechList=""
           />
         </Grid>
         <Grid item>
@@ -119,6 +120,22 @@ function Project() {
         </Grid>
         <Grid item>
           <ProjectCard
+            avatarLabelAria="FindSweeps.com"
+            avatarLabel="R"
+            title="FindSweeps.com"
+            subheader="Recent"
+            disableButton
+            stacksUsed={['Ruby', 'Rails', 'Sass', 'Postgres']}
+            animationData={findSweepData}
+            description="FindSweeps is a sweepstake aggregator.  The site is no longer in service, but was built during my tenure at Bang Equals Development "
+            disableButtonGithub
+            gitHubLink="https://www.findsweeps.com"
+            liveLink="https://www.findsweeps.com"
+            chipList=" "
+          />
+        </Grid>
+        <Grid item>
+          <ProjectCard
             avatarLabelAria="Rosetta"
             avatarLabel="R"
             title="Rosetta"
@@ -127,7 +144,7 @@ function Project() {
             animationData={codeGearsData}
             description="Rosetta is a language translation service using web scraping and machine learning"
             gitHubLink="https://github.com/rosetta-team"
-            liveLink=""
+            liveLink="https://rosetta-fe.herokuapp.com/"
             chipList=" "
           />
         </Grid>
@@ -137,13 +154,13 @@ function Project() {
             avatarLabel="UV"
             title="Upvote"
             subheader="Recent"
-            stacksUsed={['JS', 'Sinatra', 'Ruby', 'Rails', 'Shoulda Matchers', 'RSpec']}
+            stacksUsed={['JS', 'Sinatra', 'Ruby', 'Rails', 'Shoulda Matchers', 'RSpec', 'Postgres']}
             animationData={upvoteRocketAltData}
             height="50"
             width="50"
             description="Upvote is a interactive voting platform using micro-services"
             gitHubLink="https://github.com/jobannon/upvote_api"
-            liveLink=""
+            liveLink="https://upvote-ideas-ui.herokuapp.com"
             chipList=" "
           />
         </Grid>
@@ -153,7 +170,7 @@ function Project() {
             avatarLabel="SW"
             title="Sweater Weather"
             subheader="Recent"
-            stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby']}
+            stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres']}
             animationData={weatherData}
             description="Sweater Weather is an backend API that returns weather related data"
             gitHubLink="https://github.com/jobannon/sweater_weather"
@@ -167,11 +184,11 @@ function Project() {
             avatarLabel="CT"
             title="Coffee Town"
             subheader="Recent"
-            stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby']}
+            stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres']}
             animationData={dripCoffeeData}
             description="Coffee Town is a e-commerce platform selling everyone's favorite - coffee"
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
-            liveLink=""
+            liveLink="https://agile-brushlands-23238.herokuapp.com"
             chipList=" "
           />
         </Grid>

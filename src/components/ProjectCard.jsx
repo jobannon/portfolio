@@ -74,7 +74,7 @@ export default function ProjectCard(props) {
 
   const handleFlippedClick = useCallback((e) => {
     e.preventDefault();
-      setIsFlipped(!isFlipped);
+    setIsFlipped(!isFlipped);
   });
 
   const mappedStacksUsed = stacksUsed.map((stack) => (<Chip variant="outlined" color="primary" label={stack} />));
@@ -129,7 +129,7 @@ export default function ProjectCard(props) {
                     href={props.liveLink}
                     color="primary"
                     target="#"
-                    disabled={props.disableButton}
+                    disabled={props.disableButtonLive}
                     style={{ marginRight: '5px' }}
                   >
                     View Live
@@ -181,7 +181,7 @@ export default function ProjectCard(props) {
                     color="primary"
                     href={props.gitHubLink}
                     target="#"
-                    disabled={props.disableButton}
+                    disabled={props.disableButtonGithub}
                   >
                     View Github
                   </Button>
