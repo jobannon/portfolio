@@ -18,6 +18,9 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import Paper from '@material-ui/core/Paper';
 import ReactCardFlip from 'react-card-flip';
 import Chip from '@material-ui/core/Chip';
+import '../overrides.css';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 export default function ProjectCard(props) {
   const useStyles = makeStyles((theme) => ({
@@ -67,7 +70,7 @@ export default function ProjectCard(props) {
   });
 
   // const {avatarLabel, } = props
-  const { animationData, stacksUsed } = props;
+  const { animationData, stacksUsed, highLights } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [isFlipped, setIsFlipped] = React.useState(false);
@@ -78,7 +81,17 @@ export default function ProjectCard(props) {
   });
 
   const mappedStacksUsed = stacksUsed.map((stack) => (<Chip variant="outlined" color="primary" label={stack} />));
+  const mappedHightLights = highLights.map((term) => (<Chip variant="outlined" color="secondary" label={term} />));
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleVertClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -96,8 +109,18 @@ export default function ProjectCard(props) {
                   </Avatar>
               )}
                 action={(
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+                  <IconButton aria-label="settings" onClick={handleVertClick}>
+                    {/* <MoreVertIcon />
+                    <Menu
+                      id="simple-menu"
+                      anchorEl={anchorEl}
+                      keepMounted
+                      open={Boolean(anchorEl)}
+                      onClose={handleClose}
+                    >
+                      <MenuItem onClick={handleClose}>Github</MenuItem>
+                      <MenuItem onClick={handleClose}>Flip!</MenuItem>
+                    </Menu> */}
                   </IconButton>
               )}
                 title={props.title}
@@ -140,7 +163,7 @@ export default function ProjectCard(props) {
                     color="primary"
                   >
                     More...
-                    <RotateRightIcon />
+                    <RotateRightIcon className="rotating" />
                   </Button>
                 </Box>
                 )}
@@ -172,10 +195,13 @@ export default function ProjectCard(props) {
                 <Typography component="p" variant="body2" color="textSecondary">
                   <div className={classes.chips}>{mappedStacksUsed}</div>
                 </Typography>
-                <Typography variant="h6" style={{ marginTop: '20px', marginBottom: '20px' }}>
-                  Open Issues
+                <Typography variant="h6" style={{ marginBottom: '20px' }}>
+                  Highlights
                 </Typography>
-                <Box display="flex">
+                <Typography component="p" variant="body2" color="textSecondary">
+                  <Box className={classes.chips}>{mappedHightLights}</Box>
+                </Typography>
+                <Box display="flex" style={{ justifyContent: 'center', marginTop: '15px' }}>
                   <Button
                     variant="contained"
                     color="primary"
@@ -198,7 +224,7 @@ export default function ProjectCard(props) {
                     color="primary"
                   >
                     Back
-                    <RotateLeftIcon />
+                    <RotateLeftIcon className="rotatingBack" />
                   </Button>
                 </Box>
                 )}
@@ -216,4 +242,5 @@ ProjectCard.defaultProps = {
   height: 300,
   width: 300,
   stacksUsed: [],
+  highLights: [],
 };

@@ -11,6 +11,7 @@ import weatherData from '../lotties/weatherData.json';
 import websiteData from '../lotties/websiteData.json';
 import dripCoffeeData from '../lotties/dripCoffeeData.json';
 import mapData from '../lotties/mapData.json';
+import ticTacToeData from '../lotties/TicTacToeData.json';
 import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
 import findSweepData from '../lotties/findSweepData.json';
 import ProjectCard from './ProjectCard';
@@ -80,6 +81,7 @@ function Project() {
             title="Denver Poverty Map"
             subheader="Working"
             stacksUsed={['vueJS', 'JS']}
+            highLights={['Reel still being developed...']}
             animationData={mapData}
             description="I am working with Code For Denver on geo-visualization of Poverty Rates"
             disableButtonGithub
@@ -94,7 +96,8 @@ function Project() {
             avatarLabel="MSS"
             title="Movie SuperStar"
             subheader="Latest"
-            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'AWS', 'memcachier']}
+            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'CircleCI', 'AWS', 'memcachier']}
+            highLights={['Use of Caching', 'Microservice']}
             animationData={movieReelData}
             description="Movie SuperStar is an exercise in API design and testing"
             gitHubLink="https://github.com/MovieSuperStar"
@@ -110,6 +113,7 @@ function Project() {
             title="Hi. I am Josh."
             subheader="Latest"
             stacksUsed={['React', 'NodeJS', 'MaterialUI', 'AWS']}
+            highLights={['Professional Design', 'Interactive Storytelling']}
             animationData={websiteData}
             description="This portfolio site.  Built to show personality and interactivity."
             gitHubLink="https://github.com/jobannon/portfolio"
@@ -126,6 +130,7 @@ function Project() {
             subheader="Recent"
             disableButton
             stacksUsed={['Ruby', 'Rails', 'Sass', 'Postgres']}
+            highLights={['Dynamic CSS styling', 'Commercial Production App']}
             animationData={findSweepData}
             description="FindSweeps is a sweepstake aggregator.  The site is no longer in service, but was built during my tenure at Bang Equals Development "
             disableButtonGithub
@@ -140,7 +145,8 @@ function Project() {
             avatarLabel="R"
             title="Rosetta"
             subheader="Recent"
-            stacksUsed={['React', 'Sass', 'GraphQL', 'Apollo', 'Python', 'BeautifulSoup', 'SpaCy', 'Redux', 'JS', 'Apollo', 'pytest', 'jest']}
+            stacksUsed={['React', 'Sass', 'GraphQL', 'Apollo', 'Python', 'BeautifulSoup', 'SpaCy', 'Redux', 'JS', 'Apollo', 'pytest', 'jest', 'CircleCI']}
+            highLights={['Machine Learning', 'Webscrapping']}
             animationData={codeGearsData}
             description="Rosetta is a language translation service using web scraping and machine learning"
             gitHubLink="https://github.com/rosetta-team"
@@ -154,7 +160,8 @@ function Project() {
             avatarLabel="UV"
             title="Upvote"
             subheader="Recent"
-            stacksUsed={['JS', 'Sinatra', 'Ruby', 'Rails', 'Shoulda Matchers', 'RSpec', 'Postgres']}
+            stacksUsed={['JS', 'Sinatra', 'Ruby', 'Rails', 'jQuery', 'TravisCI', 'Shoulda Matchers', 'RSpec', 'Postgres']}
+            highLights={['Microservice Architecture', '"Live" DOM monitoring using classic JS']}
             animationData={upvoteRocketAltData}
             height="50"
             width="50"
@@ -171,6 +178,7 @@ function Project() {
             title="Sweater Weather"
             subheader="Recent"
             stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres']}
+            highLights={['API Design', 'Multiple API Endpoint Consumption', 'DarkSky API', 'Google API']}
             animationData={weatherData}
             description="Sweater Weather is an backend API that returns weather related data"
             gitHubLink="https://github.com/jobannon/sweater_weather"
@@ -183,10 +191,26 @@ function Project() {
             avatarLabelAria="Coffee Town"
             avatarLabel="CT"
             title="Coffee Town"
-            subheader="Recent"
-            stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres']}
+            subheader="Historic Snapshot-Waypoint"
+            stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres', 'Factory Bot']}
+            highLights={['100% Coverage (backend)', 'User Multitenancy', 'Authentication', 'Authorization', 'Session-Management']}
             animationData={dripCoffeeData}
             description="Coffee Town is a e-commerce platform selling everyone's favorite - coffee"
+            gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
+            liveLink="https://agile-brushlands-23238.herokuapp.com"
+            chipList=" "
+          />
+        </Grid>
+        <Grid item>
+          <ProjectCard
+            avatarLabelAria="Tic Tac Toe"
+            avatarLabel="TTT"
+            title="Tic Tac Toe"
+            subheader="Historic Snapshot-Waypoint"
+            stacksUsed={['React']}
+            highLights={['Remembering the journey...', 'Joy of Coding and Creating']}
+            animationData={ticTacToeData}
+            description="Sentimentally, the start of my programmatic journey into software. Also, the perennial React beginners app."
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
             liveLink="https://agile-brushlands-23238.herokuapp.com"
             chipList=" "

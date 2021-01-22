@@ -48,8 +48,8 @@ function Footer() {
           >
             <Lottie
               options={defaultOptionsReturn(linkedInLogo)}
-              height={50}
-              width={50}
+              height={75}
+              width={75}
             />
           </Link>
         </Grid>
@@ -60,8 +60,8 @@ function Footer() {
           >
             <Lottie
               options={defaultOptionsReturn(emailData)}
-              height={70}
-              width={70}
+              height={98}
+              width={98}
             />
           </Link>
         </Grid>
@@ -73,22 +73,22 @@ function Footer() {
             >
               <Lottie
                 options={defaultOptionsReturn(githubCatColorLogoData)}
-                height={24}
-                width={24}
+                height={35}
+                width={35}
               />
             </Link>
           </Box>
         </Grid>
         <Grid item>
-          <Box component="p" style={{ marginTop: '14px' }}>
+          <Box component="p" style={{ marginTop: '14px', marginLeft: '10px' }}>
             <Link
               href="https://calendly.com/joshcodes/"
               target="#"
             >
               <Lottie
                 options={defaultOptionsReturn(calendarData)}
-                height={40}
-                width={40}
+                height={56}
+                width={56}
               />
             </Link>
           </Box>
