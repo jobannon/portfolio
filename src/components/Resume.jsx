@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import Chip from '@material-ui/core/Chip';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import turingFull from '../assets/turingFull.png';
@@ -78,6 +79,11 @@ function Resume() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
+  const competencies = ['CSS', 'HTML', 'RAILS', 'JS', 'AWS', 'SALESFORCE', 'TDD', 'MVC', 'OOP', 'PYTHON', 'RSPEC', 'API DESIGN', 'CI/CD', 'AGILE', 'TDD', 'REST', 'RUBY', 'DB', 'DESIGN MICRO-SERVICES', 'REACT'];
+
+  const competenciesChipped = competencies.map((term) => (<Chip label={term} variant='outlined' color='primary' style={{padding: '5px', margin: '3px'}}/>));
+  
+  
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -115,6 +121,12 @@ function Resume() {
         <Grid item>
           <Paper className={classes.badge}>
             <img src={hastingsCollegeLogo} alt="Hastings College" height="200" />
+          </Paper>
+        </Grid>
+        <Grid item xs={12} style={{textAlign: 'center'}}>
+          <Typography variant='h6'>Competencies</Typography>
+          <Paper className={classes.paper} style={{maxWidth: '630px', margin: 'auto', padding: '15px'}}>
+            {competenciesChipped}
           </Paper>
         </Grid>
         {/* </Box> */}

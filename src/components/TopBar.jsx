@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Link from '@material-ui/core/Link';
 import OutdoorJosh from '../assets/outdoorJosh.jpg';
+import officeJosh from '../assets/joshprofile_circle.resized.png';
 
 function TabPanel(props) {
   const {
@@ -82,7 +83,7 @@ export default function ScrollableTabsButtonAuto() {
       <AppBar position="fixed">
         <Box className={classes.topBarAvatar}>
           <Box display="flex">
-            <Avatar alt="joshua obannon" src={OutdoorJosh} className={classes.large} />
+            <Avatar alt="joshua obannon" src={officeJosh} className={classes.large} />
             <Typography variant="h6" className={classes.appName}>Joshua O'bannon</Typography>
           </Box>
         </Box>
