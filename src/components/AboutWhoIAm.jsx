@@ -61,17 +61,15 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '50px',
+    borderRadius: '30px',
     color: 'white',
   },
   greenColorBox: {
-    marginLeft: '10px',
     background: '#85BAA1',
-    paddingLeft: '17px',
-    paddingRight: '17px',
-    paddingTop: '15px',
-    paddingBottom: '15px',
-    borderRadius: '50px',
+  },
+  greenColorBoxLink:{
+    padding: '25px',
+    borderRadius: '30px',
     color: 'white',
     alignText: 'center',
   },
@@ -118,16 +116,16 @@ function AboutWhoIAm() {
       <Grid container direction="row" className={classes.who}>
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
-            <Box component="span" className={classes.colorBox}>
+            <Box boxShadow={3} component="span" className={classes.colorBox}>
               Who I am
             </Box>
           </Typography>
         </Grid>
-        <Grid container direction="row" justify="center" className={classes.greenBackground} >
-          <Grid item xs={12} style={{textAlign: 'center'}}>
+        <Grid container direction="row" justify="center" className={classes.greenBackground}>
+          <Grid item xs={12} style={{ textAlign: 'center' }}>
             <img src={outdoorJosh} height="300px" alt="Outdoor Josh" style={{ borderRadius: '25px' }} />
           </Grid>
-          <Grid item xs={12} style={{maxWidth: '1000px'}} className={classes.greenBackground}>
+          <Grid item xs={12} style={{ maxWidth: '1000px' }} className={classes.greenBackground}>
             <Typography
               className={classes.paper}
               variant="h3"
@@ -141,7 +139,7 @@ function AboutWhoIAm() {
               I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in AppleSoft BASIC.
               <p>I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.</p>
               <p>I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.</p>
-              
+
             </Typography>
           </Grid>
         </Grid>
@@ -164,12 +162,18 @@ function AboutWhoIAm() {
                 className={classes.paper}
                 variant="h4"
               >
-                <Link
-                  href="https://joshcodes.dev/posts"
+                <Box
+                  component="span"
+                  boxShadow={3}
                   className={classes.greenColorBox}
                 >
-                  Here
-                </Link>
+                  <Link
+                    href="https://joshcodes.dev/posts"
+                    className={classes.greenColorBoxLink}
+                  >
+                    Here...
+                  </Link>
+                </Box>
               </Typography>
             </Box>
           </Grid>
@@ -213,7 +217,7 @@ function AboutWhoIAm() {
             <Typography
               className={classes.paperLeft}
             >
-              Open Source Software is the platform from which I built my career. 
+              Open Source Software is the platform from which I built my career.
               <p>I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects</p>
               <Button
                 variant="outlined"

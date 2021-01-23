@@ -67,13 +67,13 @@ function Project() {
     <>
       <CssBaseline />
       <Grid container className={classes.cardGroup} direction="row" justify="center" alignItems="center" spacing={8} xs={12}>
-        <Grid item xs={12} className={classes.headerText}>
+        {/* <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
             <Box component="span" className={classes.colorBox}>
               Work
             </Box>
           </Typography>
-        </Grid>
+        </Grid> */}
         <Grid item>
           <ProjectCard
             avatarLabelAria="Denver Poverty Map"

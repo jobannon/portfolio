@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Lottie from 'react-lottie';
 import TextLoop from 'react-text-loop';
+import Button from '@material-ui/core/Button';
 import hiJoshData from '../assets/hiJosh.json';
 import downCaret from '../assets/downCaret.json';
 
@@ -31,8 +32,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   positionTextBox: {
-    [theme.breakpoints.down('xs', 'sm')]: {
+    [theme.breakpoints.up('xs', 'sm')]: {
       textAlignLast: 'center',
+    },
+    [theme.breakpoints.up('md', 'lg')]: {
+      textAlignLast: 'left',
     },
   },
   paper: {
@@ -40,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: theme.palette.text.secondary,
   },
+  
   fName: {
     marginLeft: '10px',
     background: '#3f51b5',
@@ -47,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '50px',
+    borderRadius: '30px',
     color: 'white',
     justifyContent: 'left',
   },
@@ -66,9 +71,10 @@ function AboutHello() {
       <div className={classes.root}>
         <Grid
           container
-          style={{ height: '100vh' }}
+          style={{ height: '100vh'}}
           alignItems="center"
           justify="center"
+          direction='row'
           variant="h1"
           spacing={1}
         >
@@ -84,8 +90,8 @@ function AboutHello() {
             </Box>
           </Grid>
           <Grid item lg={6} xs={12}>
-            <Grid container direction="row" className={classes.positionTextBox}>
-              <Grid item xs={12}>
+            <Grid container direction="row" justify='center' alignItems="center" className={classes.positionTextBox}>
+              <Grid item xs={12} >
                 <Typography
                   className={classes.paper}
                   variant="h2"
@@ -98,16 +104,18 @@ function AboutHello() {
                   className={classes.paper}
                   variant={getVariant()}
                 >
-                  <Box component="span" className={classes.fName}>
-                    <TextLoop>
-                      <Box component="span">Josh</Box>
-                      <Box component="span">a Developer</Box>
-                      <Box component="span">a Life-long Learner</Box>
-                      <Box component="span">Goal Oriented</Box>
-                      <Box component="span">Growth Oriented</Box>
-                      <Box component="span">Team Oriented</Box>
-                    </TextLoop>
-                  </Box>
+                  {/* <Button variant="contained" color="primary"> */}
+                    <Box component="span" className={classes.fName} boxShadow={3}>
+                      <TextLoop>
+                        <Box component="span">Josh</Box>
+                        <Box component="span">a Developer</Box>
+                        <Box component="span">a Life-long Learner</Box>
+                        <Box component="span">Goal Oriented</Box>
+                        <Box component="span">Growth Oriented</Box>
+                        <Box component="span">Team Oriented</Box>
+                      </TextLoop>
+                    </Box>
+                  {/* </Button> */}
                 </Typography>
               </Grid>
             </Grid>

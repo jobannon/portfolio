@@ -95,16 +95,16 @@ function Resume() {
         direction="row"
         justify="center"
         alignItems="center"
-        style={{ marginTop: '15px' }}
+        style={{ marginTop: '15px', marginLeft: 'auto', marginRight: 'auto' }}
         spacing={3}
       >
-        <Grid item xs={12} className={classes.headerText}>
+        {/* <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
             <Box component="span" className={classes.colorBox}>
               Experience
             </Box>
           </Typography>
-        </Grid>
+        </Grid> */}
         <Grid item>
           {/* <Box style={{ display: 'flex', marginTop: '20px' }}> */}
           <Paper className={classes.badge}>

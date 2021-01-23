@@ -38,7 +38,7 @@ function Footer() {
         direction="row"
         justify="center"
         alignItems="center"
-        spacing={5}
+        spacing={2}
         className={classes.boxBackground}
       >
         <Grid item>

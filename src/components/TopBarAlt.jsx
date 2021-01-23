@@ -1,19 +1,27 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Box from "@material-ui/core/Box";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Box from '@material-ui/core/Box';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
 import {
+  HashRouter,
   BrowserRouter,
   Route,
   Link,
+  Switch,
   useLocation,
-  Redirect
-} from "react-router-dom";
+  Redirect,
+} from 'react-router-dom';
+
+import Resume from './Resume';
+import About from './About';
+import Project from './Project';
 
 function TabPanel(props) {
-  const { children, value, active, index, ...other } = props;
+  const {
+    children, value, active, index, ...other
+  } = props;
 
   return (
     <div
@@ -35,7 +43,7 @@ function TabPanel(props) {
 function a11yProps(index) {
   return {
     id: `tabs-router-${index}`,
-    "aria-controls": `tabs-router-${index}`
+    'aria-controls': `tabs-router-${index}`,
   };
 }
 
@@ -45,64 +53,62 @@ function MyTabs() {
   // This means that if you have nested routes like users,
   // users/new, users/edit, etc.
   // Then the order would be ['users/add', 'users/edit', 'users'].
-  //const routeMatch = useRouteMatch(["/inbox/:id", "/drafts", "/trash"]);
-  //const currentTab = routeMatch?.path;
+  // const routeMatch = useRouteMatch(["/inbox/:id", "/drafts", "/trash"]);
+  // const currentTab = routeMatch?.path;
   const location = useLocation();
-  let currentTab = location.pathname;
+  const currentTab = location.pathname;
   return (
     <div>
       <AppBar position="static">
         <Tabs value={currentTab}>
           <Tab
-            label="Resume"
-            value="/resume"
-            to="/resume"
+            label="Home"
+            value="/"
+            to="/"
+            component={Link}
+            {...a11yProps(0)}
+          />
+          <Tab 
+            label="Work"
+            value="/Project"
+            to="/Project"
             component={Link}
             {...a11yProps(0)}
           />
           <Tab
-            label="Drafts"
-            value="/drafts"
-            to="/drafts"
+            label="Experience"
+            value="/Resume"
+            to="/Resume"
             component={Link}
             {...a11yProps(1)}
           />
-          <Tab
-            label="Trash"
-            value="/trash"
-            to="/trash"
-            component={Link}
-            {...a11yProps(2)}
-          />
         </Tabs>
       </AppBar>
-      <TabPanel value={currentTab} active="/inbox/:id" index={0}>
-        <Typography>Inbox 1 details</Typography>
+      <TabPanel value={currentTab} active="/" index={0}>
+        <Typography>Home</Typography>
       </TabPanel>
-      <TabPanel value={currentTab} active="/drafts" index={1}>
+      <TabPanel value={currentTab} active="/Experience" index={1}>
         <Typography>Drafts details</Typography>
-      </TabPanel>
-      <TabPanel value={currentTab} active="/trash" index={2}>
-        <Typography>Trash details</Typography>
       </TabPanel>
     </div>
   );
 }
 
-export default function TabsRouter() {
+export default function TopBarAlt() {
   return (
     <div>
       <BrowserRouter>
-        <Route>
-          {({ location }) => (
-            <Typography gutterBottom>
-              Current route: {location.pathname}
-            </Typography>
-          )}
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/inbox" />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <About />
+          </Route>
+          <Route path="/Resume">
+            <Resume />
+          </Route>
+          <Route path="/Project">
+            <Project />
+          </Route>
+        </Switch>
         <MyTabs />
       </BrowserRouter>
     </div>
