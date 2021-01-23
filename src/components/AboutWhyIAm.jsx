@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '50px',
+    borderRadius: '30px',
     color: 'white',
   },
   headerText: {
@@ -78,12 +78,12 @@ function AboutWhyIAm() {
       >
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
-            <Box component="span" className={classes.colorBox}>
+            <Box boxShadow={3} component="span" className={classes.colorBox}>
               Why I am
             </Box>
           </Typography>
           <Typography className={classes.paper} variant="h6">
-            <Box component="span">
+            <Box boxShadow={3} style={{padding: '1vh'}} component="span">
               [a programmer]
             </Box>
           </Typography>

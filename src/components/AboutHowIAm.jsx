@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '50px',
+    borderRadius: '30px',
     color: 'white',
   },
   buttonStyle: {
@@ -88,7 +88,7 @@ function AboutHowIAm() {
         <Grid container direction="row">
           <Grid item xs={12} className={classes.headerText}>
             <Typography className={classes.paper} variant="h1">
-              <Box component="span" className={classes.colorBox}>
+              <Box boxShadow={3} component="span" className={classes.colorBox}>
                 How I am
               </Box>
             </Typography>

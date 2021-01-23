@@ -81,13 +81,13 @@ export default function CustomizedTimeline() {
         alignItems="center"
         style={{ marginTop: '30px' }}
       >
-        <Grid item xs={12} className={classes.headerText}>
+        {/* <Grid item xs={12} className={classes.headerText}>
           <Typography variant="h1">
             <Box component="span" className={classes.colorBox}>
               Built With...
             </Box>
           </Typography>
-        </Grid>
+        </Grid> */}
       </Grid>
       <Grid
         container
