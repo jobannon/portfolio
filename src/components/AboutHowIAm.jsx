@@ -6,11 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import GitHubCalendar from 'react-github-calendar';
+import Paper from '@material-ui/core/Paper';
 import codeSignalLogo from '../assets/codeSignalLogo.png';
 import githubLogo from '../assets/GitHub-Mark-120px-plus.png';
 import IssueScroller from './IssueScoller';
-import Paper from '@material-ui/core/Paper'
-import issuesScreenAlt from '../assets/issuesScreenAlt.png'
+import issuesScreenAlt from '../assets/issuesScreenAlt.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,8 +28,15 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '30px',
+    borderRadius: '25px',
     color: 'white',
+  },
+  paperRed: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 9px',
+    borderBottomColor: theme.palette.secondary.main,
+    lineHeight: '1.5',
   },
   buttonStyle: {
     marginTop: '10px',
@@ -66,9 +73,7 @@ const useStyles = makeStyles((theme) => ({
   innerText: {
     paddingRight: '250px',
   },
-  bordered: {
-  },
-  issuesScreenshot:{
+  issuesScreenshot: {
     [theme.breakpoints.up('xs', 'sm', 'md')]: {
       height: '200px',
       marginTop: '10px',
@@ -77,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
       height: '400px',
       marginTop: '20px',
     },
-  }
+  },
 }));
 
 function AboutHowIAm() {
@@ -103,12 +108,15 @@ function AboutHowIAm() {
             item
             xs={12}
           >
-            <Typography
-              className={classes.paper}
-              variant="h3"
-            >
-              I am iterative
-            </Typography>
+            <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
+              <Typography
+                className={classes.paperRed}
+                component="span"
+                variant="h3"
+              >
+                I am iterative
+              </Typography>
+            </Box>
             <Typography
               className={classes.paper}
               variant="h5"
@@ -141,20 +149,22 @@ function AboutHowIAm() {
           alignItems="center"
         >
           <Grid item xs={12}>
-            <Typography
-              className={classes.paper}
-              variant="h3"
-              style={{ marginBottom: '30px' }}
-            >
-              I believe in a Growth Mindset
-            </Typography>
+            <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
+              <Typography
+                className={classes.paperRed}
+                component="span"
+                variant="h3"
+              >
+                I believe in Growth Mindset
+              </Typography>
+            </Box>
           </Grid>
           <Grid item xs={12}>
             <Typography
               className={classes.paper}
               variant="h6"
             >
-              BY COMMITTING CODE DAILY 
+              BY COMMITTING CODE DAILY
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -179,12 +189,12 @@ function AboutHowIAm() {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} style={{marginTop: '30px'}}>
+          <Grid item xs={12} style={{ marginTop: '30px' }}>
             <Typography
               className={classes.paper}
               variant="h6"
             >
-              BY WORKING CODE CHALLENGES 
+              BY WORKING CODE CHALLENGES
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -194,7 +204,7 @@ function AboutHowIAm() {
               <img src={codeSignalLogo} alt="Code Signal Logo" height="100px" />
             </Box>
           </Grid>
-          <Grid item xs={12} style={{marginTop: '20px'}}>
+          <Grid item xs={12} style={{ marginTop: '20px' }}>
             <Button
               href="https://app.codesignal.com/coding-report/hXCXzwomgS5TABwR7-NECN2JFQz9t3JHWX6DhoERXT"
               variant="outlined"

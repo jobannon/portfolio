@@ -23,8 +23,11 @@ import About from './components/About';
 import Project from './components/Project';
 import Site from './components/Site';
 import Resume from './components/Resume';
+import Blog from './components/Blog';
 import Test from './components/Test';
 import Footer from './components/Footer';
+import FloatingSnacker from './components/FloatingSnacker';
+import SpeedDial from './components/SpeedDial';
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -50,7 +53,7 @@ function App() {
             <TopBar />
             <Box style={{ marginTop: '75px' }}>
               <Switch>
-                <Route exact path="/project">
+                <Route path="/project">
                   <Project />
                 </Route>
                 <Route path="/site">
@@ -59,15 +62,20 @@ function App() {
                 <Route path="/resume">
                   <Resume />
                 </Route>
+                <Route path="/blog">
+                  <Blog />
+                </Route>
                 <Route path="/test">
                   <Test />
                 </Route>
-                <Route path="/">
+                <Route exact path="/">
                   <About />
                 </Route>
               </Switch>
             </Box>
           </Box>
+          <FloatingSnacker />
+          <SpeedDial />
           <Footer />
         </MuiThemeProvider>
 

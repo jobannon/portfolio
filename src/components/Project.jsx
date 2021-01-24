@@ -33,6 +33,16 @@ function Project() {
       height: 0,
       paddingTop: '56.25%', // 16:9
     },
+    colorBox: {
+      marginLeft: '10px',
+      background: '#3f51b5',
+      paddingLeft: '17px',
+      paddingRight: '17px',
+      paddingTop: '15px',
+      paddingBottom: '15px',
+      borderRadius: '25px',
+      color: 'white',
+    },
     expand: {
       transform: 'rotate(0deg)',
       marginLeft: 'auto',
@@ -203,12 +213,14 @@ function Project() {
         </Grid>
         <Grid item>
           <ProjectCard
+            disableButtonLive
+            disableButtonGithub
             avatarLabelAria="Tic Tac Toe"
             avatarLabel="TTT"
             title="Tic Tac Toe"
             subheader="Historic Snapshot-Waypoint"
             stacksUsed={['React']}
-            highLights={['Remembering the journey...', 'Joy of Coding and Creating']}
+            highLights={['Remembering The Journey...', 'Joy of Coding and Creating']}
             animationData={ticTacToeData}
             description="Sentimentally, the start of my programmatic journey into software. Also, the perennial React beginners app."
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"

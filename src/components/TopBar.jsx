@@ -66,10 +66,10 @@ const useStyles = makeStyles((theme) => ({
   },
   subHeader: {
     color: theme.palette.text.secondary,
-    marginTop: '15px'
+    marginTop: '60px',
   },
   subHeaderText: {
-    borderBottom: 'solid 3px',
+    borderBottom: 'solid 9px',
     borderBottomColor: theme.palette.secondary.main,
     fontWeight: 700,
   },
@@ -86,6 +86,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'absolute',
     left: 0,
     top: 0,
+  },
+  colorBox: {
+    marginLeft: '10px',
+    background: '#3f51b5',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+    paddingTop: '15px',
+    paddingBottom: '15px',
+    borderRadius: '20px',
+    color: 'white',
+    justifyContent: 'left',
   },
 }));
 
@@ -106,7 +117,7 @@ export default function ScrollableTabsButtonAuto() {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Box className={classes.topBarAvatar}>
-          <Box display="flex" style={{padding: '5px', }}>
+          <Box display="flex" style={{ padding: '5px' }}>
             <Avatar alt="joshua obannon" src={officeJosh} className={classes.large} />
             <Typography variant="h6" className={classes.appName}>Joshua O'bannon</Typography>
           </Box>
@@ -121,35 +132,44 @@ export default function ScrollableTabsButtonAuto() {
           aria-label="scrollable auto tabs"
         >
           <Tab component={Link} value="/" label="Home" to="/#" href="/#" {...a11yProps(0)} index={0} />
-          <Tab component={Link} value="/Project" label="Work" to="/Project" href="/Project#" {...a11yProps(2)} index={2} />
-          <Tab component={Link} value="/Resume" label="Past" to="/Resume#" href="/Resume#" {...a11yProps(3)} index={3} />
-          <Tab component={Link} value="/Site" label="Site" to="/Site#" href="/Site#" {...a11yProps(1)} index={1} />
+          <Tab component={Link} value="/Project" label="Work" to="/Project" href="/Project#" {...a11yProps(2)} index={1} />
+          <Tab component={Link} value="/Resume" label="Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} index={2} />
+          <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} />
+          <Tab component={Link} value="/Site" label="Site" to="/Site#" href="/Site#" {...a11yProps(1)} index={4} />
+
         </Tabs>
       </AppBar>
 
-      <Toolbar />
+      {/* fixes spacing issue on fixed for appBar - mixin would not correct */}
+      <Toolbar /> 
       <Grid container className={classes.toolbar}>
         <Grid item xs={12}>
-
           <Box component="div">
             <TabPanel value={currentTab} index="/Project">
               <Typography variant="h3" className={classes.subHeader}>
-                <Box component="span" className={classes.subHeaderText}>
-                  My Past Work...
+                <Box boxShadow={3} component="span" className={classes.colorBox}>
+                  Things I Have Made...
                 </Box>
               </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Resume">
               <Typography variant="h3" className={classes.subHeader}>
-                <Box component="span" className={classes.subHeaderText}>
+                <Box boxShadow={3} component="span" className={classes.colorBox}>
                   How I Got Here...
+                </Box>
+              </Typography>
+            </TabPanel>
+            <TabPanel value={currentTab} index="/Blog">
+              <Typography variant="h3" className={classes.subHeader}>
+                <Box boxShadow={3} component="span" className={classes.colorBox}>
+                  A Penny For Your...
                 </Box>
               </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Site">
               <Typography variant="h3" className={classes.subHeader}>
-                <Box component="span" className={classes.subHeaderText}>
-                  From The Ground Up
+                <Box boxShadow={3} component="span" className={classes.colorBox}>
+                  From The Ground Up...
                 </Box>
               </Typography>
             </TabPanel>
