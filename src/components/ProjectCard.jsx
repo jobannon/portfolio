@@ -33,6 +33,7 @@ export default function ProjectCard(props) {
     chips: {
       display: 'flex',
       justifyContent: 'center',
+      minHeight: '100px',
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(0.5),
@@ -108,21 +109,6 @@ export default function ProjectCard(props) {
                     {props.avatarLabel}
                   </Avatar>
               )}
-                action={(
-                  <IconButton aria-label="settings" onClick={handleVertClick}>
-                    {/* <MoreVertIcon />
-                    <Menu
-                      id="simple-menu"
-                      anchorEl={anchorEl}
-                      keepMounted
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}
-                    >
-                      <MenuItem onClick={handleClose}>Github</MenuItem>
-                      <MenuItem onClick={handleClose}>Flip!</MenuItem>
-                    </Menu> */}
-                  </IconButton>
-              )}
                 title={props.title}
                 subheader={props.subheader}
               />
@@ -192,16 +178,18 @@ export default function ProjectCard(props) {
                 <Typography variant="h6" style={{ marginBottom: '20px' }}>
                   Tech Stack
                 </Typography>
-                <Typography component="p" variant="body2" color="textSecondary">
-                  <div className={classes.chips}>{mappedStacksUsed}</div>
-                </Typography>
+                <Box component="div" style={{ minHeight: '160px' }}>
+                  <Typography component="p" variant="body2" color="textSecondary">
+                    <div className={classes.chips}>{mappedStacksUsed}</div>
+                  </Typography>
+                </Box>
                 <Typography variant="h6" style={{ marginBottom: '20px' }}>
                   Highlights
                 </Typography>
                 <Typography component="p" variant="body2" color="textSecondary">
                   <Box className={classes.chips}>{mappedHightLights}</Box>
                 </Typography>
-                <Box display="flex" style={{ justifyContent: 'center', marginTop: '15px' }}>
+                {/* <Box display="flex" style={{ justifyContent: 'center' }}>
                   <Button
                     variant="contained"
                     color="primary"
@@ -211,13 +199,23 @@ export default function ProjectCard(props) {
                   >
                     View Github
                   </Button>
-                </Box>
+                </Box> */}
                 <Typography component="p" variant="body2" color="textSecondary" />
                 {props.links && (
                 <Box style={{
                   position: 'absolute', left: '0', right: '0', marginLeft: 'auto', marginRight: 'auto', bottom: '30px', textAlign: 'center', paddingTop: '20px',
                 }}
                 >
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    href={props.gitHubLink}
+                    target="#"
+                    disabled={props.disableButtonGithub}
+                    style={{marginRight: '5px'}}
+                  >
+                    View Github
+                  </Button>
                   <Button
                     variant="outlined"
                     onClick={handleFlippedClick}

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Lottie from 'react-lottie';
 import AboutWhyIAmCarousel from './AboutWhyIAmCarousel';
-import heartData from '../lotties/heartData.json';
+import heartData from '../lotties/pulsingHeart.json';
 
 const defaultOptionsReturn = (nameOf) => ({
   loop: true,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '30px',
+    borderRadius: '25px',
     color: 'white',
   },
   headerText: {
@@ -66,6 +66,13 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
 
   },
+  paperRed: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 9px',
+    borderBottomColor: theme.palette.secondary.main,
+    lineHeight: 1.5,
+  },
 }));
 
 function AboutWhyIAm() {
@@ -83,25 +90,40 @@ function AboutWhyIAm() {
             </Box>
           </Typography>
           <Typography className={classes.paper} variant="h6">
-            <Box boxShadow={3} style={{padding: '1vh'}} component="span">
+            <Box boxShadow={3} style={{ padding: '1vh' }} component="span">
               [a programmer]
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs={12} className={classes.greenBackground} >
+        <Grid item xs={12} className={classes.greenBackground}>
+          <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
+            <Typography
+              className={classes.paperRed}
+              component="span"
+              variant="h3"
+            >
+              I fell in
+          <Box component="span" style={{display: 'inline-block', marginLeft: '10px'}}>
+          <Lottie
+            options={defaultOptionsReturn(heartData)}
+            height={50}
+            width={50}
+          /></Box>
+            </Typography>
+          </Box>
           <Typography
             className={classes.paper}
-            style={{marginBottom: '20px'}}
-            variant="h3"
+            style={{ marginBottom: '20px' }}
+            variant="h6"
           >
-            I fell in love with programming
-          </Typography>
+            [with programming]
+            </Typography>
           <AboutWhyIAmCarousel />
           <Button
             href="http://www.jobannon.com/project"
             variant="contained"
             color="primary"
-            style={{marginTop: '30px'}}
+            style={{ marginTop: '30px' }}
           >
             See My Work...
           </Button>

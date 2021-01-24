@@ -29,6 +29,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  paperRed: {
+    textAlign: 'center',
+    lineHeight: '1.5',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 9px',
+    borderBottomColor: theme.palette.secondary.main,
+  },
   paperLeft: {
     padding: theme.spacing(2),
     textAlign: 'Left',
@@ -61,21 +68,17 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '17px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '30px',
+    borderRadius: '25px',
     color: 'white',
   },
   greenColorBox: {
     background: '#85BAA1',
   },
-  greenColorBoxLink:{
+  greenColorBoxLink: {
     padding: '25px',
-    borderRadius: '30px',
+    borderRadius: '25px',
     color: 'white',
     alignText: 'center',
-  },
-  who: {
-    // background: '#c7c3da'
-    // height: '100vh',
   },
   buttonStyle: {
     fontSize: 15,
@@ -126,12 +129,15 @@ function AboutWhoIAm() {
             <img src={outdoorJosh} height="300px" alt="Outdoor Josh" style={{ borderRadius: '25px' }} />
           </Grid>
           <Grid item xs={12} style={{ maxWidth: '1000px' }} className={classes.greenBackground}>
-            <Typography
-              className={classes.paper}
-              variant="h3"
-            >
-              I am a fullstack developer
-            </Typography>
+            <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
+              <Typography
+                className={classes.paperRed}
+                component="span"
+                variant="h3"
+              >
+                I am a fullstack developer
+              </Typography>
+            </Box>
             <Typography
               className={classes.paperLeft}
               variant="h6"
@@ -145,12 +151,15 @@ function AboutWhoIAm() {
         </Grid>
         <Grid container justify="center">
           <Grid item xs={12} lg={6} style={{ marginTop: '60px' }}>
-            <Typography
-              className={classes.paper}
-              variant="h3"
-            >
-              I am a thoughtful developer
-            </Typography>
+            <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
+              <Typography
+                className={classes.paperRed}
+                component="span"
+                variant="h3"
+              >
+                I am a thoughtful developer
+              </Typography>
+            </Box>
             <Box>
               <Typography
                 className={classes.paper}
@@ -183,19 +192,22 @@ function AboutWhoIAm() {
             <Lottie
               animationData={thinkingDeveloperDataLight}
               options={defaultOptions}
-              height={400}
-              width={400}
+              height={320}
+              width={320}
             />
           </Box>
         </Grid>
       </Grid>
       <Grid container direction="column" justify="center" className={classes.greenBackground} spacing={3}>
-        <Typography
-          className={classes.paper}
-          variant="h3"
-        >
-          I am a pay-it-forward developer
-        </Typography>
+        <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <Typography
+            className={classes.paperRed}
+            component="span"
+            variant="h3"
+          >
+            I am a pay-it-forward developer
+          </Typography>
+        </Box>
         <Grid item xs={12} className={classes.paper}>
           <img src={turingFull} alt="Turing Logo" height="220px" />
         </Grid>

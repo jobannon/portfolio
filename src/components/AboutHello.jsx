@@ -32,27 +32,28 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   positionTextBox: {
-    [theme.breakpoints.up('xs', 'sm')]: {
-      textAlignLast: 'center',
+    display: 'flex',
+    [theme.breakpoints.down('xs', 'sm')]: {
+      justifyContent: 'center',
     },
-    [theme.breakpoints.up('md', 'lg')]: {
-      textAlignLast: 'left',
-    },
+    // [theme.breakpoints.up('md', 'lg')]: {
+    //   float: 'left',
+    // },
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
     color: theme.palette.text.secondary,
   },
-  
+
   fName: {
     marginLeft: '10px',
     background: '#3f51b5',
-    paddingLeft: '17px',
-    paddingRight: '17px',
+    paddingLeft: '20px',
+    paddingRight: '20px',
     paddingTop: '15px',
     paddingBottom: '15px',
-    borderRadius: '30px',
+    borderRadius: '25px',
     color: 'white',
     justifyContent: 'left',
   },
@@ -71,10 +72,10 @@ function AboutHello() {
       <div className={classes.root}>
         <Grid
           container
-          style={{ height: '100vh'}}
+          style={{ height: '100vh' }}
           alignItems="center"
           justify="center"
-          direction='row'
+          direction="row"
           variant="h1"
           spacing={1}
         >
@@ -90,21 +91,24 @@ function AboutHello() {
             </Box>
           </Grid>
           <Grid item lg={6} xs={12}>
-            <Grid container direction="row" justify='center' alignItems="center" className={classes.positionTextBox}>
-              <Grid item xs={12} >
-                <Typography
-                  className={classes.paper}
-                  variant="h2"
-                >
-                  I am
-                </Typography>
+            <Grid container direction="row" justify="center" alignItems="center" className={classes.positionTextBox}>
+              <Grid item xs={12}>
+                <Box component="div" className={classes.positionTextBox}>
+                  <Typography
+                    className={classes.paper}
+                    variant="h2"
+                  >
+                    I am
+                  </Typography>
+                </Box>
               </Grid>
               <Grid item xs={12}>
-                <Typography
-                  className={classes.paper}
-                  variant={getVariant()}
-                >
-                  {/* <Button variant="contained" color="primary"> */}
+                <Box component="div" className={classes.positionTextBox}>
+                  <Typography
+                    className={classes.paper}
+                    variant={getVariant()}
+                  >
+                    {/* <Button variant="contained" color="primary"> */}
                     <Box component="span" className={classes.fName} boxShadow={3}>
                       <TextLoop>
                         <Box component="span">Josh</Box>
@@ -115,8 +119,9 @@ function AboutHello() {
                         <Box component="span">Team Oriented</Box>
                       </TextLoop>
                     </Box>
-                  {/* </Button> */}
-                </Typography>
+                    {/* </Button> */}
+                  </Typography>
+                </Box>
               </Grid>
             </Grid>
           </Grid>
