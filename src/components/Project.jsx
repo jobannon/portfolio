@@ -14,11 +14,13 @@ import mapData from '../lotties/mapData.json';
 import ticTacToeData from '../lotties/TicTacToeData.json';
 import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
 import findSweepData from '../lotties/findSweepData.json';
+import pieData from '../lotties/pieData.json';
 import ProjectCard from './ProjectCard';
 
 function Project() {
   const useStyles = makeStyles((theme) => ({
     root: {
+      maxWidth: '1080px',
     },
     paper: {
       padding: theme.spacing(2),
@@ -28,6 +30,7 @@ function Project() {
     cardGroup: {
       marginTop: '5vh',
       margin: 'auto',
+      maxWidth: '1500px',
     },
     media: {
       height: 0,
@@ -97,7 +100,22 @@ function Project() {
             disableButtonGithub
             gitHubLink=""
             liveLink="https://codefordenver.org"
-            chipList=""
+          />
+        </Grid>
+        <Grid item>
+          <ProjectCard
+            avatarLabelAria="PyShop"
+            avatarLabel="PS"
+            title="PyShop"
+            subheader="Working"
+            stacksUsed={['Python', 'Django', 'React']}
+            highLights={['Reel still being developed...']}
+            animationData={pieData}
+            description="An e-commerce platform built on Pie-thon and Django"
+            disableButtonGithub
+            disableButtonLive
+            gitHubLink=""
+            liveLink=""
           />
         </Grid>
         <Grid item>
@@ -105,7 +123,7 @@ function Project() {
             avatarLabelAria="Movie SuperStar"
             avatarLabel="MSS"
             title="Movie SuperStar"
-            subheader="Latest"
+            subheader="Working"
             stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'CircleCI', 'AWS', 'memcachier']}
             highLights={['Use of Caching', 'Microservice']}
             animationData={movieReelData}
@@ -113,13 +131,12 @@ function Project() {
             gitHubLink="https://github.com/MovieSuperStar"
             liveLink="https://fe-movie-superstar-redux.herokuapp.com"
             chipHighlightList=" "
-            chipTechList=""
           />
         </Grid>
         <Grid item>
           <ProjectCard
             avatarLabelAria="Portfolio Site"
-            avatarLabel="PS"
+            avatarLabel="JO"
             title="Hi. I am Josh."
             subheader="Latest"
             stacksUsed={['React', 'NodeJS', 'MaterialUI', 'AWS']}
@@ -129,7 +146,6 @@ function Project() {
             gitHubLink="https://github.com/jobannon/portfolio"
             liveLink="http://www.jobannon.com"
             chipHighlightList=" "
-            chipTechList=" "
           />
         </Grid>
         <Grid item>
@@ -146,7 +162,6 @@ function Project() {
             disableButtonGithub
             gitHubLink="https://www.findsweeps.com"
             liveLink="https://www.findsweeps.com"
-            chipList=" "
           />
         </Grid>
         <Grid item>
@@ -161,7 +176,6 @@ function Project() {
             description="Rosetta is a language translation service using web scraping and machine learning"
             gitHubLink="https://github.com/rosetta-team"
             liveLink="https://rosetta-fe.herokuapp.com/"
-            chipList=" "
           />
         </Grid>
         <Grid item>
@@ -169,7 +183,7 @@ function Project() {
             avatarLabelAria="Upvote"
             avatarLabel="UV"
             title="Upvote"
-            subheader="Recent"
+            subheader="Historic Snapshot"
             stacksUsed={['JS', 'Sinatra', 'Ruby', 'Rails', 'jQuery', 'TravisCI', 'Shoulda Matchers', 'RSpec', 'Postgres']}
             highLights={['Microservice Architecture', '"Live" DOM monitoring using classic JS']}
             animationData={upvoteRocketAltData}
@@ -178,7 +192,6 @@ function Project() {
             description="Upvote is a interactive voting platform using micro-services"
             gitHubLink="https://github.com/jobannon/upvote_api"
             liveLink="https://upvote-ideas-ui.herokuapp.com"
-            chipList=" "
           />
         </Grid>
         <Grid item>
@@ -186,14 +199,13 @@ function Project() {
             avatarLabelAria="Sweater Weather"
             avatarLabel="SW"
             title="Sweater Weather"
-            subheader="Recent"
+            subheader="History Snapshot"
             stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres']}
             highLights={['API Design', 'Multiple API Endpoint Consumption', 'DarkSky API', 'Google API']}
             animationData={weatherData}
             description="Sweater Weather is an backend API that returns weather related data"
             gitHubLink="https://github.com/jobannon/sweater_weather"
             liveLink=""
-            chipList=" "
           />
         </Grid>
         <Grid item>
@@ -201,14 +213,13 @@ function Project() {
             avatarLabelAria="Coffee Town"
             avatarLabel="CT"
             title="Coffee Town"
-            subheader="Historic Snapshot-Waypoint"
+            subheader="Historic Snapshot"
             stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres', 'Factory Bot']}
             highLights={['100% Coverage (backend)', 'User Multitenancy', 'Authentication', 'Authorization', 'Session-Management']}
             animationData={dripCoffeeData}
             description="Coffee Town is a e-commerce platform selling everyone's favorite - coffee"
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
             liveLink="https://agile-brushlands-23238.herokuapp.com"
-            chipList=" "
           />
         </Grid>
         <Grid item>
@@ -218,14 +229,13 @@ function Project() {
             avatarLabelAria="Tic Tac Toe"
             avatarLabel="TTT"
             title="Tic Tac Toe"
-            subheader="Historic Snapshot-Waypoint"
+            subheader="Historic Snapshot"
             stacksUsed={['React']}
             highLights={['Remembering The Journey...', 'Joy of Coding and Creating']}
             animationData={ticTacToeData}
             description="Sentimentally, the start of my programmatic journey into software. Also, the perennial React beginners app."
             gitHubLink="https://github.com/jobannon/monster_shop_individual_coupon"
             liveLink="https://agile-brushlands-23238.herokuapp.com"
-            chipList=" "
           />
         </Grid>
       </Grid>
