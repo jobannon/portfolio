@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   cardMedia: {
-    width: 200,
+    width: '16vh'
   },
   cardHeaderUnderline: {
     borderBottomColor: theme.palette.secondary.light,
