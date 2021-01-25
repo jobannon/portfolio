@@ -14,7 +14,14 @@ import Grid from '@material-ui/core/Grid';
 import { getByDisplayValue } from '@testing-library/react';
 import { CssBaseline } from '@material-ui/core';
 import { SlowMotionVideoOutlined } from '@material-ui/icons';
-import OutdoorJosh from '../assets/outdoorJosh.jpg';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import BoxingIcon from '@material-ui/icons/SportsMma';
+import AddIcon from '@material-ui/icons/Add';
+import Icon from '@mdi/react';
+import {
+  mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
+} from '@mdi/js';
+
 import officeJosh from '../assets/joshprofile_circle.resized.png';
 
 function TabPanel(props) {
@@ -77,6 +84,10 @@ const useStyles = makeStyles((theme) => ({
     height: '50px',
     width: '50px',
   },
+  medium: {
+    height: '40px',
+    width: '40px',
+  },
   appName: {
     alignSelf: 'center',
     marginLeft: '10px',
@@ -97,6 +108,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     color: 'white',
     justifyContent: 'left',
+  },
+  underlineSubheader: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 4px',
+    borderBottomColor: theme.palette.secondary.main,
+    lineHeight: '1.5',
   },
 }));
 
@@ -141,35 +159,49 @@ export default function ScrollableTabsButtonAuto() {
       </AppBar>
 
       {/* fixes spacing issue on fixed for appBar - mixin would not correct */}
-      <Toolbar /> 
+      <Toolbar />
       <Grid container className={classes.toolbar}>
         <Grid item xs={12}>
           <Box component="div">
             <TabPanel value={currentTab} index="/Project">
-              <Typography variant="h3" className={classes.subHeader}>
+              <Typography variant="h4" className={classes.subHeader}>
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
-                  Things I Have Made...
+                  Made With
+                  <Box component="span" style={{ display: 'inline-block', marginLeft: '10px' }}>
+                    <FavoriteIcon style={{ verticalAlign: '-7px', fontSize: 38 }} />
+                  </Box>
                 </Box>
               </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Resume">
-              <Typography variant="h3" className={classes.subHeader}>
+              <Typography variant="h4" className={classes.subHeader}>
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
-                  How I Got Here...
+                  How I Got Here
+                  {' '}
+                  <Icon path={mdiShoePrint} title="Shoe print" size={2} style={{ verticalAlign: '-9px' }} />
                 </Box>
               </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Blog">
-              <Typography variant="h3" className={classes.subHeader}>
+              <Typography variant="h4" className={classes.subHeader}>
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
-                  A Penny For Your...
+                  A Penny For Your
+                  {' '}
+                  <Icon path={mdiThoughtBubbleOutline} title="Thought" size={2} style={{ verticalAlign: '-9px' }} />
                 </Box>
               </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Site">
-              <Typography variant="h3" className={classes.subHeader}>
+              <Typography variant="h4" className={classes.subHeader}>
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
-                  From The Ground Up...
+                  <Icon path={mdiChefHat} title="Thought" size={2} style={{ verticalAlign: '-9px' }} />
+                  {' '}
+                  Built From "Scratch"
+                </Box>
+              </Typography>
+              <Typography style={{ marginTop: '25px' }}>
+                <Box component="span" className={classes.underlineSubheader}>
+                  Or on the 1000's of source contributions making react and adjacent tech possible
                 </Box>
               </Typography>
             </TabPanel>
