@@ -69,3 +69,39 @@
   -o-animation: rotatingBack 15s linear infinite;
   animation: rotatingBack 15s linear infinite;
 }
+
+@-webkit-keyframes zoomIn /* Safari and Chrome */ {
+  from {
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+@keyframes zoomIn {
+  from {
+    -ms-transform: scale(0);
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+.zoomIn {
+  -webkit-animation: zoomIn 15s linear infinite;
+  -moz-animation: zoomIn 15s linear infinite;
+  -ms-animation: zoomIn 15s linear infinite;
+  -o-animation: zoomIn 15s linear infinite;
+  animation: zoomIn 15s linear infinite;
+}
