@@ -103,12 +103,13 @@ function AboutWhyIAm() {
               variant="h3"
             >
               I fell in
-          <Box component="span" style={{display: 'inline-block', marginLeft: '10px'}}>
-          <Lottie
-            options={defaultOptionsReturn(heartData)}
-            height={50}
-            width={50}
-          /></Box>
+              <Box component="span" style={{ display: 'inline-block', marginLeft: '10px' }}>
+                <Lottie
+                  options={defaultOptionsReturn(heartData)}
+                  height={50}
+                  width={50}
+                />
+              </Box>
             </Typography>
           </Box>
           <Typography
@@ -117,7 +118,7 @@ function AboutWhyIAm() {
             variant="h6"
           >
             [with programming]
-            </Typography>
+          </Typography>
           <AboutWhyIAmCarousel />
           <Button
             href="http://www.jobannon.com/project"

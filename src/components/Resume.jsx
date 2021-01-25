@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Document, Page, pdfjs, View,
 } from 'react-pdf';
+import { SizeMe } from 'react-sizeme';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core';
@@ -66,13 +67,8 @@ function Resume() {
         height: '65vh',
         width: '25vw',
       },
-      [theme.breakpoints.up('lg')]: {
-        display: 'flex',
-        margin: 'auto',
-        justify: 'center',
-        height: '75vh',
-        width: '50vw',
-      },
+    },
+    page: {
     },
   }));
   const classes = useStyles();
@@ -81,9 +77,8 @@ function Resume() {
 
   const competencies = ['CSS', 'HTML', 'RAILS', 'JS', 'AWS', 'SALESFORCE', 'TDD', 'MVC', 'OOP', 'PYTHON', 'RSPEC', 'API DESIGN', 'CI/CD', 'AGILE', 'TDD', 'REST', 'RUBY', 'DB', 'DESIGN MICRO-SERVICES', 'REACT'];
 
-  const competenciesChipped = competencies.map((term) => (<Chip label={term} variant='outlined' color='primary' style={{padding: '5px', margin: '3px'}}/>));
-  
-  
+  const competenciesChipped = competencies.map((term) => (<Chip label={term} variant="outlined" color="primary" style={{ padding: '5px', margin: '3px' }} />));
+
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -123,22 +118,27 @@ function Resume() {
             <img src={hastingsCollegeLogo} alt="Hastings College" height="200" />
           </Paper>
         </Grid>
-        <Grid item xs={12} style={{textAlign: 'center'}}>
-          <Typography variant='h6'>Competencies</Typography>
-          <Paper className={classes.paper} style={{maxWidth: '630px', margin: 'auto', padding: '15px'}}>
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <Typography variant="h6">Competencies</Typography>
+          <Paper className={classes.paper} style={{ maxWidth: '630px', margin: 'auto', padding: '15px' }}>
             {competenciesChipped}
           </Paper>
         </Grid>
-        {/* </Box> */}
       </Grid>
-      <Box style={{ display: 'flex', marginTop: '30px', justifyContent: 'center' }}>
-        <Document
-          file={currentResume}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-      </Box>
+      <Grid item xs={12} style={{ textAlign: 'center' }}>
+        <Box style={{ display: 'flex', marginTop: '30px', justifyContent: 'center'}}>
+          <SizeMe>
+            {({ size }) => (
+              <Document
+                file={currentResume}
+                onLoadSuccess={onDocumentLoadSuccess}
+              >
+                <Page pageNumber={pageNumber} width={size.width ? size.width : 1}/>
+              </Document>
+            )}
+          </SizeMe>
+        </Box>
+      </Grid>
       <Grid
         container
         direction="row"

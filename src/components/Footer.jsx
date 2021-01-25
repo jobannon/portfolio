@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Lottie from 'react-lottie';
 import Link from '@material-ui/core/Link';
+import { mdiCopyright } from '@mdi/js';
+import Icon from '@mdi/react';
 import linkedInLogo from '../lotties/linkedInLogo.json';
 import emailData from '../lotties/emailData.json';
 import githubCatColorLogoData from '../lotties/githubCatLogoColored.json';
@@ -19,6 +21,9 @@ function Footer() {
       // bottom: 0,
       // left: 0,
       // right: 0,
+    },
+    footerText: {
+      color: 'white',
     },
   }));
 
@@ -91,6 +96,24 @@ function Footer() {
                 width={56}
               />
             </Link>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box component="div" color='white' style={{textAlign:'center'}}>
+            ...looking for work that touches, moves, and inspires...
+          </Box>
+        </Grid> 
+        <Grid item xs={12}>
+          <Box component="div" color='white' style={{textAlign:'center'}}>
+            <Link color='white'>credits</Link>
+          </Box>
+        </Grid> 
+        <Grid item xs={12}>
+          <Box component="div">
+            <Icon path={mdiCopyright} title="Copyright" color="white" size={1} style={{ verticalAlign: '-6px' }} />
+            <Box component="span" className={classes.footerText}>
+              2020 Joshua O'Bannon
+            </Box>
           </Box>
         </Grid>
       </Grid>

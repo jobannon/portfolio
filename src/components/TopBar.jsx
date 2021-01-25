@@ -20,8 +20,8 @@ import AddIcon from '@material-ui/icons/Add';
 import Icon from '@mdi/react';
 import {
   mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
+  mdiCoffee,
 } from '@mdi/js';
-
 import officeJosh from '../assets/joshprofile_circle.resized.png';
 
 function TabPanel(props) {
@@ -172,6 +172,13 @@ export default function ScrollableTabsButtonAuto() {
                   </Box>
                 </Box>
               </Typography>
+              <Typography style={{ marginTop: '25px' }}>
+                <Box component="span" className={classes.underlineSubheader}>
+                  And lots of
+                  {' '}
+                  <Icon path={mdiCoffee} title="Coffee Maker" size={1} style={{ verticalAlign: '-6px' }} />
+                </Box>
+              </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Resume">
               <Typography variant="h4" className={classes.subHeader}>
@@ -181,6 +188,11 @@ export default function ScrollableTabsButtonAuto() {
                   <Icon path={mdiShoePrint} title="Shoe print" size={2} style={{ verticalAlign: '-9px' }} />
                 </Box>
               </Typography>
+              <Typography style={{ marginTop: '25px' }}>
+                <Box component="span" className={classes.underlineSubheader}>
+                  Abridged, obviously.
+                </Box>
+              </Typography>
             </TabPanel>
             <TabPanel value={currentTab} index="/Blog">
               <Typography variant="h4" className={classes.subHeader}>
@@ -188,6 +200,11 @@ export default function ScrollableTabsButtonAuto() {
                   A Penny For Your
                   {' '}
                   <Icon path={mdiThoughtBubbleOutline} title="Thought" size={2} style={{ verticalAlign: '-9px' }} />
+                </Box>
+              </Typography>
+              <Typography style={{ marginTop: '25px' }}>
+                <Box component="span" className={classes.underlineSubheader}>
+                  A dollar seemed too much...
                 </Box>
               </Typography>
             </TabPanel>
@@ -201,7 +218,11 @@ export default function ScrollableTabsButtonAuto() {
               </Typography>
               <Typography style={{ marginTop: '25px' }}>
                 <Box component="span" className={classes.underlineSubheader}>
-                  Or on the 1000's of source contributions making react and adjacent tech possible
+                  On 1000's of source contributions
+                </Box>
+                <br />
+                <Box component="span" className={classes.underlineSubheader}>
+                  Powering the web
                 </Box>
               </Typography>
             </TabPanel>
