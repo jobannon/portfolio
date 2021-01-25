@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs', 'sm')]: {
       justifyContent: 'center',
     },
-    // [theme.breakpoints.up('md', 'lg')]: {
-    //   float: 'left',
-    // },
   },
   paper: {
     padding: theme.spacing(2),
@@ -91,7 +88,7 @@ function AboutHello() {
             </Box>
           </Grid>
           <Grid item lg={6} xs={12}>
-            <Grid container direction="row" justify="center" alignItems="center" className={classes.positionTextBox}>
+            <Grid container direction="row" justify="center" alignItems="center"> 
               <Grid item xs={12}>
                 <Box component="div" className={classes.positionTextBox}>
                   <Typography
