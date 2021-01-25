@@ -51,7 +51,7 @@ function App() {
         <MuiThemeProvider theme={theme}>
           <Box id="main-content">
             <TopBar />
-            <Box style={{ marginTop: '75px' }}>
+            <Box style={{ marginTop: '5vh' }}>
               <Switch>
                 <Route path="/project">
                   <Project />
