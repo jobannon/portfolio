@@ -39,7 +39,7 @@ export default function Blog() {
 
         <Grid item xs={12}>
           <Typography>
-            Under construction - posts cen be found
+            Under construction - posts can be found
           </Typography>
           <Box component="div" style={{ display: 'flex', justifyContent: 'center' }}>
             <Button
