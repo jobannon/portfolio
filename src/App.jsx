@@ -28,6 +28,7 @@ import Test from './components/Test';
 import Footer from './components/Footer';
 import FloatingSnacker from './components/FloatingSnacker';
 import SpeedDial from './components/SpeedDial';
+import BlogPost from './components/BlogPost';
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -53,6 +54,9 @@ function App() {
             <TopBar />
             <Box style={{ marginTop: '5vh' }}>
               <Switch>
+                <Route path="/post">
+                  <BlogPost />
+                </Route>
                 <Route path="/project">
                   <Project />
                 </Route>
