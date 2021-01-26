@@ -1,0 +1,26 @@
+---
+layout: page
+title:  "On Empathy"
+date:   2020-01-15 18:27:46 -0600
+categories: portfolio
+---
+---
+_On Empathy_...
+
+Empathy is one program left unfinished in my life.  Its old haggard programming constantly demands refactoring.  As I have leaned into the weaker parts of my own development in this regard, I have realized the cost of a lack of empathy.  From less developed relationships to less engaged conversations with customers.  The practice of empathy pays dividends in life and work.  Empathy asks the question, where can I listen instead of speaking?  Where can I push for deeper understanding of a problem or context instead of pushing my own agenda.  The result is usually a better product, a better day worked, and a better shared culture/team.
+
+To understand what empathy is, we have to understand what empathy is not.  Empathy is not asking a bunch of questions and expecting immediate answers and results.  In roles past, the expectation was accountability for all you-facing actions at any given meeting.  There was a lack of understanding of the current business week or the current workload.  Empathetic meetings have a different tone.  They start with where you are.  In a past life, this looked like my manager pulling up the metrics for the week, and if particularly challenging, asking where help was needed and where the biggest backlog existed.  If the week was light, empathy asked -- how we could be more proactive in supporting neglected areas of the business.  
+
+Empathy in software must have a similar flavor.  It asks, where is the biggest customer need?  It pauses to study the problem to make the most effective next action.  It enters into the world of the user, the manager, and the colleague.  Often times, when we listen in this way, we get different answers than we are expecting.  When we are not blinded by our own context, we are left with the software feature, bug fix, or new layout that would really make the difference to our users.  Or perhaps, coming off a particularly challenging sprint and feature revision, empathy asks what the morale of the team is.  To ask, what could be done to keep the team fully alive and connected.  Perhaps a cool down period working on easy dev wins or perhaps tackling that next hot feature.
+
+Empathy requires we understand both the problem, the people working the problem, and the user who deals daily with the problem.  We can no longer expect to work in our metaphorical (or perhaps literal) basement software cubicles producing work that does not speak to something beyond ourselves.  We work in teams, _Collaboratively_.  For example, our feature set revision may impact the small dev team, but it also may also touch and affect financial reporting, marketing, and sales.  
+
+Why does the feature need to be built _this way_, with _this reporting tool_, implemented in _this manner?_  The answer may change drastically if you take the time to, for instance, enter the world of the financials person and hear their needs.  The result is a product which might ship on time and meet revenue expectations.  This possibility looms brightly against the reality of other projects, harpooned with delays as the software did not meet user/corporate acceptance testing.
+
+In my last role, I was responsible for training my replacement.  I had to place myself in their shoes and remember what it was like for me in the beginning.  What would they need to know first in this role?  What are the most difficult concepts to grasp?  I asked myself if there were any tools or reference guides needing development.  In this scenario, the more I could access the gift of empathy, the more I could enable their success (and paradoxically, my own, as trainer).
+
+Empathy enables us to navigate the metaphorically blood-stained halls of inter-office conflict as well.  Instead of being filled with resentment and callous, even if we disagree, we can still hear the other side.  For instance, in my past, getting items shipped on time, especially when they were not revenue generating was a point of irritation.  _Why couldn't shipping simply do their job and ship in a reasonable timeframe?_ . Empathy asked that I understand the world of materials and packaging.  For instance, they had a new POS, a new manager, and constraints around a labor union.  There were reasons why things were not moving as they could or even should.  
+
+The way to action was thru the phone.  Who knew that simply using the once novel technology of duplex communication over cooper strewn wires would be enough to get that package shipped?  Consistent monitoring and accountability eventually made the shipping team nimbler, but it was empathy that first allowed action. 
+
+I struggle on how to end this essay in a meaningful way.  Empathy is a learned pattern of thoughts, approaches, and behaviors that connect us to each other and to our own very humanity.  The world of tech is dominated by deadlines, old ways of being and thinking, larger than life egos (both corporate and individual) supported by the instant riches of technologies still in their infancy.  What we need in tech is long term thinking.  Part of that long-term thinking involves empathetic listening and acting.  When we inhabit someone else’s world, we can create technologies and teams that far exceed our initial scope.
