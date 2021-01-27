@@ -69,7 +69,7 @@ function AboutHello() {
       <div className={classes.root}>
         <Grid
           container
-          style={{ height: '100vh' }}
+          style={{ height: '92vh' }}
           alignItems="center"
           justify="center"
           direction="row"
@@ -126,8 +126,8 @@ function AboutHello() {
             <Lottie
               animationData={downCaret}
               options={defaultOptionsReturn(downCaret)}
-              height="25vh"
-              width="25vh"
+              height="20vh"
+              width="20vh"
             />
           </Grid>
         </Grid>
