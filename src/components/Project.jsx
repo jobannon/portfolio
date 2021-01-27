@@ -124,12 +124,12 @@ function Project() {
             avatarLabel="MSS"
             title="Movie SuperStar"
             subheader="Working"
-            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'CircleCI', 'AWS', 'memcachier']}
+            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'CircleCI', 'memcachier', 'Netlify', 'JAMStack']}
             highLights={['Use of Caching', 'Microservice']}
             animationData={movieReelData}
             description="Movie SuperStar is an exercise in API design and testing"
             gitHubLink="https://github.com/MovieSuperStar"
-            liveLink="https://fe-movie-superstar-redux.herokuapp.com"
+            liveLink="https://moviesuperstar.netlify.app/#/"
             chipHighlightList=" "
           />
         </Grid>
