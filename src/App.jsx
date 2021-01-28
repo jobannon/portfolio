@@ -16,7 +16,6 @@ import {
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import { ViewColumnTwoTone } from '@material-ui/icons';
 import TopBar from './components/TopBar';
 import TopBarAlt from './components/TopBarAlt';
 import About from './components/About';
@@ -28,7 +27,11 @@ import Test from './components/Test';
 import Footer from './components/Footer';
 import FloatingSnacker from './components/FloatingSnacker';
 import SpeedDial from './components/SpeedDial';
+import Post from './components/Post';
+import BlogHome from './components/BlogHome';
 import BlogPost from './components/BlogPost';
+
+require('dotenv').config();
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -52,31 +55,26 @@ function App() {
         <MuiThemeProvider theme={theme}>
           <Box id="main-content">
             <TopBar />
-            <Box style={{ marginTop: '5vh' }}>
-              <Switch>
-                <Route path="/post">
-                  <BlogPost />
-                </Route>
-                <Route path="/project">
-                  <Project />
-                </Route>
-                <Route path="/site">
-                  <Site />
-                </Route>
-                <Route path="/resume">
-                  <Resume />
-                </Route>
-                <Route path="/blog">
-                  <Blog />
-                </Route>
-                <Route path="/test">
-                  <Test />
-                </Route>
-                <Route exact path="/">
-                  <About />
-                </Route>
-              </Switch>
-            </Box>
+            <Switch>
+              <Route path="/correspondence/:slug">
+                <BlogPost />
+              </Route>
+              <Route path="/project">
+                <Project />
+              </Route>
+              <Route path="/site">
+                <Site />
+              </Route>
+              <Route path="/resume">
+                <Resume />
+              </Route>
+              <Route exact path="/">
+                <About />
+              </Route>
+              {/* <Route path="/p/:page">
+                <BlogHome />
+              </Route> */}
+            </Switch>
           </Box>
           <FloatingSnacker />
           <SpeedDial />
