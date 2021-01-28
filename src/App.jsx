@@ -28,7 +28,6 @@ import Footer from './components/Footer';
 import FloatingSnacker from './components/FloatingSnacker';
 import SpeedDial from './components/SpeedDial';
 import Post from './components/Post';
-import BlogHome from './components/BlogHome';
 import BlogPost from './components/BlogPost';
 
 require('dotenv').config();
