@@ -4,7 +4,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import SelectInput from '@material-ui/core/Select/SelectInput';
-import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid';
 
 export default function BlogPost() {
   const [loaded, setLoaded] = useState(false);
@@ -22,8 +22,8 @@ export default function BlogPost() {
 
   return (
     <>
-      <Grid container direction='row' justify='center' style={{marginTop: '40px'}}>
-        <Grid item xs={8}>
+      <Grid container direction="row" justify="center" style={{ marginTop: '40px' }}>
+        <Grid item xs={6}>
           {loaded
         && (
         <div>
