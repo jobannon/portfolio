@@ -30,3 +30,6 @@ yarn-error.log*
 !.elasticbeanstalk/*.global.yml
 secrets.env
 .env
+
+# Local Netlify folder
+.netlify
