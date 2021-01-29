@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import { withStyles } from '@material-ui/core/styles';
 import {
   Switch,
   Route,
@@ -64,5 +63,4 @@ function App() {
   );
 }
 
-// export default App
-export default withStyles(styles)(App);
+export default (App);
