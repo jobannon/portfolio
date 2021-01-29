@@ -17,13 +17,12 @@ import findSweepData from '../lotties/findSweepData.json';
 import pieData from '../lotties/pieData.json';
 import ProjectCard from './ProjectCard';
 
-
-const NormalizedGridContainer = withStyles(theme => ({
+const NormalizedGridContainer = withStyles((theme) => ({
   root: {
     width: '100%',
     margin: '0px',
-    padding: `${(theme.spacing/2) * 8}px`
-  }
+    padding: `${(theme.spacing / 2) * 8}px`,
+  },
 }))(Grid);
 
 function Project() {
