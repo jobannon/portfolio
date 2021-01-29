@@ -124,6 +124,11 @@ function Resume() {
             {competenciesChipped}
           </Paper>
         </Grid>
+        <Grid item xs={12} style={{textAlign: 'center', marginTop: '20px'}}>
+          <Link href="/currentResume.pdf" download>
+            <Button variant="outlined" color="secondary">Download PDF</Button>
+          </Link>
+        </Grid>
 
         <Grid item xs={12} style={{ textAlign: 'center' }}>
           <Box style={{ maxWidth: '1080px', margin: 'auto' }}>
@@ -139,18 +144,6 @@ function Resume() {
             </SizeMe>
           </Box>
         </Grid>
-      </NormalizedGridContainer>
-      <NormalizedGridContainer
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        style={{ marginTop: '15px' }}
-        spacing={3}
-      >
-        <Link href="/currentResume.pdf" download>
-          <Button variant="outlined" color="secondary">Download</Button>
-        </Link>
       </NormalizedGridContainer>
     </>
   );
