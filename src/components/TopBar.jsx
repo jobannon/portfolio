@@ -22,7 +22,9 @@ import {
   mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
   mdiCoffee,
 } from '@mdi/js';
+import Lottie from 'react-lottie';
 import officeJosh from '../assets/joshprofile_circle.resized.png';
+// import mountainsData from '../lotties/mountainsData.json';
 
 function TabPanel(props) {
   const {
@@ -89,14 +91,14 @@ const useStyles = makeStyles((theme) => ({
     width: '40px',
   },
   appName: {
-    alignSelf: 'center',
+    // alignSelf: 'center',
     marginLeft: '10px',
     marginRight: '10px',
+    display: 'absolute',
+    top: 0,
+    left: 0,
   },
   topBarAvatar: {
-    display: 'absolute',
-    left: 0,
-    top: 0,
   },
   colorBox: {
     marginLeft: '10px',
@@ -128,6 +130,24 @@ export default function ScrollableTabsButtonAuto() {
     setValue(newValue);
   });
 
+  const defaultOptionsReturn = (nameOf) => ({
+    loop: true,
+    autoplay: true,
+    animationData: nameOf,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  });
+  // const mountainsLottie = (
+  //   <Lottie
+  //     animationData={mountainsData}
+  //     options={defaultOptionsReturn(mountainsData)}
+  //     height={80}
+  //     width={240}
+  //     className={classes.hi}
+  //   />
+  // );
+
   const location = useLocation();
   const currentTab = location.pathname;
 
@@ -140,6 +160,7 @@ export default function ScrollableTabsButtonAuto() {
             <Typography variant="h6" className={classes.appName}>Joshua O'bannon</Typography>
           </Box>
         </Box>
+
         <Tabs
           value={currentTab}
           onChange={handleChange}
@@ -152,10 +173,13 @@ export default function ScrollableTabsButtonAuto() {
           <Tab component={Link} value="/" label="Home" to="/#" href="/#" {...a11yProps(0)} index={0} />
           <Tab component={Link} value="/Project" label="Work" to="/Project" href="/Project#" {...a11yProps(2)} index={1} />
           <Tab component={Link} value="/Resume" label="Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} index={2} />
-          <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} />
+          {/* <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} /> */}
           <Tab component={Link} value="/Site" label="Site" to="/Site#" href="/Site#" {...a11yProps(1)} index={4} />
 
         </Tabs>
+        {/* <Box style={{display: 'absolute', right: '0', top: '0'}}>
+            {mountainsLottie}
+          </Box> */}
       </AppBar>
 
       {/* fixes spacing issue on fixed for appBar - mixin would not correct */}
@@ -168,8 +192,8 @@ export default function ScrollableTabsButtonAuto() {
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
                   Made With
                   <Box component="span" style={{ display: 'inline-block', marginLeft: '10px' }}>
-                    <FavoriteIcon style={{ verticalAlign: '-7px', fontSize: 38 }} />
-                  </Box>
+                      <FavoriteIcon style={{ verticalAlign: '-7px', fontSize: 38 }} />
+                    </Box>
                 </Box>
               </Typography>
               <Typography style={{ marginTop: '25px' }}>
