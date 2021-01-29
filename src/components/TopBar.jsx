@@ -11,20 +11,13 @@ import { useLocation } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import { getByDisplayValue } from '@testing-library/react';
-import { CssBaseline } from '@material-ui/core';
-import { SlowMotionVideoOutlined } from '@material-ui/icons';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import BoxingIcon from '@material-ui/icons/SportsMma';
-import AddIcon from '@material-ui/icons/Add';
 import Icon from '@mdi/react';
 import {
   mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
   mdiCoffee,
 } from '@mdi/js';
-import Lottie from 'react-lottie';
-import officeJosh from '../assets/joshprofile_circle.resized.png';
-// import mountainsData from '../lotties/mountainsData.json';
+import officeJosh from '../assets/joshprofile_circle.resized.png'
 
 function TabPanel(props) {
   const {
@@ -82,16 +75,19 @@ const useStyles = makeStyles((theme) => ({
     borderBottomColor: theme.palette.secondary.main,
     fontWeight: 700,
   },
+  underlineSubheader: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 4px',
+    borderBottomColor: theme.palette.secondary.main,
+    lineHeight: '1.5',
+  },
   large: {
     height: '50px',
     width: '50px',
   },
-  medium: {
-    height: '40px',
-    width: '40px',
-  },
   appName: {
-    // alignSelf: 'center',
+    alignSelf: 'center',
     marginLeft: '10px',
     marginRight: '10px',
     display: 'absolute',
@@ -110,13 +106,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     color: 'white',
     justifyContent: 'left',
-  },
-  underlineSubheader: {
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    borderBottom: 'solid 4px',
-    borderBottomColor: theme.palette.secondary.main,
-    lineHeight: '1.5',
   },
 }));
 
@@ -138,15 +127,6 @@ export default function ScrollableTabsButtonAuto() {
       preserveAspectRatio: 'xMidYMid slice',
     },
   });
-  // const mountainsLottie = (
-  //   <Lottie
-  //     animationData={mountainsData}
-  //     options={defaultOptionsReturn(mountainsData)}
-  //     height={80}
-  //     width={240}
-  //     className={classes.hi}
-  //   />
-  // );
 
   const location = useLocation();
   const currentTab = location.pathname;
@@ -175,15 +155,12 @@ export default function ScrollableTabsButtonAuto() {
           <Tab component={Link} value="/Resume" label="Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} index={2} />
           {/* <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} /> */}
           <Tab component={Link} value="/Site" label="Site" to="/Site#" href="/Site#" {...a11yProps(1)} index={4} />
-
         </Tabs>
-        {/* <Box style={{display: 'absolute', right: '0', top: '0'}}>
-            {mountainsLottie}
-          </Box> */}
       </AppBar>
 
       {/* fixes spacing issue on fixed for appBar - mixin would not correct */}
       <Toolbar />
+
       <Grid container className={classes.toolbar}>
         <Grid item xs={12}>
           <Box component="div">
@@ -192,8 +169,8 @@ export default function ScrollableTabsButtonAuto() {
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
                   Made With
                   <Box component="span" style={{ display: 'inline-block', marginLeft: '10px' }}>
-                      <FavoriteIcon style={{ verticalAlign: '-7px', fontSize: 38 }} />
-                    </Box>
+                    <FavoriteIcon style={{ verticalAlign: '-7px', fontSize: 38 }} />
+                  </Box>
                 </Box>
               </Typography>
               <Typography style={{ marginTop: '25px' }}>
