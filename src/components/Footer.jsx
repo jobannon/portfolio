@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { withStyles, makeStyles } from '@material-ui/core';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -10,6 +10,14 @@ import linkedInLogo from '../lotties/linkedInLogo.json';
 import emailData from '../lotties/emailData.json';
 import githubCatColorLogoData from '../lotties/githubCatLogoColored.json';
 import calendarData from '../lotties/calendarData.json';
+
+const NormalizedGridContainer = withStyles(theme => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing/2) * 8}px`
+  }
+}))(Grid);
 
 function Footer() {
   const useStyles = makeStyles((theme) => ({
@@ -38,7 +46,7 @@ function Footer() {
   const classes = useStyles();
   return (
     <>
-      <Grid
+      <NormalizedGridContainer
         container
         direction="row"
         justify="center"
@@ -116,7 +124,7 @@ function Footer() {
             </Box>
           </Box>
         </Grid>
-      </Grid>
+      </NormalizedGridContainer>
     </>
   );
 }

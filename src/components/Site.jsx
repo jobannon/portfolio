@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -66,35 +66,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// bug in MUI- see https://github.com/mui-org/material-ui/issues/7466
+const NormalizedGridContainer = withStyles(theme => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing/2) * 8}px`
+  }
+}))(Grid)
+
 export default function CustomizedTimeline() {
   const classes = useStyles();
 
   return (
     <>
       <CssBaseline />
-      <Grid
+      <NormalizedGridContainer
         container
-        xs={12}
         spacing={3}
         direction="row"
         justify="center"
         alignItems="center"
         style={{ marginTop: '30px' }}
-      >
-        {/* <Grid item xs={12} className={classes.headerText}>
-          <Typography variant="h1">
-            <Box component="span" className={classes.colorBox}>
-              Built With...
-            </Box>
-          </Typography>
-        </Grid> */}
-      </Grid>
-      <Grid
-        container
-        spacing={3}
-        direction="row"
-        justify="center"
-        alignItems="center"
       >
         <Grid item>
           <Paper elevation={3} className={classes.paperCard}>
@@ -129,8 +122,8 @@ export default function CustomizedTimeline() {
             <Typography color="textSecondary">Components from Google!</Typography>
           </Paper>
         </Grid>
-      </Grid>
-      <Grid
+      </NormalizedGridContainer>
+      <NormalizedGridContainer
         container
         direction="row"
         xs={12}
@@ -175,7 +168,6 @@ export default function CustomizedTimeline() {
                       height={40}
                       width={40}
                     />
-
                   </TimelineDot>
                   <TimelineConnector />
                 </TimelineSeparator>
@@ -232,7 +224,7 @@ export default function CustomizedTimeline() {
             </Timeline>
           </Paper>
         </Grid>
-      </Grid>
+      </NormalizedGridContainer>
     </>
   );
 }

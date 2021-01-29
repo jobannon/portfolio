@@ -121,7 +121,7 @@ function AboutWhyIAm() {
           </Typography>
           <AboutWhyIAmCarousel />
           <Button
-            href="http://www.jobannon.com/project"
+            href="http://www.jobannon.com/Project#"
             variant="contained"
             color="primary"
             style={{ marginTop: '30px' }}

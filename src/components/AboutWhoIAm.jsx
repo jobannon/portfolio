@@ -3,13 +3,22 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
 import Button from '@material-ui/core/Button';
 import outdoorJosh from '../assets/outdoorJosh.jpg';
 import thinkingDeveloperDataLight from '../assets/thinkingDeveloperDataLight.json';
 import turingFull from '../assets/turingFull.png';
 import codeForDenver from '../assets/codeForDenver2.png';
+
+// bug in MUI- see https://github.com/mui-org/material-ui/issues/7466
+const NormalizedGridContainer = withStyles(theme => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing/2) * 8}px`
+  }
+}))(Grid);
 
 const defaultOptions = {
   loop: true,
@@ -116,7 +125,7 @@ function AboutWhoIAm() {
   const classes = useStyles();
   return (
     <>
-      <Grid container direction="row" className={classes.who}>
+      <NormalizedGridContainer container direction="row" className={classes.who}>
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
             <Box boxShadow={3} component="span" className={classes.colorBox}>
@@ -124,7 +133,7 @@ function AboutWhoIAm() {
             </Box>
           </Typography>
         </Grid>
-        <Grid container direction="row" justify="center" className={classes.greenBackground}>
+        <NormalizedGridContainer container direction="row" justify="center" className={classes.greenBackground}>
           <Grid item xs={12} style={{ textAlign: 'center' }}>
             <img src={outdoorJosh} height="300px" alt="Outdoor Josh" style={{ borderRadius: '25px' }} />
           </Grid>
@@ -148,8 +157,8 @@ function AboutWhoIAm() {
 
             </Typography>
           </Grid>
-        </Grid>
-        <Grid container justify="center">
+        </NormalizedGridContainer>
+        <NormalizedGridContainer container justify="center">
           <Grid item xs={12} lg={6} style={{ marginTop: '60px' }}>
             <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
               <Typography
@@ -186,7 +195,7 @@ function AboutWhoIAm() {
               </Typography>
             </Box>
           </Grid>
-        </Grid>
+        </NormalizedGridContainer>
         <Grid item xs={12}>
           <Box style={{ marginTop: '40px', marginBottom: '80px' }}>
             <Lottie
@@ -197,8 +206,8 @@ function AboutWhoIAm() {
             />
           </Box>
         </Grid>
-      </Grid>
-      <Grid container direction="column" justify="center" className={classes.greenBackground} spacing={3}>
+      </NormalizedGridContainer>
+      <NormalizedGridContainer container direction="column" justify="center" className={classes.greenBackground} spacing={3}>
         <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
           <Typography
             className={classes.paperRed}
@@ -243,7 +252,7 @@ function AboutWhoIAm() {
           </Box>
         </Grid>
 
-      </Grid>
+      </NormalizedGridContainer>
 
     </>
   );
