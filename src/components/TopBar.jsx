@@ -17,7 +17,7 @@ import {
   mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
   mdiCoffee,
 } from '@mdi/js';
-import officeJosh from '../assets/joshprofile_circle.resized.png'
+import officeJosh from '../assets/joshprofile_circle.resized.png';
 
 function TabPanel(props) {
   const {
