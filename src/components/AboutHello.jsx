@@ -10,12 +10,12 @@ import hiJoshData from '../assets/hiJosh.json';
 import downCaret from '../assets/downCaret.json';
 
 // bug in MUI- see https://github.com/mui-org/material-ui/issues/7466
-const NormalizedGridContainer = withStyles(theme => ({
+const NormalizedGridContainer = withStyles((theme) => ({
   root: {
     width: '100%',
     margin: '0px',
-    padding: `${(theme.spacing/2) * 8}px`
-  }
+    padding: `${(theme.spacing / 2) * 8}px`,
+  },
 }))(Grid);
 
 const defaultOptionsReturn = (nameOf) => ({
