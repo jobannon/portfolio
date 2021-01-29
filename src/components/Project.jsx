@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { CssBaseline } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
@@ -16,6 +16,14 @@ import upvoteRocketAltData from '../lotties/upvoteRocketAltData.json';
 import findSweepData from '../lotties/findSweepData.json';
 import pieData from '../lotties/pieData.json';
 import ProjectCard from './ProjectCard';
+
+const NormalizedGridContainer = withStyles((theme) => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing / 2) * 8}px`,
+  },
+}))(Grid);
 
 function Project() {
   const useStyles = makeStyles((theme) => ({
@@ -79,14 +87,7 @@ function Project() {
   return (
     <>
       <CssBaseline />
-      <Grid container className={classes.cardGroup} direction="row" justify="center" alignItems="center" spacing={8} xs={12}>
-        {/* <Grid item xs={12} className={classes.headerText}>
-          <Typography className={classes.paper} variant="h1">
-            <Box component="span" className={classes.colorBox}>
-              Work
-            </Box>
-          </Typography>
-        </Grid> */}
+      <NormalizedGridContainer container className={classes.cardGroup} direction="row" justify="center" alignItems="center" spacing={8} xs={12}>
         <Grid item>
           <ProjectCard
             avatarLabelAria="Denver Poverty Map"
@@ -140,7 +141,7 @@ function Project() {
             title="Hi. I am Josh."
             subheader="Latest"
             stacksUsed={['React', 'NodeJS', 'MaterialUI', 'AWS']}
-            highLights={['Professional Design', 'Interactive Storytelling']}
+            highLights={['Professional Design', 'Interactive Storytelling', 'Responsive']}
             animationData={websiteData}
             description="This portfolio site.  Built to show personality and interactivity."
             gitHubLink="https://github.com/jobannon/portfolio"
@@ -171,7 +172,7 @@ function Project() {
             title="Rosetta"
             subheader="Recent"
             stacksUsed={['React', 'Sass', 'GraphQL', 'Apollo', 'Python', 'BeautifulSoup', 'SpaCy', 'Redux', 'JS', 'Apollo', 'pytest', 'jest', 'CircleCI']}
-            highLights={['Machine Learning', 'Webscrapping']}
+            highLights={['Machine Learning', 'Webscrapping', 'NLP']}
             animationData={codeGearsData}
             description="Rosetta is a language translation service using web scraping and machine learning"
             gitHubLink="https://github.com/rosetta-team"
@@ -238,7 +239,7 @@ function Project() {
             liveLink="https://agile-brushlands-23238.herokuapp.com"
           />
         </Grid>
-      </Grid>
+      </NormalizedGridContainer>
     </>
   );
 }

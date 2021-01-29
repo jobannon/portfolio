@@ -1,13 +1,22 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Lottie from 'react-lottie';
 import TextLoop from 'react-text-loop';
 import Button from '@material-ui/core/Button';
 import hiJoshData from '../assets/hiJosh.json';
 import downCaret from '../assets/downCaret.json';
+
+// bug in MUI- see https://github.com/mui-org/material-ui/issues/7466
+const NormalizedGridContainer = withStyles((theme) => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing / 2) * 8}px`,
+  },
+}))(Grid);
 
 const defaultOptionsReturn = (nameOf) => ({
   loop: true,
@@ -67,7 +76,7 @@ function AboutHello() {
   return (
     <>
       <div className={classes.root}>
-        <Grid
+        <NormalizedGridContainer
           container
           style={{ height: '92vh' }}
           alignItems="center"
@@ -88,7 +97,12 @@ function AboutHello() {
             </Box>
           </Grid>
           <Grid item lg={6} xs={12}>
-            <Grid container direction="row" justify="center" alignItems="center"> 
+            <NormalizedGridContainer
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
               <Grid item xs={12}>
                 <Box component="div" className={classes.positionTextBox}>
                   <Typography
@@ -120,7 +134,7 @@ function AboutHello() {
                   </Typography>
                 </Box>
               </Grid>
-            </Grid>
+            </NormalizedGridContainer>
           </Grid>
           <Grid item xs={12}>
             <Lottie
@@ -130,7 +144,7 @@ function AboutHello() {
               width="20vh"
             />
           </Grid>
-        </Grid>
+        </NormalizedGridContainer>
       </div>
     </>
   );

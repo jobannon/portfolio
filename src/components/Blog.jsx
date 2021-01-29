@@ -5,25 +5,19 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Lottie from 'react-lottie';
+import Typography from '@material-ui/core/Typography';
 import FeaturedPost from './FeaturedPost';
 import jobSearch from '../assets/jobSearch.jpg';
 import jobPhoto from '../assets/jobPhoto.jpg';
 import dogPartnersPhoto from '../assets/dogPartners.jpg';
 import seekingHumanKindPhoto from '../assets/seekingKindnessPhoto.jpg';
 import dryerPhoto from '../assets/dryerPhoto.jpg';
-import markedPost from '../posts/2020-01-15-On The Job Search.md';
-import BlogPost from './BlogPost';
-import Typography from '@material-ui/core/Typography'
+// import markedPost from '../posts/2020-01-15-On The Job Search.md';
+import BlogPost from './Post';
 
 import constructionData from '../lotties/constructionData.json';
 
 export default function Blog() {
-  const withLink = (href, mdData) => <Link href={href} target="#" style={{ display: 'flex' }}><BlogPost markedPost={mdData} /></Link>;
-  const goToPost = (postData) => {
-    <Link to="/post">
-      <BlogPost markedPost={postData} />
-    </Link>;
-  };
   const defaultOptionsReturn = (nameOf) => ({
     loop: true,
     autoplay: true,

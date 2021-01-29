@@ -70,7 +70,6 @@ export default function ProjectCard(props) {
     },
   });
 
-  // const {avatarLabel, } = props
   const { animationData, stacksUsed, highLights } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -189,17 +188,6 @@ export default function ProjectCard(props) {
                 <Typography component="p" variant="body2" color="textSecondary">
                   <Box className={classes.chips}>{mappedHightLights}</Box>
                 </Typography>
-                {/* <Box display="flex" style={{ justifyContent: 'center' }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    href={props.gitHubLink}
-                    target="#"
-                    disabled={props.disableButtonGithub}
-                  >
-                    View Github
-                  </Button>
-                </Box> */}
                 <Typography component="p" variant="body2" color="textSecondary" />
                 {props.links && (
                 <Box style={{
@@ -212,7 +200,7 @@ export default function ProjectCard(props) {
                     href={props.gitHubLink}
                     target="#"
                     disabled={props.disableButtonGithub}
-                    style={{marginRight: '5px'}}
+                    style={{ marginRight: '5px' }}
                   >
                     View Github
                   </Button>

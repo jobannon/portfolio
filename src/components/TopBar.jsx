@@ -11,12 +11,7 @@ import { useLocation } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import { getByDisplayValue } from '@testing-library/react';
-import { CssBaseline } from '@material-ui/core';
-import { SlowMotionVideoOutlined } from '@material-ui/icons';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import BoxingIcon from '@material-ui/icons/SportsMma';
-import AddIcon from '@material-ui/icons/Add';
 import Icon from '@mdi/react';
 import {
   mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
@@ -80,23 +75,26 @@ const useStyles = makeStyles((theme) => ({
     borderBottomColor: theme.palette.secondary.main,
     fontWeight: 700,
   },
+  underlineSubheader: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 4px',
+    borderBottomColor: theme.palette.secondary.main,
+    lineHeight: '1.5',
+  },
   large: {
     height: '50px',
     width: '50px',
-  },
-  medium: {
-    height: '40px',
-    width: '40px',
   },
   appName: {
     alignSelf: 'center',
     marginLeft: '10px',
     marginRight: '10px',
+    display: 'absolute',
+    top: 0,
+    left: 0,
   },
   topBarAvatar: {
-    display: 'absolute',
-    left: 0,
-    top: 0,
   },
   colorBox: {
     marginLeft: '10px',
@@ -109,13 +107,6 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     justifyContent: 'left',
   },
-  underlineSubheader: {
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    borderBottom: 'solid 4px',
-    borderBottomColor: theme.palette.secondary.main,
-    lineHeight: '1.5',
-  },
 }));
 
 export default function ScrollableTabsButtonAuto() {
@@ -126,6 +117,15 @@ export default function ScrollableTabsButtonAuto() {
   const handleChange = useCallback((e, newValue) => {
     // debugger
     setValue(newValue);
+  });
+
+  const defaultOptionsReturn = (nameOf) => ({
+    loop: true,
+    autoplay: true,
+    animationData: nameOf,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
   });
 
   const location = useLocation();
@@ -140,6 +140,7 @@ export default function ScrollableTabsButtonAuto() {
             <Typography variant="h6" className={classes.appName}>Joshua O'bannon</Typography>
           </Box>
         </Box>
+
         <Tabs
           value={currentTab}
           onChange={handleChange}
@@ -152,14 +153,14 @@ export default function ScrollableTabsButtonAuto() {
           <Tab component={Link} value="/" label="Home" to="/#" href="/#" {...a11yProps(0)} index={0} />
           <Tab component={Link} value="/Project" label="Work" to="/Project" href="/Project#" {...a11yProps(2)} index={1} />
           <Tab component={Link} value="/Resume" label="Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} index={2} />
-          <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} />
+          {/* <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} /> */}
           <Tab component={Link} value="/Site" label="Site" to="/Site#" href="/Site#" {...a11yProps(1)} index={4} />
-
         </Tabs>
       </AppBar>
 
       {/* fixes spacing issue on fixed for appBar - mixin would not correct */}
       <Toolbar />
+
       <Grid container className={classes.toolbar}>
         <Grid item xs={12}>
           <Box component="div">

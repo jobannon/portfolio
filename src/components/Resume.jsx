@@ -5,7 +5,7 @@ import {
 import { SizeMe } from 'react-sizeme';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
@@ -18,6 +18,14 @@ import hastingsCollegeLogo from '../assets/hastingsCollegeLogo.png';
 import currentResume from '../assets/currentResume.pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+const NormalizedGridContainer = withStyles((theme) => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing / 2) * 8}px`,
+  },
+}))(Grid);
 
 // credentials
 function Resume() {
@@ -85,7 +93,7 @@ function Resume() {
   return (
     <>
       <CssBaseline />
-      <Grid
+      <NormalizedGridContainer
         container
         direction="row"
         justify="center"
@@ -93,15 +101,7 @@ function Resume() {
         style={{ marginTop: '15px', marginLeft: 'auto', marginRight: 'auto' }}
         spacing={3}
       >
-        {/* <Grid item xs={12} className={classes.headerText}>
-          <Typography className={classes.paper} variant="h1">
-            <Box component="span" className={classes.colorBox}>
-              Experience
-            </Box>
-          </Typography>
-        </Grid> */}
         <Grid item>
-          {/* <Box style={{ display: 'flex', marginTop: '20px' }}> */}
           <Paper className={classes.badge}>
             <img src={awsCloudBadge} alt="AWS Cloud Certified" height="200" />
             {' '}
@@ -124,33 +124,27 @@ function Resume() {
             {competenciesChipped}
           </Paper>
         </Grid>
-      </Grid>
-      <Grid item xs={12} style={{ textAlign: 'center' }}>
-        <Box style={{ display: 'flex', marginTop: '30px', justifyContent: 'center'}}>
-          <SizeMe>
-            {({ size }) => (
-              <Document
-                file={currentResume}
-                onLoadSuccess={onDocumentLoadSuccess}
-              >
-                <Page pageNumber={pageNumber} width={size.width ? size.width : 1}/>
-              </Document>
-            )}
-          </SizeMe>
-        </Box>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        style={{ marginTop: '15px' }}
-        spacing={3}
-      >
-        <Link href="/currentResume.pdf" download>
-          <Button variant="outlined" color="secondary">Download</Button>
-        </Link>
-      </Grid>
+        <Grid item xs={12} style={{textAlign: 'center', marginTop: '20px'}}>
+          <Link href="/currentResume.pdf" download>
+            <Button variant="outlined" color="secondary">Download PDF</Button>
+          </Link>
+        </Grid>
+
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <Box style={{ maxWidth: '1080px', margin: 'auto' }}>
+            <SizeMe>
+              {({ size }) => (
+                <Document
+                  file={currentResume}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page pageNumber={pageNumber} width={size.width ? size.width : 1} />
+                </Document>
+              )}
+            </SizeMe>
+          </Box>
+        </Grid>
+      </NormalizedGridContainer>
     </>
   );
 }
