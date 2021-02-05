@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import {
+  CssBaseline, Paper, Grid, Button, Box, Chip, Link, Typography,
+  makeStyles, withStyles,
+} from '@material-ui/core';
+import {
   Document, Page, pdfjs, View,
 } from 'react-pdf';
 import { SizeMe } from 'react-sizeme';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
-import { makeStyles, withStyles } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-import Chip from '@material-ui/core/Chip';
-import Link from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
 import turingFull from '../assets/turingFull.png';
 import awsCloudBadge from '../assets/awsCloudBadge.png';
 import hastingsCollegeLogo from '../assets/hastingsCollegeLogo.png';
@@ -27,23 +22,12 @@ const NormalizedGridContainer = withStyles((theme) => ({
   },
 }))(Grid);
 
-// credentials
 function Resume() {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
-    colorBox: {
-      marginLeft: '10px',
-      background: '#3f51b5',
-      paddingLeft: '17px',
-      paddingRight: '17px',
-      paddingTop: '15px',
-      paddingBottom: '15px',
-      borderRadius: '50px',
-      color: 'white',
-    },
-    badge: {
+    badgeBox: {
       marginLeft: '10px',
       marginRight: '10px',
       padding: theme.spacing(2),
@@ -51,41 +35,16 @@ function Resume() {
       minWidth: '220px',
       textAlign: 'center',
     },
-    headerText: {
-      marginBottom: '100px',
-      textAlign: 'center',
-    },
-    credFormat: {
-      [theme.breakpoints.up('sm')]: {
-        display: 'flex',
-        margin: 'auto',
-        justify: 'center',
-
-      },
-    },
-    resumeFormat: {
-      [theme.breakpoints.down('sm')]: {
-        height: '80vh',
-        width: '80vw',
-      },
-      [theme.breakpoints.up('lg')]: {
-        display: 'flex',
-        margin: 'auto',
-        justify: 'center',
-        height: '65vh',
-        width: '25vw',
-      },
-    },
-    page: {
-    },
   }));
   const classes = useStyles();
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
   const competencies = ['CSS', 'HTML', 'RAILS', 'JS', 'AWS', 'SALESFORCE', 'TDD', 'MVC', 'OOP', 'PYTHON', 'RSPEC', 'API DESIGN', 'CI/CD', 'AGILE', 'TDD', 'REST', 'RUBY', 'DB', 'DESIGN MICRO-SERVICES', 'REACT'];
+  const softSkills = ['Six Sigma Familiar', 'Lean', 'Customer Triage', 'Account Management', 'Customer Service', 'Proactive Communication', 'Effective Followup'];
 
   const competenciesChipped = competencies.map((term) => (<Chip label={term} variant="outlined" color="primary" style={{ padding: '5px', margin: '3px' }} />));
+  const softSkillsChipped = softSkills.map((term) => (<Chip label={term} variant="outlined" color="primary" style={{ padding: '5px', margin: '3px' }} />));
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -102,29 +61,35 @@ function Resume() {
         spacing={3}
       >
         <Grid item>
-          <Paper className={classes.badge}>
+          <Paper className={classes.badgeBox}>
             <img src={awsCloudBadge} alt="AWS Cloud Certified" height="200" />
             {' '}
           </Paper>
         </Grid>
         <Grid item>
-          <Paper className={classes.badge}>
+          <Paper className={classes.badgeBox}>
             <img src={turingFull} alt="Turing Alumni" height="200" />
             {' '}
           </Paper>
         </Grid>
         <Grid item>
-          <Paper className={classes.badge}>
+          <Paper className={classes.badgeBox}>
             <img src={hastingsCollegeLogo} alt="Hastings College" height="200" />
+          </Paper>
+        </Grid>
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <Typography variant="h6">Technical Skillsets</Typography>
+          <Paper className={classes.paper} style={{ maxWidth: '630px', margin: 'auto', padding: '15px' }}>
+            {competenciesChipped}
           </Paper>
         </Grid>
         <Grid item xs={12} style={{ textAlign: 'center' }}>
           <Typography variant="h6">Competencies</Typography>
           <Paper className={classes.paper} style={{ maxWidth: '630px', margin: 'auto', padding: '15px' }}>
-            {competenciesChipped}
+            {softSkillsChipped}
           </Paper>
         </Grid>
-        <Grid item xs={12} style={{textAlign: 'center', marginTop: '20px'}}>
+        <Grid item xs={12} style={{ textAlign: 'center', marginTop: '20px' }}>
           <Link href="/currentResume.pdf" download>
             <Button variant="outlined" color="secondary">Download PDF</Button>
           </Link>
