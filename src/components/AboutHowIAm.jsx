@@ -1,16 +1,11 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Chip from '@material-ui/core/Chip';
-import GitHubCalendar from 'react-github-calendar';
-import Paper from '@material-ui/core/Paper';
-import codeSignalLogo from '../assets/codeSignalLogo.png';
+import {
+  Button, Chip, Box, Grid, Typography, makeStyles,
+} from '@material-ui/core';
 import githubLogo from '../assets/GitHub-Mark-120px-plus.png';
+import codeSignalLogo from '../assets/codeSignalLogo.png';
 import IssueScroller from './IssueScoller';
-import issuesScreenAlt from '../assets/issuesScreenAlt.png';
+import issuesScreenShot from '../assets/issuesScreenAlt.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  colorBox: {
+  headerText: {
+    marginTop: '100px',
+    marginBottom: '100px',
+  },
+  headerColorBox: {
     marginLeft: '10px',
     background: '#3f51b5',
     paddingLeft: '17px',
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '25px',
     color: 'white',
   },
-  paperRed: {
+  underlineSubheaderRed: {
     textAlign: 'center',
     color: theme.palette.text.secondary,
     borderBottom: 'solid 9px',
@@ -44,16 +43,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 15,
     color: theme.palette.primary.light,
   },
-  how: {
-    // height: '100vh',
-  },
-  headerText: {
-    marginTop: '100px',
-    marginBottom: '100px',
-  },
   greenBackground: {
     background: '#CEEDDB',
-    // borderRadius: '25px',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '55px',
@@ -66,12 +57,6 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '10px',
     paddingTop: '100px',
     paddingBottom: '100px',
-  },
-  innerHeader: {
-    textAlign: 'left',
-  },
-  innerText: {
-    paddingRight: '250px',
   },
   issuesScreenshot: {
     [theme.breakpoints.up('xs', 'sm', 'md')]: {
@@ -93,7 +78,7 @@ function AboutHowIAm() {
         <Grid container direction="row">
           <Grid item xs={12} className={classes.headerText}>
             <Typography className={classes.paper} variant="h1">
-              <Box boxShadow={3} component="span" className={classes.colorBox}>
+              <Box boxShadow={3} component="span" className={classes.HeaderBox}>
                 How I am
               </Box>
             </Typography>
@@ -110,7 +95,7 @@ function AboutHowIAm() {
           >
             <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
               <Typography
-                className={classes.paperRed}
+                className={classes.underlineSubheaderRed}
                 component="span"
                 variant="h3"
               >
@@ -124,7 +109,7 @@ function AboutHowIAm() {
               For example, I am continuously refactoring past projects and implementing new features
               <Grid container direction="column">
                 <Grid item>
-                  <img src={issuesScreenAlt} alt="Issues Screenshoot" className={classes.issuesScreenshot} />
+                  <img src={issuesScreenShot} alt="Issues Screenshoot" className={classes.issuesScreenshot} />
                 </Grid>
               </Grid>
             </Typography>
@@ -151,7 +136,7 @@ function AboutHowIAm() {
           <Grid item xs={12}>
             <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
               <Typography
-                className={classes.paperRed}
+                className={classes.underlineSubheaderRed}
                 component="span"
                 variant="h3"
               >
@@ -180,14 +165,11 @@ function AboutHowIAm() {
               Github Profile
             </Button>
           </Grid>
+          <Grid item xs={12} style={{ marginTop: '25px' }}>
+            <Chip label="Live" color="secondary" />
+          </Grid>
           <Grid item xs={12}>
-            <Box className={classes.bordered}>
-              <Chip label="Live" color="secondary" />
-              <GitHubCalendar
-                username="jobannon"
-                blockSize={15}
-              />
-            </Box>
+            <img src="https://grass-graph.moshimo.works/images/jobannon.png?background=none" />
           </Grid>
           <Grid item xs={12} style={{ marginTop: '30px' }}>
             <Typography
