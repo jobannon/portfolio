@@ -1,9 +1,6 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import {Grid, Box, Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Lottie from 'react-lottie';
 import AboutWhyIAmCarousel from './AboutWhyIAmCarousel';
 import heartData from '../lotties/pulsingHeart.json';
@@ -26,12 +23,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  paperLeft: {
-    padding: theme.spacing(2),
-    textAlign: 'left',
-    color: theme.palette.text.secondary,
-  },
-  colorBox: {
+  headerColorBox: {
     marginLeft: '10px',
     background: '#3f51b5',
     paddingLeft: '17px',
@@ -47,26 +39,12 @@ const useStyles = makeStyles((theme) => ({
   greenBackground: {
     background: '#CEEDDB',
     textAlign: 'center',
-    // borderRadius: '25px',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '55px',
     paddingBottom: '55px',
   },
-  carBox: {
-    width: '60%',
-    minWidth: '350px',
-    height: 'auto',
-    margin: 'auto',
-  },
-  carImage: {
-    height: 'auto',
-    width: '45%',
-    minWidth: '300px',
-    margin: 'auto',
-
-  },
-  paperRed: {
+  underlineSubheaderRed: {
     textAlign: 'center',
     color: theme.palette.text.secondary,
     borderBottom: 'solid 9px',
@@ -85,7 +63,7 @@ function AboutWhyIAm() {
       >
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
-            <Box boxShadow={3} component="span" className={classes.colorBox}>
+            <Box boxShadow={3} component="span" className={classes.headerColorBox}>
               Why I am
             </Box>
           </Typography>
@@ -98,7 +76,7 @@ function AboutWhyIAm() {
         <Grid item xs={12} className={classes.greenBackground}>
           <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
             <Typography
-              className={classes.paperRed}
+              className={classes.underlineSubheaderRed}
               component="span"
               variant="h3"
             >
