@@ -78,7 +78,7 @@ function AboutHowIAm() {
         <Grid container direction="row">
           <Grid item xs={12} className={classes.headerText}>
             <Typography className={classes.paper} variant="h1">
-              <Box boxShadow={3} component="span" className={classes.HeaderBox}>
+              <Box boxShadow={3} component="span" className={classes.headerColorBox}>
                 How I am
               </Box>
             </Typography>
