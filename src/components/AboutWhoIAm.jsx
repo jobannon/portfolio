@@ -1,11 +1,9 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import {
+  Grid, Link, Box, Typography, Button,
+} from '@material-ui/core/';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
-import Button from '@material-ui/core/Button';
 import outdoorJosh from '../assets/outdoorJosh.jpg';
 import thinkingDeveloperDataLight from '../assets/thinkingDeveloperDataLight.json';
 import turingFull from '../assets/turingFull.png';
@@ -38,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  paperRed: {
+  underlineSubheaderRed: {
     textAlign: 'center',
     lineHeight: '1.5',
     color: theme.palette.text.secondary,
@@ -49,13 +47,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'Left',
     color: theme.palette.text.secondary,
-  },
-  paperRight: {
-    padding: theme.spacing(2),
-    textAlign: 'Right',
-    color: theme.palette.text.secondary,
-    [theme.breakpoints.up('xs')]: {
-    },
   },
   codeForDenverImg: {
     height: '120px',
@@ -70,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
       float: 'center',
     },
   },
-  colorBox: {
+  headerColorBox: {
     marginLeft: '10px',
     background: '#3f51b5',
     paddingLeft: '17px',
@@ -99,7 +90,6 @@ const useStyles = makeStyles((theme) => ({
   },
   greenBackground: {
     background: '#CEEDDB',
-    // borderRadius: '25px',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '55px',
@@ -113,12 +103,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '100px',
     paddingBottom: '100px',
   },
-  innerHeader: {
-    textAlign: 'left',
-  },
-  innerText: {
-    paddingRight: '250px',
-  },
 }));
 
 function AboutWhoIAm() {
@@ -128,7 +112,7 @@ function AboutWhoIAm() {
       <NormalizedGridContainer container direction="row" className={classes.who}>
         <Grid item xs={12} className={classes.headerText}>
           <Typography className={classes.paper} variant="h1">
-            <Box boxShadow={3} component="span" className={classes.colorBox}>
+            <Box boxShadow={3} component="span" className={classes.headerColorBox}>
               Who I am
             </Box>
           </Typography>
@@ -140,7 +124,7 @@ function AboutWhoIAm() {
           <Grid item xs={12} style={{ maxWidth: '1000px' }} className={classes.greenBackground}>
             <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
               <Typography
-                className={classes.paperRed}
+                className={classes.underlineSubheaderRed}
                 component="span"
                 variant="h3"
               >
@@ -151,9 +135,13 @@ function AboutWhoIAm() {
               className={classes.paperLeft}
               variant="h6"
             >
-              I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in AppleSoft BASIC.
-              <p>I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.</p>
-              <p>I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.</p>
+              <Box component="span">
+                I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in AppleSoft BASIC.
+              </Box>
+              <Box component="p">
+                I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.
+                I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.
+              </Box>
 
             </Typography>
           </Grid>
@@ -162,7 +150,7 @@ function AboutWhoIAm() {
           <Grid item xs={12} lg={6} style={{ marginTop: '60px' }}>
             <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
               <Typography
-                className={classes.paperRed}
+                className={classes.underlineSubheaderRed}
                 component="span"
                 variant="h3"
               >
@@ -210,7 +198,7 @@ function AboutWhoIAm() {
       <NormalizedGridContainer container direction="column" justify="center" className={classes.greenBackground} spacing={3}>
         <Box style={{ textAlign: 'center', marginBottom: '30px' }}>
           <Typography
-            className={classes.paperRed}
+            className={classes.underlineSubheaderRed}
             component="span"
             variant="h3"
           >
@@ -225,8 +213,12 @@ function AboutWhoIAm() {
             <Typography
               className={classes.paperLeft}
             >
-              The greatest obstacle to change is support to make that change.  When I decided to pursue coding as a full-time career having a mentor in my corner to explain the finer points of OOP was invaluable.
-              <p>I am giving back by offering a 6-week mentorship to incoming Turing Students</p>
+              <Box component="span">
+                The greatest obstacle to change is support to make that change.  When I decided to pursue coding as a full-time career having a mentor in my corner to explain the finer points of OOP was invaluable.
+              </Box>
+              <Box component="p">
+                I am giving back by offering a 6-week mentorship to incoming Turing Students
+              </Box>
             </Typography>
           </Box>
         </Grid>
@@ -238,8 +230,12 @@ function AboutWhoIAm() {
             <Typography
               className={classes.paperLeft}
             >
-              Open Source Software is the platform from which I built my career.
-              <p>I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects</p>
+              <Box component="span">
+                Open Source Software is the platform from which I built my career.
+              </Box>
+              <Box component="p">
+                I am giving back by working on a Denver Poverty Map data visualization and other civic minded projects
+              </Box>
               <Button
                 variant="outlined"
                 href="https://codefordenver.org/#/#featured"
