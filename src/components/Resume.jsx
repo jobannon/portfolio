@@ -35,6 +35,13 @@ function Resume() {
       minWidth: '220px',
       textAlign: 'center',
     },
+    underlineSubheaderRed: {
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      borderBottom: 'solid 4px',
+      borderBottomColor: theme.palette.secondary.main,
+      lineHeight: '1.5',
+    },
   }));
   const classes = useStyles();
   const [numPages, setNumPages] = useState(null);
@@ -78,16 +85,37 @@ function Resume() {
           </Paper>
         </Grid>
         <Grid item xs={12} style={{ textAlign: 'center' }}>
-          <Typography variant="h6">Technical Skillsets</Typography>
+          <Typography variant="h6">
+            <Box mb={2} mt={3}>
+              <Box component="span" className={classes.underlineSubheaderRed}>
+                Technical Skillsets
+              </Box>
+            </Box>
+          </Typography>
           <Paper className={classes.paper} style={{ maxWidth: '630px', margin: 'auto', padding: '15px' }}>
             {competenciesChipped}
           </Paper>
         </Grid>
         <Grid item xs={12} style={{ textAlign: 'center' }}>
-          <Typography variant="h6">Competencies</Typography>
+          <Typography variant="h6" mb="10px">
+            <Box mb={2} mt={3}>
+              <Box component="span" className={classes.underlineSubheaderRed}>
+                Competencies
+              </Box>
+            </Box>
+          </Typography>
           <Paper className={classes.paper} style={{ maxWidth: '630px', margin: 'auto', padding: '15px' }}>
             {softSkillsChipped}
           </Paper>
+        </Grid>
+        <Grid item xs={12} style={{ textAlign: 'center' }}>
+          <Typography variant="h6" mb="10px">
+            <Box mt={3}>
+              <Box component="span" className={classes.underlineSubheaderRed}>
+                Resume
+              </Box>
+            </Box>
+          </Typography>
         </Grid>
         <Grid item xs={12} style={{ textAlign: 'center', marginTop: '20px' }}>
           <Link href="/currentResume.pdf" download>
