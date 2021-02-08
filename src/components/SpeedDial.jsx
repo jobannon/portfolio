@@ -6,7 +6,7 @@ import Lottie from 'react-lottie';
 import Link from '@material-ui/core/Link';
 import Icon from '@mdi/react';
 import {
-  mdiLinkedin, mdiAt, mdiGoogle, mdiDiscord,
+  mdiLinkedin, mdiAt, mdiGoogle,
   mdiTwitter,
 } from '@mdi/js';
 
@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
 const withLink = (href, children) => <Link href={href} target="#" style={{ display: 'flex' }}>{children}</Link>;
 
 const actions = [
-  // { icon: withLink("discordlink", <Icon path={mdiDiscord} title="Discord" size={1} />), name: 'Discord'},
   { icon: withLink('https://twitter.com/jtobannon', <Icon path={mdiTwitter} title="Twitter" size={1} />), name: 'Tweet!' },
   { icon: withLink('https://calendly.com/joshcodes/', <Icon path={mdiGoogle} title="Google Meet" size={1} />), name: 'Meet/Calendly' },
   { icon: withLink('mailto:jtobannon@gmail.com', <Icon path={mdiAt} title="Email" size={1} />), name: 'Email' },
