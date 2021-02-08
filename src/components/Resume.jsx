@@ -4,7 +4,7 @@ import {
   makeStyles, withStyles,
 } from '@material-ui/core';
 import {
-  Document, Page, pdfjs, View,
+  Document, Page, pdfjs,
 } from 'react-pdf';
 import { SizeMe } from 'react-sizeme';
 import turingFull from '../assets/turingFull.png';
@@ -53,7 +53,7 @@ function Resume() {
   const competenciesChipped = competencies.map((term) => (<Chip label={term} variant="outlined" color="primary" style={{ padding: '5px', margin: '3px' }} />));
   const softSkillsChipped = softSkills.map((term) => (<Chip label={term} variant="outlined" color="primary" style={{ padding: '5px', margin: '3px' }} />));
 
-  function onDocumentLoadSuccess({ numPages }) {
+  function onDocumentLoadSuccess() {
     setNumPages(numPages);
   }
   return (
@@ -122,7 +122,6 @@ function Resume() {
             <Button variant="outlined" color="secondary">Download PDF</Button>
           </Link>
         </Grid>
-
         <Grid item xs={12} style={{ textAlign: 'center' }}>
           <Box style={{ maxWidth: '1080px', margin: 'auto' }}>
             <SizeMe>
