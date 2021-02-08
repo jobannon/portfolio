@@ -4,13 +4,13 @@ import {
   useParams,
 } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import DOMPurify from 'dompurify';
 
 export default function BlogPost() {
   const [loaded, setLoaded] = useState(false);
   const [content, setContent] = useState([]);
 
-  const butter = Butter('31ea5a68e6738d99e452df58f9656819247fff89');
+  const { REACT_APP_BUTTER_ID: BUTTER_ID } = process.env;
+  const butter = Butter(BUTTER_ID);
   const { slug } = useParams();
 
   useEffect(() => {
@@ -20,8 +20,6 @@ export default function BlogPost() {
     });
   }, []);
 
-  const sanitizer = DOMPurify.sanitize;
-
   return (
     <>
       <Grid container direction="row" justify="center" style={{ marginTop: '40px' }}>
@@ -29,7 +27,7 @@ export default function BlogPost() {
           {loaded
         && (
         <div>
-          <div dangerouslySetInnerHTML={{ __html: sanitizer(content) }} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         )}
           {!loaded
