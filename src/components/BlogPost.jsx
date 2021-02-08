@@ -3,8 +3,8 @@ import Butter from 'buttercms';
 import {
   useParams,
 } from 'react-router-dom';
-import SelectInput from '@material-ui/core/Select/SelectInput';
 import Grid from '@material-ui/core/Grid';
+import DOMPurify from 'dompurify';
 
 export default function BlogPost() {
   const [loaded, setLoaded] = useState(false);
@@ -20,6 +20,8 @@ export default function BlogPost() {
     });
   }, []);
 
+  const sanitizer = DOMPurify.sanitize;
+
   return (
     <>
       <Grid container direction="row" justify="center" style={{ marginTop: '40px' }}>
@@ -27,7 +29,7 @@ export default function BlogPost() {
           {loaded
         && (
         <div>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <div dangerouslySetInnerHTML={{ __html: sanitizer(content) }} />
         </div>
         )}
           {!loaded
