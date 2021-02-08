@@ -4,20 +4,17 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-
 import {
   createMuiTheme,
   responsiveFontSizes,
   MuiThemeProvider,
 } from '@material-ui/core';
-
 import Box from '@material-ui/core/Box';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 import { ApolloClient, ApolloProvider } from '@apollo/client';
-
 import TopBar from './components/TopBar';
 import About from './components/About';
 import Project from './components/Project';
@@ -68,7 +65,7 @@ function App() {
               <TopBar />
               <Switch>
                 <Route path="/correspondence/:slug">
-                  <CorrespondencePost/>
+                  <CorrespondencePost />
                 </Route>
                 <Route path="/project">
                   <Project />
