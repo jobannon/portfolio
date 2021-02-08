@@ -1,5 +1,7 @@
 import React from 'react';
-import {Grid, Typography, CssBaseline, Paper, Box} from '@material-ui/core';
+import {
+  Grid, CssBaseline,
+} from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import movieReelData from '../lotties/movieReel.json';
 import codeGearsData from '../lotties/codeGrearsData.json';
