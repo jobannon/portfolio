@@ -1,16 +1,13 @@
-import React, {
-  useState, useEffect, useCallback, useMemo,
-} from 'react';
-import { useQuery, gql, ApolloConsumer } from '@apollo/client';
-import { Query } from 'react-apollo';
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import {
-  CssBaseline, Link, Grid, Box, CircularProgress, makeStyles,
+  CssBaseline, Link, Grid, Box, makeStyles,
 } from '@material-ui/core';
 import FeaturedPost from './FeaturedPost';
 
 require('dotenv').config();
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   linkStyle: {
     '&:hover': {
       textDecoration: 'none',
