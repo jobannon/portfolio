@@ -112,11 +112,6 @@ function Footer() {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Box component="div" color="white" style={{ textAlign: 'center' }}>
-            <Link color="white">credits</Link>
-          </Box>
-        </Grid>
-        <Grid item xs={12}>
           <Box component="div">
             <Icon path={mdiCopyright} title="Copyright" color="white" size={1} style={{ verticalAlign: '-6px' }} />
             <Box component="span" className={classes.footerText}>
