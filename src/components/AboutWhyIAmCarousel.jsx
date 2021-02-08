@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   stepperBottom: {
     backgroundColor: '#F0F9F4',
   },
-  img: {
+  imgSize: {
     [theme.breakpoints.up('xs', 'sm')]: {
       maxWidth: 400,
     },
@@ -109,7 +109,7 @@ export default function AboutWhyIAmCarousel() {
         {photoSteps.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img className={classes.img} src={step.imgPath} alt={step.label} />
+              <img className={classes.imgSize} src={step.imgPath} alt={step.label} />
             ) : null}
           </div>
         ))}

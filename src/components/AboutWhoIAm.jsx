@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       height: '80px',
     },
-
   },
   outdoorJosh: {
     textAlign: 'right',
@@ -136,11 +135,12 @@ function AboutWhoIAm() {
               variant="h6"
             >
               <Box component="span">
-                I have a passion for software design. I was hooked on coding when only 16 years old creating tic-tac-toe in AppleSoft BASIC.
+                I have a passion for software design.
+                I was hooked on coding when only 16 years old creating tic-tac-toe in AppleSoft BASIC.
               </Box>
               <Box component="p">
                 I am interested in developing software and working in technologies that further and deepen meaningful online experiences and engagement with users and the communities they inhabit. Additionally, I am excited by technologies that enable workflows, greater efficiencies and drive the mission of the organization.I am collaborative, diligent, and conscientious.
-                I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of "doing the right thing" for the user and the company as well as driving by metrics to deliver effectively.
+                I desire to contribute to a diverse team on a challenging codebase with demanding user requirements. From my past experience in customer relations, I know the importance of doing the right thing for the user and the company as well as driving by metrics to deliver effectively.
               </Box>
 
             </Typography>

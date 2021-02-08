@@ -1,5 +1,7 @@
 import React from 'react';
-import {Grid, Box, Typography, Button} from '@material-ui/core';
+import {
+  Grid, Box, Typography, Button,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Lottie from 'react-lottie';
 import AboutWhyIAmCarousel from './AboutWhyIAmCarousel';

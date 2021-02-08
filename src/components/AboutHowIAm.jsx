@@ -169,7 +169,7 @@ function AboutHowIAm() {
             <Chip label="Live" color="secondary" />
           </Grid>
           <Grid item xs={12}>
-            <img src="https://grass-graph.moshimo.works/images/jobannon.png?background=none" />
+            <img src="https://grass-graph.moshimo.works/images/jobannon.png?background=none" alt="github graph" />
           </Grid>
           <Grid item xs={12} style={{ marginTop: '30px' }}>
             <Typography

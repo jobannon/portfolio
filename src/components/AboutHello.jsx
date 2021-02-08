@@ -1,5 +1,7 @@
 import React from 'react';
-import { withStyles, makeStyles, Typography, Grid, Box } from '@material-ui/core';
+import {
+  withStyles, makeStyles, Typography, Grid, Box,
+} from '@material-ui/core';
 import Lottie from 'react-lottie';
 import TextLoop from 'react-text-loop';
 import hiJoshData from '../assets/hiJosh.json';
@@ -87,8 +89,8 @@ function AboutHello() {
               <Lottie
                 animationData={hiJoshData}
                 options={defaultOptionsReturn(hiJoshData)}
-                height="30vh"
-                width="40vh"
+                height="50vh"
+                width="50vh"
                 className={classes.hi}
               />
             </Box>
