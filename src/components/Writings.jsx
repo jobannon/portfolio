@@ -5,8 +5,6 @@ import {
 } from '@material-ui/core';
 import FeaturedPost from './FeaturedPost';
 
-require('dotenv').config();
-
 const useStyles = makeStyles(() => ({
   linkStyle: {
     '&:hover': {
@@ -19,7 +17,7 @@ export default function Writings() {
   const classes = useStyles();
   const POSTS_QUERY = gql`
     query GetBlogCollection {
-      blogPostCollection {
+      blogPostCollection { 
         items {
           title
           heroImage {
