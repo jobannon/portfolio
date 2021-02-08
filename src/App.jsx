@@ -26,7 +26,7 @@ import Resume from './components/Resume';
 import Footer from './components/Footer';
 import FloatingSnacker from './components/FloatingSnacker';
 import SpeedDial from './components/SpeedDial';
-import BlogPost from './components/BlogPost';
+import CorrespondencePost from './components/CorrespondencePost';
 import Writings from './components/Writings';
 import WritingsPost from './components/WritingsPost';
 
@@ -68,7 +68,7 @@ function App() {
               <TopBar />
               <Switch>
                 <Route path="/correspondence/:slug">
-                  <BlogPost />
+                  <CorrespondencePost/>
                 </Route>
                 <Route path="/project">
                   <Project />

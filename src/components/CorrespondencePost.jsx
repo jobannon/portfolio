@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 
-export default function BlogPost() {
+export default function CorrespondencePost() {
   const [loaded, setLoaded] = useState(false);
   const [content, setContent] = useState([]);
 
