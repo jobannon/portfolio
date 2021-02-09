@@ -155,7 +155,7 @@ export default function CustomizedTimeline() {
                     <Typography variant="h6" component="h1">
                       AWS
                     </Typography>
-                    <Typography>This application is deployed to AWS cloud</Typography>
+                    <Typography>Route 53 is the DNS</Typography>
                     <Typography color="textSecondary">The power of the cloud!</Typography>
                   </Paper>
                 </TimelineContent>
@@ -174,10 +174,12 @@ export default function CustomizedTimeline() {
                 <TimelineContent>
                   <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                      Elastic Beanstalk
+                      Netlify
                     </Typography>
                     <Typography>Handles the deployment pipeline</Typography>
-                    <Typography color="textSecondary">Autoscaling of capacity is built in using ...</Typography>
+                    <Typography color="textSecondary">
+                      Autoscaling of capacity is built in using this CDN
+                    </Typography>
                   </Paper>
                 </TimelineContent>
               </TimelineItem>
@@ -195,10 +197,10 @@ export default function CustomizedTimeline() {
                 <TimelineContent>
                   <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                      GitHub Actions
+                      GitHub Hook
                     </Typography>
-                    <Typography>Work in Progress</Typography>
-                    <Typography color="textSecondary">Allowing a auto-deploy from the Git repository to Elastic Beanstalk</Typography>
+                    <Typography>Netlify Deploy</Typography>
+                    <Typography color="textSecondary">Allowing auto-deploy from the Git repository to Netlify</Typography>
                   </Paper>
                 </TimelineContent>
               </TimelineItem>
