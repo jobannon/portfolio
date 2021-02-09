@@ -1,43 +1,76 @@
-import React, { useState, useEffect } from 'react';
-import Butter from 'buttercms';
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 import {
-  useParams,
-} from 'react-router-dom';
-import Grid from '@material-ui/core/Grid';
+  Box, Grid, Typography, CssBaseline, makeStyles,
+} from '@material-ui/core';
+import ReactMarkdown from 'react-markdown';
+import Image from 'material-ui-image';
+
+require('dotenv').config();
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    textAlign: 'left',
+    color: theme.palette.text.secondary,
+  },
+  subheaderRedUnderline: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    borderBottom: 'solid 9px',
+    borderBottomColor: theme.palette.secondary.main,
+    lineHeight: '1.5',
+  },
+}));
 
 export default function CorrespondencePost() {
-  const [loaded, setLoaded] = useState(false);
-  const [content, setContent] = useState([]);
+  const classes = useStyles();
 
-  const { REACT_APP_BUTTER_ID: BUTTER_ID } = process.env;
-  const butter = Butter(BUTTER_ID);
   const { slug } = useParams();
+  const SIMPLE_LETTER_QUERY = gql`
+    query GetCorrespondencePostBySlug {
+      correspondencePostCollection(where: {slug:"${slug}"}) {
+        items {
+          title
+          main
+          coverImage {
+            url
+          }
+        }
+      }
+    }
+    `;
 
-  useEffect(() => {
-    butter.post.retrieve(slug).then((resp) => {
-      setLoaded(true);
-      setContent(resp.data.data.body);
-    });
-  }, []);
+  const { loading, error, data } = useQuery(SIMPLE_LETTER_QUERY);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
 
   return (
     <>
-      <Grid container direction="row" justify="center" style={{ marginTop: '40px' }}>
-        <Grid item xs={6}>
-          {loaded
-        && (
-        <div>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </div>
-        )}
-          {!loaded
-				&& (
-					<div>
-  Loading...
-					</div>
-				)}
+      <CssBaseline />
+      <Box style={{ margin: 'auto', marginTop: '100px' }}>
+        <Grid container direction="column" spacing={3}>
+          {data.correspondencePostCollection.items.map((item) => (
+            <Grid item style={{ margin: 'auto', maxWidth: '900px' }}>
+              <img src={item.coverImage.url} height="200px" />
+              <Typography variant="h2" className={classes.paper}>
+                <Box component="span" className={classes.subheaderRedUnderline}>
+                  {item.title}
+                </Box>
+              </Typography>
+              <Box>
+                <Typography variant="p">
+                  <ReactMarkdown>
+                    {item.main}
+                  </ReactMarkdown>
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
-      </Grid>
+      </Box>
     </>
   );
 }

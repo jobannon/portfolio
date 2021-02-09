@@ -32,7 +32,7 @@ export default function WritingsPost() {
       blogPostCollection(where: {slug:"${slug}"}) {
         items {
           title
-        body
+          body
         }
       }
     }
@@ -55,10 +55,11 @@ export default function WritingsPost() {
                 </Box>
               </Typography>
               <Box>
-                <ReactMarkdown>
-                  {item.body}
-                </ReactMarkdown>
-                {/* {item.body} */}
+                <Typography variant="p">
+                  <ReactMarkdown>
+                    {item.body}
+                  </ReactMarkdown>
+                </Typography>
               </Box>
             </Grid>
           ))}
