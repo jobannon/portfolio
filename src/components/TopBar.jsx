@@ -1,20 +1,15 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import {
+  AppBar, Toolbar, Tabs, Tab, Typography, Box, Link, Grid,
+} from '@material-ui/core';
 import { useLocation } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Icon from '@mdi/react';
 import {
-  mdiThoughtBubbleOutline, mdiShoePrint, mdiWall, mdiChefHat,
+  mdiThoughtBubbleOutline, mdiShoePrint, mdiChefHat,
   mdiCoffee,
 } from '@mdi/js';
 import officeJosh from '../assets/joshprofile_circle.resized.png';
@@ -153,7 +148,7 @@ export default function ScrollableTabsButtonAuto() {
           <Tab component={Link} value="/" label="Home" to="/#" href="/#" {...a11yProps(0)} index={0} />
           <Tab component={Link} value="/Project" label="Work" to="/Project" href="/Project#" {...a11yProps(2)} index={1} />
           <Tab component={Link} value="/Resume" label="Experience" to="/Resume#" href="/Resume#" {...a11yProps(3)} index={2} />
-          {/* <Tab component={Link} value="/Blog" label="Writing" to="/Blog" href="/Blog#" {...a11yProps(2)} index={3} /> */}
+          <Tab component={Link} value="/Writings" label="Writing" to="/Writings" href="/Writings#" {...a11yProps(2)} index={3} />
           <Tab component={Link} value="/Site" label="Site" to="/Site#" href="/Site#" {...a11yProps(1)} index={4} />
         </Tabs>
       </AppBar>
@@ -195,7 +190,7 @@ export default function ScrollableTabsButtonAuto() {
                 </Box>
               </Typography>
             </TabPanel>
-            <TabPanel value={currentTab} index="/Blog">
+            <TabPanel value={currentTab} index="/Writings">
               <Typography variant="h4" className={classes.subHeader}>
                 <Box boxShadow={3} component="span" className={classes.colorBox}>
                   A Penny For Your

@@ -1,10 +1,8 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import {
+  Grid, CssBaseline,
+} from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import { CssBaseline } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
 import movieReelData from '../lotties/movieReel.json';
 import codeGearsData from '../lotties/codeGrearsData.json';
 import weatherData from '../lotties/weatherData.json';
@@ -44,16 +42,6 @@ function Project() {
       height: 0,
       paddingTop: '56.25%', // 16:9
     },
-    colorBox: {
-      marginLeft: '10px',
-      background: '#3f51b5',
-      paddingLeft: '17px',
-      paddingRight: '17px',
-      paddingTop: '15px',
-      paddingBottom: '15px',
-      borderRadius: '25px',
-      color: 'white',
-    },
     expand: {
       transform: 'rotate(0deg)',
       marginLeft: 'auto',
@@ -66,19 +54,6 @@ function Project() {
     },
     avatar: {
       backgroundColor: theme.palette.primary.light,
-    },
-    colorBox: {
-      marginLeft: '10px',
-      background: '#3f51b5',
-      paddingLeft: '17px',
-      paddingRight: '17px',
-      paddingTop: '15px',
-      paddingBottom: '15px',
-      borderRadius: '50px',
-      color: 'white',
-    },
-    headerText: {
-      textAlign: 'center',
     },
   }));
 
@@ -108,7 +83,7 @@ function Project() {
             avatarLabelAria="PyShop"
             avatarLabel="PS"
             title="PyShop"
-            subheader="Working"
+            subheader="Planning"
             stacksUsed={['Python', 'Django', 'React']}
             highLights={['Reel still being developed...']}
             animationData={pieData}
@@ -125,7 +100,7 @@ function Project() {
             avatarLabel="MSS"
             title="Movie SuperStar"
             subheader="Working"
-            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'CircleCI', 'memcachier', 'Netlify', 'JAMStack']}
+            stacksUsed={['React', 'Rails', 'Ruby', 'Postgres', 'CircleCI', 'memcachier', 'ESlint', 'Netlify', 'JAMStack']}
             highLights={['Use of Caching', 'Microservice']}
             animationData={movieReelData}
             description="Movie SuperStar is an exercise in API design and testing"
@@ -140,7 +115,7 @@ function Project() {
             avatarLabel="JO"
             title="Hi. I am Josh."
             subheader="Latest"
-            stacksUsed={['React', 'NodeJS', 'MaterialUI', 'AWS']}
+            stacksUsed={['React', 'NodeJS', 'MaterialUI', 'AWS', 'ESlint']}
             highLights={['Professional Design', 'Interactive Storytelling', 'Responsive']}
             animationData={websiteData}
             description="This portfolio site.  Built to show personality and interactivity."
@@ -200,7 +175,7 @@ function Project() {
             avatarLabelAria="Sweater Weather"
             avatarLabel="SW"
             title="Sweater Weather"
-            subheader="History Snapshot"
+            subheader="Historic Snapshot"
             stacksUsed={['Capybara', 'Rails', 'RSpec', 'Ruby', 'Postgres']}
             highLights={['API Design', 'Multiple API Endpoint Consumption', 'DarkSky API', 'Google API']}
             animationData={weatherData}

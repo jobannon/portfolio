@@ -1,11 +1,9 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
+import {
+  withStyles, makeStyles, Typography, Grid, Box,
+} from '@material-ui/core';
 import Lottie from 'react-lottie';
 import TextLoop from 'react-text-loop';
-import Button from '@material-ui/core/Button';
 import hiJoshData from '../assets/hiJosh.json';
 import downCaret from '../assets/downCaret.json';
 
@@ -28,9 +26,13 @@ const defaultOptionsReturn = (nameOf) => ({
 });
 
 const useStyles = makeStyles((theme) => ({
-
   root: {
     flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'left',
+    color: theme.palette.text.secondary,
   },
   animatingHi: {
     [theme.breakpoints.up('xs', 'sm', 'md')]: {
@@ -42,17 +44,14 @@ const useStyles = makeStyles((theme) => ({
   },
   positionTextBox: {
     display: 'flex',
-    [theme.breakpoints.down('xs', 'sm')]: {
+    [theme.breakpoints.up('xs', 'sm', 'md')]: {
       justifyContent: 'center',
     },
+    [theme.breakpoints.up('lg')]: {
+      justifyContent: 'left',
+    },
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'left',
-    color: theme.palette.text.secondary,
-  },
-
-  fName: {
+  textLoopFirstName: {
     marginLeft: '10px',
     background: '#3f51b5',
     paddingLeft: '20px',
@@ -67,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 function AboutHello() {
   const classes = useStyles();
-  const getVariant = () => {
+  const getHeadingVariant = () => {
     if (window.screen.availWidth < 500) {
       return 'h2';
     }
@@ -90,8 +89,8 @@ function AboutHello() {
               <Lottie
                 animationData={hiJoshData}
                 options={defaultOptionsReturn(hiJoshData)}
-                height="30vh"
-                width="40vh"
+                height="50vh"
+                width="50vh"
                 className={classes.hi}
               />
             </Box>
@@ -117,10 +116,9 @@ function AboutHello() {
                 <Box component="div" className={classes.positionTextBox}>
                   <Typography
                     className={classes.paper}
-                    variant={getVariant()}
+                    variant={getHeadingVariant()}
                   >
-                    {/* <Button variant="contained" color="primary"> */}
-                    <Box component="span" className={classes.fName} boxShadow={3}>
+                    <Box component="span" className={classes.textLoopFirstName} boxShadow={3}>
                       <TextLoop>
                         <Box component="span">Josh</Box>
                         <Box component="span">a Developer</Box>
@@ -130,7 +128,6 @@ function AboutHello() {
                         <Box component="span">Team Oriented</Box>
                       </TextLoop>
                     </Box>
-                    {/* </Button> */}
                   </Typography>
                 </Box>
               </Grid>

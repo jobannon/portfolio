@@ -1,20 +1,16 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import {
+  Paper, Typography, Button, MobileStepper,
+} from '@material-ui/core';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-
 import earlyAgeAppleBasic from '../assets/earlyAge/earlyAgeAppleBasic.png';
 import earlyAgeTic from '../assets/earlyAge/earlyAgeTic.png';
 import earlyAgeTic2 from '../assets/earlyAge/earlyAgeTic2.png';
 import earlyAgeTic3 from '../assets/earlyAge/earlyAgeTic3.png';
 import earlyAgeTic4 from '../assets/earlyAge/earlyAgeTic4.png';
-import earlyAgeTic5 from '../assets/earlyAge/earlyAgeTic5.png';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -30,29 +26,19 @@ const photoSteps = [
     earlyAgeTic,
   },
   {
-    label: 'Tic Tac Toe was the Genesis of my Journey',
+    label: 'Using Algebra in one of my first applications',
     imgPath:
     earlyAgeTic2,
   },
   {
-    label: 'Tic Tac Toe was the Genesis of my Journey',
+    label: 'More TicTacToe',
     imgPath:
     earlyAgeTic3,
   },
   {
-    label: 'Tic Tac Toe was the Genesis of my Journey',
+    label: 'More Algebra being used for early games',
     imgPath:
      earlyAgeTic4,
-  },
-  {
-    label: 'Tic Tac Toe was the Genesis of my Journey',
-    imgPath:
-     earlyAgeTic5,
-  },
-  {
-    label: 'Tic Tac Toe was the Genesis of my Journey',
-    imgPath:
-     earlyAgeTic,
   },
 ];
 
@@ -73,12 +59,11 @@ const useStyles = makeStyles((theme) => ({
     height: 50,
     paddingLeft: theme.spacing(4),
     backgroundColor: '#F0F9F4',
-    // backgroundColor: theme.palette.background.default,
   },
   stepperBottom: {
     backgroundColor: '#F0F9F4',
   },
-  img: {
+  imgSize: {
     [theme.breakpoints.up('xs', 'sm')]: {
       maxWidth: 400,
     },
@@ -124,7 +109,7 @@ export default function AboutWhyIAmCarousel() {
         {photoSteps.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img className={classes.img} src={step.imgPath} alt={step.label} />
+              <img className={classes.imgSize} src={step.imgPath} alt={step.label} />
             ) : null}
           </div>
         ))}
