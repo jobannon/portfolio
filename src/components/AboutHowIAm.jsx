@@ -68,6 +68,15 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '20px',
     },
   },
+  ghImage: {
+    [theme.breakpoints.up('xs', 'sm', 'md')]: {
+      width: '400px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '800px',
+      marginTop: '20px',
+    },
+  },
 }));
 
 function AboutHowIAm() {
@@ -169,7 +178,9 @@ function AboutHowIAm() {
             <Chip label="Live" color="secondary" />
           </Grid>
           <Grid item xs={12}>
-            <img src="https://grass-graph.moshimo.works/images/jobannon.png?background=none" alt="github graph" />
+            <Box display='flex' className={classes.ghImage}>
+              <img src="https://grass-graph.moshimo.works/images/jobannon.png?background=none" alt="github graph" width="100%" />
+            </Box>
           </Grid>
           <Grid item xs={12} style={{ marginTop: '30px' }}>
             <Typography

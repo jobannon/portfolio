@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
     minWidth: '50vh',
-    maxWidth: '350px',
+    maxWidth: '300px',
   },
   cardDetails: {
     flex: 1,
@@ -20,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
   cardHeaderUnderline: {
     borderBottomColor: theme.palette.secondary.light,
     borderBottom: '1px solid',
+  },
+  coverImage: {
+    [theme.breakpoints.down('xs', 'sm')]: {
+      display: 'none',
+    },
   },
 }));
 
