@@ -8,7 +8,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
-    minWidth: '50vh',
+    minWidth: '45vw',
     maxWidth: '300px',
   },
   cardDetails: {
