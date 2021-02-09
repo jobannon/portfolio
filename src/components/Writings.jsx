@@ -49,7 +49,7 @@ export default function Writings() {
       <Box style={{ marginTop: '100px', margin: 'auto' }}>
         <NormalizedGridContainer container direction="column" spacing={3}>
           {data.blogPostCollection.items.map((item) => (
-            <Grid item style={{ margin: 'auto' }}>
+            <Grid item xs={12} style={{ margin: 'auto' }}>
               <Link
                 to={`/${item.slug}`}
                 href={`/writings/${item.slug}`}
