@@ -16,6 +16,6 @@
 
 ### 👍 MVP 
 
-### 🚧 Integrate CMS for blog
+### 👍 Integrate CMS for blog
 
-### ☐ Further refinements (TBA)
+### 🚧 Further refinements (TBA)
