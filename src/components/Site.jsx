@@ -197,7 +197,7 @@ export default function CustomizedTimeline() {
                 <TimelineContent>
                   <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                      GitHub Hook
+                      GitHub/Netlify Hook
                     </Typography>
                     <Typography>Netlify Deploy</Typography>
                     <Typography color="textSecondary">Allowing auto-deploy from the Git repository to Netlify</Typography>
