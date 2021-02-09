@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import {
-  CssBaseline, Link, Grid, Box, makeStyles,
+  CssBaseline, Link, Grid, Box, makeStyles, withStyles,
 } from '@material-ui/core';
 import FeaturedPost from './FeaturedPost';
 
@@ -12,6 +12,14 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
+
+const NormalizedGridContainer = withStyles((theme) => ({
+  root: {
+    width: '100%',
+    margin: '0px',
+    padding: `${(theme.spacing / 2) * 8}px`,
+  },
+}))(Grid);
 
 export default function Writings() {
   const classes = useStyles();
@@ -39,7 +47,7 @@ export default function Writings() {
     <>
       <CssBaseline />
       <Box style={{ marginTop: '100px', margin: 'auto' }}>
-        <Grid container direction="column" spacing={3}>
+        <NormalizedGridContainer container direction="column" spacing={3}>
           {data.blogPostCollection.items.map((item) => (
             <Grid item style={{ margin: 'auto' }}>
               <Link
@@ -57,7 +65,7 @@ export default function Writings() {
               </Link>
             </Grid>
           ))}
-        </Grid>
+        </NormalizedGridContainer>
       </Box>
     </>
   );
