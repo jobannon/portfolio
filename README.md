@@ -18,4 +18,4 @@
 
 ### 👍 Integrate CMS for blog
 
-### 🚧 Further refinements (TBA)
+### 🚧 Further refinements - intergrate Typescript
