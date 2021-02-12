@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
-import Paper from '@material-ui/core/Paper';
+import {
+  Paper, Chip, Box, makeStyles, Typography, Grid,
+} from '@material-ui/core';
 import TextLoop from 'react-text-loop';
-import Chip from '@material-ui/core/Chip';
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
+import axios from 'axios';
 
 function IssueScroller() {
   const useStyles = makeStyles((theme) => ({
@@ -24,12 +21,20 @@ function IssueScroller() {
   const [cleanTitles, setCleanTitles] = useState([]);
   const [status, setStatus] = useState([]);
 
-  function getGithubIssues() {
-    fetch('https://api.github.com/repos/jobannon/fe-movie-superstar-redux/issues')
-      .then((response) => response.json())
-      .then((data) => {
-        setGithubIssues(data);
-      });
+  async function getGithubIssues() {
+    const options = {
+      method: 'GET',
+      url:
+          'https://api.github.com/repos/jobannon/fe-movie-superstar-redux/issues',
+      headers: {
+      },
+    };
+    try {
+      const response = await axios.request(options);
+      setGithubIssues(response.data);
+    } catch (error) {
+      console.error('Error fetching Github issues for Superstar Repo', error);
+    }
   }
   useEffect(() => {
     getGithubIssues();
